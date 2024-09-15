@@ -1,0 +1,265 @@
+.hero-container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(25deg, rgba( 27, 27, 27, 1) 40%, rgba(8,70,59,1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    h3{
+        font-family: 'Fira Code';
+        font-weight: 300;
+        font-size: clamp(40px, 3vw, 80px);
+        margin-bottom: 12px;
+        margin-top: 0px;
+    }
+    h1{
+        font-size: clamp(96px, 4vw, 128px);
+        margin-bottom: 40px;
+        margin-top: 0px;
+    }
+
+    .buttonContainer{
+        z-index: 1;
+    }
+
+// Animate the size, inside
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 0 0 2em var(--hover);
+}
+
+// Animate the size, outside
+.pulse:hover, 
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+// Stack multiple shadows, one from the left, the other from the right
+.close:hover,
+.close:focus {
+  box-shadow: 
+    inset -3.5em 0 0 0 var(--hover),
+    inset 3.5em 0 0 0 var(--hover);  
+}
+
+// Size can also be negative; see how it's smaller than the element
+.raise:hover,
+.raise:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+// Animating from the bottom
+.up:hover,
+.up:focus {
+  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+
+// And from the left
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
+}
+
+// Multiple shadows, one on the outside, another on the inside
+.offset {  
+  box-shadow: 
+    0.3em 0.3em 0 0 var(--color),
+    inset 0.3em 0.3em 0 0 var(--color);
+  
+  &:hover,
+  &:focus {
+    box-shadow: 
+      0 0 0 0 var(--hover),
+      inset 6em 3.5em 0 0 var(--hover);
+  }
+}
+
+//=== Set button colors
+// If you wonder why use Sass vars or CSS custom properties...
+  // Make a map with the class names and matching colors
+$colors: (
+  fill: #3dcfb6,
+);
+
+// Sass variables compile to a static string; CSS variables are dynamic and inherited
+  // Loop through the map and set CSS custom properties using Sass variables
+@each $button, $color in $colors {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #3dcfb6;
+  }
+}
+
+// Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties.
+button {  
+  color: var(--color);
+  transition: 0.25s;
+  
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+}
+
+//=== Pen styling, ignore
+body {
+  color: #fff;
+  background: hsl(227, 10%, 10%);
+  font: 300 1em 'Fira Sans', sans-serif;
+  
+  // Center everything ever
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+}
+
+// Basic button styles
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+  cursor: pointer;
+  border-radius: 100px;
+  font-size: 18px;
+
+}
+
+h1 { font-weight: 400; }
+
+code { 
+  color: #3dcfb6;
+  font: inherit;
+}
+}
+
+
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    right: 96px;
+    left: 96px;
+
+
+
+    .left-string-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+        position: relative;
+        bottom: 0;
+        gap: 24px;
+        
+        .colored-string{
+            width: 1px;
+            height: 30vh;
+            background-color: #3dcfb6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+    }
+
+    .right-string-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        width: 48px;
+
+
+        .white-string {
+            width: 1px;
+            height: 30vh;
+            background-color: white;
+        }
+
+        .hero-icon{
+            &:hover {
+                filter: brightness(10);
+                cursor: pointer;
+            }
+        }
+
+        .heroEmail{
+            width: fit-content;
+            transform: translateY(-500%) rotate(-90deg);
+        }
+
+
+
+    }
+
+    .arrowContainer{
+        border: 1px solid #3dcfb6;
+        border-radius: 100px;
+        height: 64px;
+        width: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .arrow {
+            animation: up-and-down-slide 1.25s ease-in-out infinite;
+            width: 16px;
+            height: auto;
+            filter: brightness(10);
+        }
+    }
+
+}
+
+
+.sliderContainer{
+    height: 96px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: infinite-repeat 20s linear infinite;
+    background-color: rgba(0, 0, 0, 0.201);
+}
+
+@keyframes up-and-down-slide {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(0px, 10px);
+    }
+  }
+
+  @keyframes infinite-repeat {
+    0%{
+      transform: translate(0, 0);
+    }
+  
+    100% {
+      transform: translate(100%, 0);
+    }
+  }
