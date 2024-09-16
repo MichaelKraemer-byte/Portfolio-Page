@@ -6,6 +6,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
+
     
     h3{
         font-family: 'Fira Code';
@@ -13,11 +15,13 @@
         font-size: clamp(40px, 3vw, 80px);
         margin-bottom: 12px;
         margin-top: 0px;
+        z-index: 1;
     }
     h1{
         font-size: clamp(96px, 4vw, 128px);
         margin-bottom: 40px;
         margin-top: 0px;
+        z-index: 1;
     }
 
     .buttonContainer{
@@ -30,57 +34,6 @@
   box-shadow: inset 0 0 0 2em var(--hover);
 }
 
-// Animate the size, outside
-.pulse:hover, 
-.pulse:focus {
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em transparent;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 var(--hover); }
-}
-
-// Stack multiple shadows, one from the left, the other from the right
-.close:hover,
-.close:focus {
-  box-shadow: 
-    inset -3.5em 0 0 0 var(--hover),
-    inset 3.5em 0 0 0 var(--hover);  
-}
-
-// Size can also be negative; see how it's smaller than the element
-.raise:hover,
-.raise:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
-}
-
-// Animating from the bottom
-.up:hover,
-.up:focus {
-  box-shadow: inset 0 -3.25em 0 0 var(--hover);
-}
-
-// And from the left
-.slide:hover,
-.slide:focus {
-  box-shadow: inset 6.5em 0 0 0 var(--hover);
-}
-
-// Multiple shadows, one on the outside, another on the inside
-.offset {  
-  box-shadow: 
-    0.3em 0.3em 0 0 var(--color),
-    inset 0.3em 0.3em 0 0 var(--color);
-  
-  &:hover,
-  &:focus {
-    box-shadow: 
-      0 0 0 0 var(--hover),
-      inset 6em 3.5em 0 0 var(--hover);
-  }
-}
 
 //=== Set button colors
 // If you wonder why use Sass vars or CSS custom properties...
@@ -133,11 +86,10 @@ button {
   font: inherit;
   line-height: 1;
   margin: 0.5em;
-  padding: 1em 2em;
+  padding: 0.8em 1.6em;
   cursor: pointer;
   border-radius: 100px;
   font-size: 18px;
-
 }
 
 h1 { font-weight: 400; }
@@ -154,7 +106,6 @@ code {
     display: flex;
     justify-content: space-between;
     position: absolute;
-    z-index: 0;
     bottom: 0;
     right: 96px;
     left: 96px;
@@ -172,7 +123,7 @@ code {
         
         .colored-string{
             width: 1px;
-            height: 30vh;
+            height: 24vh;
             background-color: #3dcfb6;
             display: flex;
             flex-direction: column;
@@ -187,13 +138,15 @@ code {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: end;
         gap: 24px;
         width: 48px;
+        height: 70vh;
 
 
         .white-string {
             width: 1px;
-            height: 30vh;
+            height: 20vh;
             background-color: white;
         }
 
@@ -206,11 +159,18 @@ code {
 
         .heroEmail{
             width: fit-content;
-            transform: translateY(-500%) rotate(-90deg);
+            transform: translateY(-550%) rotate(-90deg);
+            text-decoration: none;
+            color: white;
+            letter-spacing: 1px;
+            font-weight: 400;
+
+
+
+            &:hover{
+            color: #b5fff3;
+            }
         }
-
-
-
     }
 
     .arrowContainer{
@@ -233,33 +193,127 @@ code {
 
 
 .sliderContainer{
-    height: 96px;
-    width: 100%;
+    color: #3dcfb6;
+    width: 100vw;
+    height: 64px;
     overflow: hidden;
     display: flex;
-    justify-content: center;
     align-items: center;
-    animation: infinite-repeat 20s linear infinite;
     background-color: rgba(0, 0, 0, 0.201);
+    transform: rotate(-3deg);
+    gap: 48px;
+    white-space: nowrap;
+    position: absolute;
+    bottom: 4vh;
+    left: -18px;
+    right: 0;
+    box-sizing: border-box;
+    backdrop-filter: blur(2px);
+
+    .marqueeText {
+      display: flex;
+      position: relative;
+      gap: 40px;
+      white-space: nowrap;
+      box-sizing: border-box;
+
+      font-size: 32px;
+      font-weight: 400;
+      animation: infinite-loop 16s infinite linear;
+  }
 }
 
-@keyframes up-and-down-slide {
-    0%,
-    100% {
-      transform: translate(0, 0);
-    }
+
+@keyframes infinite-loop {
+
+  from {
+    transform: translateX(3%);
+ }
+
+  to {
+      transform: translateX(-100%);
+  }
+}
   
-    50% {
-      transform: translate(0px, 10px);
-    }
+  
+@keyframes up-and-down-slide {
+  0%,
+  100% {
+    transform: translate(0, 0);
   }
 
-  @keyframes infinite-repeat {
-    0%{
-      transform: translate(0, 0);
-    }
-  
-    100% {
-      transform: translate(100%, 0);
-    }
+  50% {
+    transform: translate(0px, 10px);
   }
+}
+
+.custom-cursor {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 350ms ease;
+  transform: translate(-50%, -50%) scale(.3);
+  z-index: 1000;
+}
+.custom-cursor:before{
+  content:"";
+  mix-blend-mode:difference;
+  margin:auto;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:100%;
+    box-shadow:0 0 20px 40px rgba(255,255,255,1);
+  border-radius: 50%;
+  filter:blur(5px);
+}
+.custom-cursor--link {
+  transform: translate(-50%, -50%) scale(1);
+}
+.block {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+  min-height: 300px;
+}
+.block--black {
+  background-color: black;
+  color: white;
+}
+.block--white {
+  background-color: white;
+  color: black;
+}
+.block__title,
+.block__link {
+  color: currentColor;
+}
+.block__title {
+  margin-bottom: 1em;
+  font-size: 4rem;
+  font-weight: 300;
+  text-align: center;
+}
+.block__link {
+  padding: .5em;
+  text-decoration: none;
+  transition: letter-spacing 200ms ease;
+}
+.block__link:hover {
+  letter-spacing: .1em;
+}

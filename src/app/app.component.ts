@@ -8,6 +8,7 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { CursorEffektComponent } from './components/cursor-effekt/cursor-effekt.component';
 
 
 @Component({
@@ -23,6 +24,7 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
     ProjectsComponent,
     TestimonialsComponent,
     ContactFormComponent,
+    CursorEffektComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -1,0 +1,115 @@
+.about-me-section {
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    padding: 144px 112px 144px 112px;
+    // padding: 12vh 8vw; 
+    align-items: center;
+    justify-content: center;
+    gap: 9vw;    
+    z-index: 1;
+    position: relative;
+
+    .img-and-svg-container{
+        height: 100%;
+        width: 100%;
+        flex: 1;
+        max-width: 600px;
+
+
+        .imgWrapper{
+            display: flex;
+            justify-content: end;
+            position: relative;
+
+
+            img{
+                width: 100%;
+                height: auto;
+                z-index: 1;
+                position: absolute;
+                border-radius: 30px;
+                transform: translate(8%, -6%);
+
+            }        
+        }
+
+        svg{
+            width: 100%;
+            height: auto;
+            z-index: 0;
+            position: relative;
+            border-radius: 40px;
+        }
+    }
+}
+
+
+
+    .aboute-me-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: end;
+    width: 100%;
+    max-width: 600px;
+    height: 100%;
+
+
+        .description-container{
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            background-color: rgba(61, 207, 183, 0.10);
+            border: 1px solid #3dcfb6;
+            border-radius: 30px;
+        
+            .subtitle {
+                font-size: 4.3rem;
+                font-family: 'Fira Code';
+                font-weight: 700;
+                color: #3dcfb6;
+                margin: 0;
+            }
+
+        }    
+        
+        .intro-title{
+        color: #3dcfb6;
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        letter-spacing: 3px;
+        }    
+
+        .description-content-container{
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+
+            .description-text{
+                font-size: 18px;
+                font-weight: 300;
+            }        
+
+            .single-content{
+                display: flex;
+                align-items: space-between;
+                gap: 1vw;
+
+
+                svg{
+                    width: 32px;
+                    height: auto;
+                }
+
+                p{
+                    font-weight: 200;
+                    font-size: 18px;
+                    margin: 0;
+                }
+            }
+
+    
+        }
+
+    }

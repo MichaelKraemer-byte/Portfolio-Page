@@ -20,12 +20,28 @@ header{
             flex-direction: column;
 
             span{
-                font-size: 28px;
+                font-size: 30px;
                 letter-spacing: 0px;
-                font-weight: 700;
-                font-family: 'Karla';
-                margin-top: -8px;
+                font-weight: 900;
+                font-family: 'Fira Code';
             }
+            .surnameSpan{
+              margin-top: -12px;
+            }
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          .logo-name{
+            color: transparent; /* Textfüllung transparent */
+            -webkit-text-stroke: 0.6px white;
+          }
+          svg{
+            fill: transparent; 
+            stroke: #3CDFB6; 
+            stroke-width: 8px; 
+          }
         }
     }
 
