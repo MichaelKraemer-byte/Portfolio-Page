@@ -191,6 +191,32 @@ code {
 
 }
 
+.iconAnker{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span{
+    font-size: 32px;
+    position: absolute;
+    margin-left: 56px;
+    margin-bottom: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+  }
+
+  &:hover{
+    span{
+      opacity: 1;
+      visibility: visible;
+      position: absolute;
+      color: #3CDFB6;
+    }    
+  }
+}
+
 
 .sliderContainer{
     color: #3dcfb6;

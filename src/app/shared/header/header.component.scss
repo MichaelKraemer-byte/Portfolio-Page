@@ -18,6 +18,8 @@ header{
         .logo-name{
             display: flex;
             flex-direction: column;
+            transition: color 0.175s ease-in-out, -webkit-text-stroke 0.175s ease-in-out;
+
 
             span{
                 font-size: 30px;
@@ -30,11 +32,15 @@ header{
             }
         }
 
+        svg {
+          transition: fill 0.175s ease-in-out, stroke 0.175s ease-in-out, stroke-width 0.175s ease-in-out;
+        }
+
         &:hover {
           cursor: pointer;
 
           .logo-name{
-            color: transparent; /* Textfüllung transparent */
+            color: transparent; 
             -webkit-text-stroke: 0.6px white;
           }
           svg{
@@ -59,26 +65,61 @@ header{
     }
 }
 
+.link{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  span{
+    font-size: 24px;
+    position: absolute;
+    margin-top: 16px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+
+  }
+
+  &:hover{
+    span{
+      opacity: 1;
+      visibility: visible;
+      position: absolute;
+      color: #3CDFB6;
+    }    
+  }
+
+}
+
 
 .switch {
-    position: relative;
-    display: inline-block;
-    margin: 0 5px;
-    border: 1px solid #3CDFB6;
-    border-radius: 100px;
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  border: 1px solid #3CDFB6;
+  border-radius: 100px;
+  transition: border 0.125s ease-in-out;
+
+  &:hover {
+    border: 1px solid white;
   }
+  &:hover > span.off,
+  &:hover input.check-toggle-round-flat:checked ~ .on {
+    color: #3CDFB6 ;
+  }
+}
   
   .switch > span {
     position: absolute;
-    top: 14px;
+    top: 9px;
     pointer-events: none;
-    font-family: 'Helvetica', Arial, sans-serif;
-    font-weight: bold;
-    font-size: 12px;
+    font-family: 'Karla', 'Helvetica', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
     text-transform: uppercase;
     text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
     width: 50%;
     text-align: center;
+    transition: color 0.125s ease-in-out; /* Übergang für die Textfarbe */
   }
   
   input.check-toggle-round-flat:checked ~ .off {
@@ -86,7 +127,7 @@ header{
   }
   
   input.check-toggle-round-flat:checked ~ .on {
-    color: #3CDFB6;
+    color: #266258;
   }
   
   .switch > span.on {
@@ -98,7 +139,7 @@ header{
   .switch > span.off {
     right: 0;
     padding-right: 4px;
-    color: #3CDFB6;
+    color: #266258;
   }
   
   .check-toggle {
