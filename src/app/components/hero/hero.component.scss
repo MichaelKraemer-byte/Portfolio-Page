@@ -34,16 +34,11 @@
   box-shadow: inset 0 0 0 2em var(--hover);
 }
 
-
-//=== Set button colors
-// If you wonder why use Sass vars or CSS custom properties...
-  // Make a map with the class names and matching colors
 $colors: (
   fill: #3dcfb6,
 );
 
-// Sass variables compile to a static string; CSS variables are dynamic and inherited
-  // Loop through the map and set CSS custom properties using Sass variables
+
 @each $button, $color in $colors {
   .#{$button} {
     --color: #{$color};
@@ -51,7 +46,6 @@ $colors: (
   }
 }
 
-// Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties.
 button {  
   color: var(--color);
   transition: 0.25s;
@@ -64,13 +58,12 @@ button {
   }
 }
 
-//=== Pen styling, ignore
+
 body {
   color: #fff;
   background: hsl(227, 10%, 10%);
   font: 300 1em 'Fira Sans', sans-serif;
   
-  // Center everything ever
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -79,7 +72,6 @@ body {
   display: flex;
 }
 
-// Basic button styles
 button {
   background: none;
   border: 2px solid;
