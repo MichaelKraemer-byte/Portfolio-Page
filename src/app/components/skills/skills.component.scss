@@ -194,7 +194,7 @@ svg{
 
 
     &:hover {
-        svg{
+        .icon{
             transform: scale(1.125);
         }
         .color-effekt{
@@ -203,41 +203,63 @@ svg{
     }
 }
 
-.popUp{
-    position: absolute;
-    color: #37ffe1;
-    z-index: 4;
-    background-image: url('../../../assets/img/popup.jpg');
-    background-size: contain;
-    background-position: center;
-    width: 200px;
-    height: auto;
-    
-    // display: block; /* oder 'flex', je nachdem, wie du es gestalten möchtest */
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // z-index: 1000; /* Sicherstellen, dass es über anderen Inhalten liegt */
-    // background-color: white;
-    // border: 1px solid black;
-    // padding: 10px;
 
-    .react-and-vue-icon{
-        position: relative;
-        z-index: 7;
-    }
-    p{
-        position: relative;
-        z-index: 7;
-    }
+.popUp-wrapper{
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 4;  
+  transition: opacity 100ms ease-in-out, visibility 100ms ease-in-out,  transform 100ms ease-in-out;
 }
 
+.popUp{
+    position: absolute;
+    transform: translate(-24%, -95%);
+    color: #3dcfb6;
+    z-index: 4;
+    background-color: white;
+    height: auto;
+    width: 180px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 0px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+    p{
+      position: relative;
+      z-index: 7;
+      font-family: 'Karla';
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }    
 
+    .react-and-vue-icon{
+      position: relative;
+      z-index: 7;
+    }
+
+    .white-triangle{
+      position: absolute;
+      bottom: -14px;
+      left: 30px;
+    }
+
+}
 
 
 .growth-wrapper{
     &:hover{
+
+      .popUp-wrapper{
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1.2);
+        z-index: 4;        
+      }
 
     }
 }
