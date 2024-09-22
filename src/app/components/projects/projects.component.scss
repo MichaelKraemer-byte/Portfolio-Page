@@ -1,0 +1,140 @@
+section{
+    position: relative;
+    height: 95vh;
+    display: flex;
+    padding: 144px 112px 144px 112px;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.projects{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.subtitle{
+    font-size: 4.3rem;
+    font-family: "Fira Code";
+    font-weight: 700;
+    color: #3dcfb6;
+    margin: 0;
+}
+
+.intro-line{
+    font-size: 18px;
+    font-weight: 300;
+    width: 60%;
+    margin: 41px 0px 41px 0px;
+}
+
+.content-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 9.5vmax;
+}
+
+.button-section{
+    flex: 1;
+}
+
+.project-container{
+    padding: 42px 30px 42px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+    border-bottom: 1px solid #3dcfb6;
+    font-weight: 300;
+    word-spacing: 1px;
+
+    p, h3 {
+        margin: 0px;
+    }
+
+    span{
+        color: #3dcfb6;
+    }
+}
+
+.border-top-line{
+    border-top: 1px solid #3dcfb6;
+}
+
+
+.project-title-and-svg{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    h3{
+        font-size: 24px;
+        font-weight: 700;
+        font-family: 'Fira Code';
+    }
+
+}
+
+.intro-title{
+    color: #3dcfb6;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.image-section{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: relative;
+}
+
+.img-and-svg-container{
+    position: relative; 
+    img{
+        width: 296px;
+        height: 192px;
+        position: absolute;
+        z-index: 1;
+        border-radius: 24px;
+        object-fit: cover;
+    }
+    svg{
+        width: 296px;
+        height: 192px;
+        position: relative;
+        left: 24px;
+        top:20px;
+    }
+}
+
+// .hidden-project-1,
+// .hidden-project-2,
+// .hidden-project-3 {
+//     display: none;
+// }
+
+// .hover-div-1 {
+//     &:hover {
+//         .hidden-project-1{
+//         display: block;
+//         }
+//     }
+// }
+
+// .hover-div-2 {
+//     &:hover {
+//         .hidden-project-1{
+//         display: block;
+//         }
+//     }
+// }
+
+// .hover-div-3 {
+//     &:hover {
+//         .hidden-project-1{
+//         display: block;
+//         }
+//     }
+// }
