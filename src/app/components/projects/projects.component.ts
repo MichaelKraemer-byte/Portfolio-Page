@@ -14,10 +14,10 @@ export class ProjectsComponent {
   project2IsVisible: boolean = false;
   project3IsVisible: boolean = false;
 
-  @Output() toggleGreyBackgroundEvent = new EventEmitter<void>;
+  @Output() toggleGreyBackgroundEvent = new EventEmitter<void>();
 
-  emitGreyBackground(){
-    this.toggleGreyBackgroundEvent.emit();
+  emitGreyBackground() {
+    this.toggleGreyBackgroundEvent.emit(); // Emit the event to show grey background
   }
 
   toggleVisibilityProject1(isHovered: boolean){

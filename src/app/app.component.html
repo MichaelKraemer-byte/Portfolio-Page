@@ -1,10 +1,17 @@
-<app-greybackground *ngIf="showGreyBackground" (click)="toggleGreyBackground()"></app-greybackground>
+<app-greybackground 
+[ngClass]="{ 'visible': isVisible }" [@fadeAnimation]="isVisible ? 'visible' : 'void'"
+  (click)="toggleGreyBackground()" 
+  >
+</app-greybackground>
+
+
+
 <app-cursor-effekt></app-cursor-effekt>
 <app-header></app-header>
 <app-hero></app-hero>
 <app-about-me></app-about-me>
 <app-skills></app-skills>
-<app-projects (toggleGreyBackgroundEvent)="toggleGreyBackground()"></app-projects>
+<app-projects (toggleGreyBackgroundEvent)="onToggleGreyBackground()"></app-projects>
 <app-testimonials></app-testimonials>
 <app-contact-form></app-contact-form>
 <app-footer></app-footer>

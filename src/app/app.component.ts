@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -9,16 +10,14 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { CursorEffektComponent } from './components/cursor-effekt/cursor-effekt.component';
-import { CommonModule } from '@angular/common';
 import { GreyBackgroundComponent } from './components/greybackground/greybackground.component';
-
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet, 
+    RouterOutlet,
     HeaderComponent,
     FooterComponent,
     HeroComponent,
@@ -31,25 +30,17 @@ import { GreyBackgroundComponent } from './components/greybackground/greybackgro
     GreyBackgroundComponent
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
 
-  showGreyBackground: boolean = false;
+  isVisible: boolean = false;
 
-
-  toggleGreyBackground(){
-    if (this.showGreyBackground) {
-      setTimeout(()=>{
-        this.showGreyBackground = false;
-      }, 2000);
-    } else{
-      this.showGreyBackground = true;
-    }
+  onToggleGreyBackground() {
+    this.isVisible = true; 
   }
 
-  // fadeOut(){
-  //   const greyBackground = document.querySelector('.grey-background') as HTMLElement;
-  //   greyBackground.style.animation = 'fade-out 1s ease-in-out';
-  // }
+  toggleGreyBackground() {
+    this.isVisible = false; 
+  }
 }
