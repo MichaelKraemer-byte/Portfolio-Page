@@ -5,7 +5,7 @@
         <p class="intro-line">Explore a selection of my work here - Interact with projects to see my skills in action</p>
         <div class="content-section">
             <div class="button-section">
-                <div class="project-container border-top-line" (mouseenter)="showHiddenProject1()" (mouseleave)="hideHiddenProject1()">
+                <div class="project-container border-top-line" (click)="emitGreyBackground()" (mouseover)="toggleVisibilityProject1(true)" (mouseout)="toggleVisibilityProject1(false)" >
                     <div class="project-title-and-svg">
                         <h3>Join</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 13 13" fill="none">
@@ -15,8 +15,8 @@
                     <p>Javascript <span>|</span> HTML <span>|</span> CSS <span>|</span> Firebase</p>            
                 </div>
                 
-                <div class="project-container" (mouseenter)="showHiddenProject2()" (mouseleave)="hideHiddenProject2()">
-                    <div class="project-title-and-svg">
+                <div class="project-container" (mouseover)="toggleVisibilityProject2(true)" (mouseout)="toggleVisibilityProject2(false)">
+                    <div class="project-title-and-svg" >
                         <h3>Loctar Risen</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 13 13" fill="none">
                             <path d="M10.5675 3.39893L1.68683 12.2798C1.48047 12.486 1.25023 12.5842 0.996115 12.5743C0.741997 12.5643 0.511837 12.4563 0.305636 12.2501C0.0992746 12.0437 -0.00390625 11.8085 -0.00390625 11.5445C-0.00390625 11.2805 0.0992746 11.0453 0.305636 10.8389L9.15656 1.98802H1.78674C1.50802 1.98802 1.27267 1.89251 1.08069 1.70148C0.888542 1.51029 0.792469 1.27606 0.792469 0.998784C0.792469 0.721506 0.888542 0.485595 1.08069 0.291054C1.27267 0.0966718 1.50802 -0.000518799 1.78674 -0.000518799H11.5617C11.8405 -0.000518799 12.0759 0.0954747 12.268 0.287461C12.46 0.479607 12.556 0.715037 12.556 0.993752V10.7688C12.556 11.0475 12.4605 11.2829 12.2695 11.475C12.0783 11.667 11.844 11.763 11.5668 11.763C11.2895 11.763 11.0537 11.667 10.8593 11.475C10.6647 11.2829 10.5675 11.0475 10.5675 10.7688V3.39893Z" fill="white"/>
@@ -24,7 +24,7 @@
                     </div>
                     <p>Javascript <span>|</span> HTML <span>|</span> CSS</p>            
                 </div>
-                <div class="project-container" (mouseenter)="showHiddenProject3()" (mouseleave)="hideHiddenProject3()">
+                <div class="project-container" (mouseover)="toggleVisibilityProject3(true)" (mouseout)="toggleVisibilityProject3(false)">
                     <div class="project-title-and-svg">
                         <h3>DA Bubble</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 13 13" fill="none">
@@ -37,8 +37,8 @@
 
 
             <div class="image-section">
-                <div *ngIf="isHiddenProjectVisible1" class="img-and-svg-container">
-                    <img src="../../../assets/img/join-1.jpg" alt="Project 1">
+                <div [ngStyle]="{'opacity' : project1IsVisible ? '1' : '0' }" class="img-and-svg-container">
+                    <img src="assets/img/join-1.jpg" alt="Project 1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="293" height="192" viewBox="0 0 293 192" fill="none">
                         <g clip-path="url(#clip0_3296_3667)">
                         <path d="M14.1762 0.423325L13.1918 1.40779L0.492188 14.1074" stroke="#3DCFB6" stroke-width="1.01" stroke-miterlimit="10"/>
@@ -88,8 +88,8 @@
                     </svg>
                 </div>
 
-                <div *ngIf="isHiddenProjectVisible2" class="img-and-svg-container">
-                    <img src="../../../assets/img/loctar-risen-1.jpg" alt="Project 2">
+                <div [ngStyle]="{'opacity' : project2IsVisible ? '1' : '0' }"  class="img-and-svg-container translateY--45">
+                    <img src="assets/img/loctar-risen-1.jpg" alt="Project 2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="293" height="192" viewBox="0 0 293 192" fill="none">
                         <g clip-path="url(#clip0_3296_3667)">
                         <path d="M14.1762 0.423325L13.1918 1.40779L0.492188 14.1074" stroke="#3DCFB6" stroke-width="1.01" stroke-miterlimit="10"/>
@@ -139,8 +139,8 @@
                     </svg>
                 </div>
 
-                <div *ngIf="isHiddenProjectVisible3" class="img-and-svg-container">
-                    <img src="../../../assets/img/loctar-risen-1.jpg" alt="Project 3">
+                <div [ngStyle]="{'opacity' : project3IsVisible ? '1' : '0' }"  class="img-and-svg-container translateY--90">
+                    <img src="assets/img/loctar-risen-1.jpg" alt="Project 3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="293" height="192" viewBox="0 0 293 192" fill="none">
                         <g clip-path="url(#clip0_3296_3667)">
                         <path d="M14.1762 0.423325L13.1918 1.40779L0.492188 14.1074" stroke="#3DCFB6" stroke-width="1.01" stroke-miterlimit="10"/>
@@ -192,5 +192,4 @@
             </div>
         </div>
     </div>
-
 </section>

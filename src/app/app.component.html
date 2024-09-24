@@ -1,9 +1,10 @@
+<app-greybackground *ngIf="showGreyBackground" (click)="toggleGreyBackground()"></app-greybackground>
 <app-cursor-effekt></app-cursor-effekt>
 <app-header></app-header>
 <app-hero></app-hero>
 <app-about-me></app-about-me>
 <app-skills></app-skills>
-<app-projects></app-projects>
+<app-projects (toggleGreyBackgroundEvent)="toggleGreyBackground()"></app-projects>
 <app-testimonials></app-testimonials>
 <app-contact-form></app-contact-form>
 <app-footer></app-footer>

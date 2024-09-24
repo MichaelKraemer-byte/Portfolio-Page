@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -9,32 +9,26 @@ import { Component } from '@angular/core';
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
-  isHiddenProjectVisible1 = false;
-  isHiddenProjectVisible2 = false;
-  isHiddenProjectVisible3 = false;
 
-//ng style visible anstatt ngif 
-  showHiddenProject1() {
-    this.isHiddenProjectVisible1 = true;
+  project1IsVisible: boolean = false;
+  project2IsVisible: boolean = false;
+  project3IsVisible: boolean = false;
+
+  @Output() toggleGreyBackgroundEvent = new EventEmitter<void>;
+
+  emitGreyBackground(){
+    this.toggleGreyBackgroundEvent.emit();
   }
 
-  showHiddenProject2() {
-    this.isHiddenProjectVisible2 = true;
+  toggleVisibilityProject1(isHovered: boolean){
+    this.project1IsVisible = isHovered;
   }
 
-  showHiddenProject3() {
-    this.isHiddenProjectVisible3 = true;
+  toggleVisibilityProject2(isHovered: boolean){
+    this.project2IsVisible = isHovered;
   }
 
-  hideHiddenProject1() {
-    this.isHiddenProjectVisible1 = false;
-  }
-
-  hideHiddenProject2() {
-    this.isHiddenProjectVisible2 = false;
-  }
-
-  hideHiddenProject3() {
-    this.isHiddenProjectVisible3 = false;
+  toggleVisibilityProject3(isHovered: boolean){
+    this.project3IsVisible = isHovered;
   }
 }
