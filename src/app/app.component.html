@@ -1,8 +1,5 @@
-<app-greybackground 
-[ngClass]="{ 'visible': isVisible }" [@fadeAnimation]="isVisible ? 'visible' : 'void'"
-  (click)="toggleGreyBackground()" 
-  >
-</app-greybackground>
+<app-greybackground></app-greybackground>
+
 
 
 
@@ -11,8 +8,24 @@
 <app-hero></app-hero>
 <app-about-me></app-about-me>
 <app-skills></app-skills>
-<app-projects (toggleGreyBackgroundEvent)="onToggleGreyBackground()"></app-projects>
+<app-projects (openGreyBackgroundEvent)="openGreyBackground()"></app-projects> 
 <app-testimonials></app-testimonials>
 <app-contact-form></app-contact-form>
 <app-footer></app-footer>
-<router-outlet/>
+<router-outlet><router-outlet/>
+
+
+
+
+
+
+  <!-- // [ngClass]="{ 'visible': isVisible }" [@fadeAnimation]="isVisible ? 'visible' : 'void'"
+  //   (click)="toggleGreyBackground()" -->
+
+
+
+
+
+
+
+

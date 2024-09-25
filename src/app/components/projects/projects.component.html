@@ -5,7 +5,7 @@
         <p class="intro-line">Explore a selection of my work here - Interact with projects to see my skills in action</p>
         <div class="content-section">
             <div class="button-section">
-                <div class="project-container border-top-line" (click)="emitGreyBackground()" (mouseover)="toggleVisibilityProject1(true)" (mouseout)="toggleVisibilityProject1(false)" >
+                <div class="project-container border-top-line" (click)="openPopup(projects[0])" (click)="emitGreyBackground()" (mouseover)="toggleVisibilityProject(0, true)" (mouseout)="toggleVisibilityProject(0, false)" >
                     <div class="project-title-and-svg">
                         <h3>Join</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 13 13" fill="none">
@@ -15,7 +15,7 @@
                     <p>Javascript <span>|</span> HTML <span>|</span> CSS <span>|</span> Firebase</p>            
                 </div>
                 
-                <div class="project-container" (click)="emitGreyBackground()" (mouseover)="toggleVisibilityProject2(true)" (mouseout)="toggleVisibilityProject2(false)">
+                <div class="project-container" (click)="openPopup(projects[0])" (click)="emitGreyBackground()" (mouseover)="toggleVisibilityProject(1, true)" (mouseout)="toggleVisibilityProject(1, false)">
                     <div class="project-title-and-svg" >
                         <h3>Loctar Risen</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 13 13" fill="none">
@@ -24,7 +24,7 @@
                     </div>
                     <p>Javascript <span>|</span> HTML <span>|</span> CSS</p>            
                 </div>
-                <div class="project-container" (click)="emitGreyBackground()" (mouseover)="toggleVisibilityProject3(true)" (mouseout)="toggleVisibilityProject3(false)">
+                <div class="project-container" (click)="openPopup(projects[0])" (click)="emitGreyBackground()" (mouseover)="toggleVisibilityProject(2, true)" (mouseout)="toggleVisibilityProject(2, false)">
                     <div class="project-title-and-svg">
                         <h3>DA Bubble</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 13 13" fill="none">
@@ -34,6 +34,9 @@
                     <p>Angular <span>|</span> Typescript <span>|</span> Firebase</p>            
                 </div>                  
             </div>
+            <app-popup [project]="selectedProject" [isOpen]="showPopup"></app-popup> 
+            <!-- ng if ?? -->
+
 
 
             <div class="image-section">

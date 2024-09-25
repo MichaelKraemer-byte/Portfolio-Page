@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { trigger, style, animate, transition } from '@angular/animations';
+import { Component} from '@angular/core';
+import { trigger, style, animate, transition, state } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,23 +10,34 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./greybackground.component.scss'],
   animations: [
     trigger('fadeAnimation', [
-      transition(':enter', [
-        style({ opacity: 0, zIndex: -2 }), 
-        animate('500ms ease-in', style({ opacity: 1, zIndex: 3 })) 
+      state('open', style({
+        opacity: 1,
+        zIndex: 3,
+        display: 'block',
+      })),
+      state('closed', style({
+        opacity: 0,
+        zIndex: -2,
+        display: 'none',
+      })),
+      transition('open => closed', [
+        animate('0.125s ease-in-out', style({ opacity: 0})),
+        style({ display: 'none'})
       ]),
-      transition(':leave', [
-        animate('500ms ease-out', style({ opacity: 0, zIndex: -2 })) 
+      transition('closed => open', [
+        style({ display: 'block' }),  
+        animate('0.125s ease-in-out', style({ opacity: 1 }))
       ])
     ])
   ]
 })
-export class GreyBackgroundComponent implements OnInit, OnDestroy {
+export class GreyBackgroundComponent {
 
-  ngOnInit(): void {
-    // document.body.style.overflow = 'hidden'; // Disable scrolling
-  }
 
-  ngOnDestroy(): void {
-    // document.body.style.overflow = ''; // Enable scrolling
+  isVisible: boolean = false; 
+
+  hide() {
+    document.body.style.overflow = ''; 
+    this.isVisible = false;
   }
 }

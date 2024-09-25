@@ -1,3 +1,16 @@
+.grey-background {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.505);
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0; // Initially hidden
+    z-index: -2; // Initially hidden behind other elements
+    transition: z-index 500ms ease-in-out; // Transition for z-index
+}
+
 .visible {
     z-index: 3; // Set to 3 when visible
+    opacity: 1; // Fade-in effect
 }

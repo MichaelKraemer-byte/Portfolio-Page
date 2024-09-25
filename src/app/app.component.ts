@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
@@ -11,6 +11,8 @@ import { ContactFormComponent } from './components/contact-form/contact-form.com
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { CursorEffektComponent } from './components/cursor-effekt/cursor-effekt.component';
 import { GreyBackgroundComponent } from './components/greybackground/greybackground.component';
+import { trigger, style, animate, transition } from '@angular/animations';
+
 
 @Component({
   selector: 'app-root',
@@ -34,13 +36,12 @@ import { GreyBackgroundComponent } from './components/greybackground/greybackgro
 })
 export class AppComponent {
 
-  isVisible: boolean = false;
+  @ViewChild(GreyBackgroundComponent) greyBackground!: GreyBackgroundComponent;
 
-  onToggleGreyBackground() {
-    this.isVisible = true; 
+  openGreyBackground() {
+    this.greyBackground.isVisible = true;
+    document.body.style.overflow = 'hidden';
   }
 
-  toggleGreyBackground() {
-    this.isVisible = false; 
-  }
+
 }
