@@ -1,13 +1,13 @@
-import { Component} from '@angular/core';
+import { Component, EventEmitter, Output} from '@angular/core';
 import { trigger, style, animate, transition, state } from '@angular/animations';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-greybackground',
+  selector: 'app-modal',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './greybackground.component.html',
-  styleUrls: ['./greybackground.component.scss'],
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.scss'],
   animations: [
     trigger('fadeAnimation', [
       state('open', style({
@@ -31,13 +31,15 @@ import { CommonModule } from '@angular/common';
     ])
   ]
 })
-export class GreyBackgroundComponent {
+export class ModalComponent {
 
+  isModalOpen: boolean = false;
 
-  isVisible: boolean = false; 
+  @Output() closed = new EventEmitter<void>();
 
-  hide() {
+  close() {
     document.body.style.overflow = ''; 
-    this.isVisible = false;
+    this.closed.emit(); 
+    this.isModalOpen = false;  
   }
 }

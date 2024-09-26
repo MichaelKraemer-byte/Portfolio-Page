@@ -10,8 +10,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { CursorEffektComponent } from './components/cursor-effekt/cursor-effekt.component';
-import { GreyBackgroundComponent } from './components/greybackground/greybackground.component';
-import { trigger, style, animate, transition } from '@angular/animations';
+import { ModalComponent } from './modal/modal.component';
 
 
 @Component({
@@ -29,17 +28,17 @@ import { trigger, style, animate, transition } from '@angular/animations';
     TestimonialsComponent,
     ContactFormComponent,
     CursorEffektComponent,
-    GreyBackgroundComponent
+    ModalComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
 
-  @ViewChild(GreyBackgroundComponent) greyBackground!: GreyBackgroundComponent;
+  @ViewChild(ModalComponent) modal!: ModalComponent;
 
-  openGreyBackground() {
-    this.greyBackground.isVisible = true;
+  openModal() {
+    this.modal.isModalOpen = true;
     document.body.style.overflow = 'hidden';
   }
 

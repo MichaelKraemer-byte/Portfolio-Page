@@ -1,0 +1,12 @@
+<div   
+class="grey-background" 
+
+[@fadeAnimation]="isModalOpen ? 'open' : 'closed' "
+
+(click)="close()"
+></div>
+
+<div class="popup" [@fadeAnimation]="isModalOpen ? 'open' : 'closed' "
+>
+  <ng-content></ng-content> <!-- Platzhalter für den dynamischen Inhalt -->
+</div>
