@@ -10,7 +10,9 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { CursorEffektComponent } from './components/cursor-effekt/cursor-effekt.component';
-import { ModalComponent } from './modal/modal.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { Project } from './models/project.interface';
+
 
 
 @Component({
@@ -29,18 +31,25 @@ import { ModalComponent } from './modal/modal.component';
     ContactFormComponent,
     CursorEffektComponent,
     ModalComponent
-  ],
+],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
 
-  @ViewChild(ModalComponent) modal!: ModalComponent;
+  @ViewChild(ModalComponent) modal!: ModalComponent;  
+  @ViewChild(ProjectsComponent) projectsComponent!: ProjectsComponent;
 
-  openModal() {
+
+  project: Project | null = null;
+  projects: Project[] = [];
+  
+  openingProject(project: Project){
+    this.project = project;  
     this.modal.isModalOpen = true;
+    this.modal.animateNextProject = true;
     document.body.style.overflow = 'hidden';
+    this.projects = this.projectsComponent.projects;
   }
-
 
 }

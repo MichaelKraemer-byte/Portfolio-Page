@@ -1,10 +1,14 @@
-<app-modal></app-modal>
+<app-modal [project]="project"  [projects]="projects"></app-modal>
 <app-cursor-effekt></app-cursor-effekt>
 <app-header></app-header>
 <app-hero></app-hero>
 <app-about-me></app-about-me>
 <app-skills></app-skills>
-<app-projects (openModalEvent)="openModal()"></app-projects> 
+<app-projects (openProjectEvent)="openingProject($event)">
+
+
+
+</app-projects>
 <app-testimonials></app-testimonials>
 <app-contact-form></app-contact-form>
 <app-footer></app-footer>
@@ -15,8 +19,6 @@
 
 
 
-  <!-- // [ngClass]="{ 'visible': isVisible }" [@fadeAnimation]="isVisible ? 'visible' : 'void'"
-  //   (click)="toggleGreyBackground()" -->
 
 
 

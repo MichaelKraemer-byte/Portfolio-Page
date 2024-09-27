@@ -1,0 +1,210 @@
+.grey-background {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.505);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transition: z-index 500ms ease-in-out; 
+}
+
+.popup {
+    position: fixed;
+    z-index: 4;
+  }
+
+
+
+// Project Popup
+.project-popup-window{
+    position: fixed;
+    display: flex;
+    border-radius: 50px;
+    border: 1px solid #3dcfb6;
+    width: 85vmax;
+    height: 75vh;
+    background: linear-gradient(38deg, rgb(27, 27, 27) 33%, rgb(8, 70, 59) 110%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    padding: 80px;
+    box-sizing: border-box;
+}
+
+.project-content{
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 10vw;
+}
+
+
+
+.project-number{
+    font-size: 8rem;
+    font-family: 'Karla', Arial, Helvetica, sans-serif;
+    margin: 0px;
+    font-weight: 700;
+    color: #3dcfb6;
+    line-height: 1;
+}
+
+.title{
+    font-family: 'Fira Code';
+    font-weight: 700;
+    font-size: 4.5rem;
+    margin: 0px;
+}
+
+.subtitle{
+    color: #3dcfb6;
+    font-size: 1.6rem;
+    font-weight: 700;
+    font-family: 'Karla', Arial, Helvetica, sans-serif;
+    font-family: 'Fira Code';
+    margin: 0px;
+}
+
+.description {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 0px;
+}
+
+.project-img{
+    width: 100%;
+    border-radius: 30px;
+    height: 70%;
+    object-fit: cover;
+    object-position: left;
+}
+
+.left-side,
+.right-side{
+    width: 100%;
+    flex: 1;
+}
+
+.left-side{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.gap-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    
+}
+
+.right-side{
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.closeX-container{
+    transition: transform 0.075s ease-in-out, filter 0.075s ease-in-out;
+    &:hover{
+        filter: brightness(0) saturate(100%) invert(74%) sepia(9%) saturate(3080%) hue-rotate(118deg)  contrast(71%);
+        transform: scale(1.4);
+        cursor: pointer;
+    }
+}
+
+
+.nextProjectButton{
+    border: 0px;
+    background-color: transparent;
+    color: #3dcfb6;
+    font-size: 1.2rem;
+    transition: color 0.1s ease-in-out, ;
+    font-weight: 300;
+    font-family: 'Karla';
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    .nextButtonSVG{
+        transition: transform 0.125s ease-in-out, filter 0.1s ease-in-out;
+    }
+
+    &:hover{
+        color: white;
+        cursor: pointer;
+
+        svg{
+            transform: translateX(50%);
+            filter: brightness(5);
+        }
+    }
+}
+
+.link{
+    border: 1px solid #FFFFFF;
+    background-color: transparent;
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    transition: color 0.1s ease-in-out, ;
+    font-weight: 300;
+    font-family: 'Karla';
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    padding: 16px 24px 16px 24px;
+    text-decoration: none;
+    width: fit-content;
+    box-sizing: border-box;
+
+    .ankerSVG{
+        transition: transform 0.125s ease-in-out;
+    }
+
+    &:hover{
+        color: #3dcfb6;
+        border: 1px solid #3dcfb6;
+        cursor: pointer;
+
+        svg{
+            animation: moveInArc 0.125s ease-in-out forwards;
+        }
+    }
+    &:not(:hover) .ankerSVG {
+        animation: moveOutArc 0.125s ease-in-out forwards; /* Zurück zur Ausgangsposition */
+    }
+}
+
+@keyframes moveInArc {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(40%); /* Bewegt sich nach rechts */
+    }
+    100% {
+        transform: translateX(40%) translateY(-25%); /* Bewegt sich nach oben */
+    }
+}
+
+@keyframes moveOutArc {
+    0% {
+        transform: translateX(40%) translateY(-25%);
+    }
+    50% {
+        transform: translateX(40%) translateY(0%); /* Bewegt sich nach rechts */
+    }
+    100% {
+        transform: translateX(0%) translateY(0%); /* Bewegt sich nach oben */
+    }
+}
+
+.link-container{
+    display: flex;
+    gap: 2vw;
+}

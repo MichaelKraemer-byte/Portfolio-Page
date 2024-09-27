@@ -1,13 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component} from '@angular/core';
+import { Component, EventEmitter, Output} from '@angular/core';
 import { Project } from '../../models/project.interface';
-import { ModalComponent } from '../../modal/modal.component';
 
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, ModalComponent],
+  imports: [CommonModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
@@ -19,7 +18,6 @@ export class ProjectsComponent {
   project2IsVisible: boolean = false;
   project3IsVisible: boolean = false;
 
-  // @Output() openModalEvent = new EventEmitter<void>();
 
   toggleVisibilityProject(index: number, isHovered: boolean){
     if (index == 0) {
@@ -31,42 +29,41 @@ export class ProjectsComponent {
     }
   }
 
-  isModalOpen = false;  // Kontrolliert, ob das Modal geöffnet ist
-  currentProject: Project | null = null;
 
+  @Output() openProjectEvent = new EventEmitter<Project>();
 
   projects: Project[] = [
-  {
-    number: 1,
-    title: 'Project 1',
-    description: 'Description of project 1',
-    technologies: ['Angular', 'TypeScript', 'SCSS'],
-    links: 'https://project1.com',
-    img: 'path/to/image1.jpg',
-  },
-  {
-    number: 2,
-    title: 'Project 2',
-    description: 'Description of project 2',
-    technologies: ['React', 'JavaScript', 'CSS'],
-    links: 'https://project2.com',
-    img: 'path/to/image2.jpg',
-  }
-];
+    {
+      number: 1,
+      title: 'Join',
+      description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
+      technologies: ['CSS', 'HTML', 'Firebase', 'JavaScript'],
+      github: 'https://github.com/MichaelKraemer-byte/Join',
+      livetest: 'https://join-209.developerakademie.net/index.html',
+      img: '../../assets/img/join-1.jpg',
+    },
+    {
+      number: 2,
+      title: 'Loctar Risen',
+      description: 'A object-oriented jump, run and throw game. Guide Scarr the orc through obstacles, collect coins and axes, and defeat the troll to uncover treasure for his family.',
+      technologies: ['JavaScript', 'HTML', 'CSS'],
+      github: 'https://github.com/MichaelKraemer-byte/Join',
+      livetest: 'https://michael-kraemer.developerakademie.net/Game/index.html',
+      img: '../../assets/img/loctar-risen-1.jpg',
+    },
+    {
+      number: 3,
+      title: 'DABubble',
+      description: 'Description of project 2',
+      technologies: ['React', 'JavaScript', 'CSS'],
+      github: 'https://github.com/MichaelKraemer-byte/Join',
+      livetest: 'https://project2.com',
+      img: '../../assets/img/loctar-risen-1.jpg',
+    }
+  ];
 
-  openModal(project: any) {
-    this.currentProject = project;
-    // this.openModalEvent.emit(); 
-    this.isModalOpen = true;  // Modal öffnen
+  openProject(project: any) {
+    this.openProjectEvent.emit(project);
   }
 
-  closeModal() {
-    this.isModalOpen = false;  // Modal schließen
-  }
-
-  nextProject() {
-    const currentIndex = this.projects.findIndex(p => p === this.currentProject);
-    const nextIndex = (currentIndex + 1) % this.projects.length;
-    this.currentProject = this.projects[nextIndex];
-  }
 }
