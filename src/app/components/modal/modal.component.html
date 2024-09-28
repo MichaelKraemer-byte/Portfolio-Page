@@ -16,8 +16,11 @@ class="grey-background"
           <h2 class="title">{{project?.title}}</h2>
           <h3 class="subtitle">What is this project about?</h3>
           <p class="description">{{project?.description}}</p>
-          <div>
-            <span>{{project?.technologies}}</span>
+          <div class="technology-list">
+            <div class="technology-item" *ngFor="let tech of project?.technologies">
+              <div [innerHTML]="getTechnologyIcon(tech)"></div>
+              <span>{{ tech }}</span>
+            </div>
           </div>
           <div class="link-container">
             <a class="link" href="{{project?.github}}">GitHub

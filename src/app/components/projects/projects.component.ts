@@ -54,11 +54,11 @@ export class ProjectsComponent {
     {
       number: 3,
       title: 'DABubble',
-      description: 'Description of project 2',
-      technologies: ['React', 'JavaScript', 'CSS'],
+      description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+      technologies: ['JavaScript', 'HTML', 'CSS'],
       github: 'https://github.com/MichaelKraemer-byte/Join',
       livetest: 'https://project2.com',
-      img: '../../assets/img/loctar-risen-1.jpg',
+      img: '../../assets/img/dabubble.jpg',
     }
   ];
 

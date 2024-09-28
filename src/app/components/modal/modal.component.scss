@@ -38,7 +38,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    gap: 10vw;
+    gap: 5vw;
 }
 
 
@@ -77,8 +77,8 @@
 .project-img{
     width: 100%;
     border-radius: 30px;
-    height: 70%;
-    object-fit: cover;
+    height: fit-content;
+    object-fit: contain;
     object-position: left;
 }
 
@@ -208,3 +208,20 @@
     display: flex;
     gap: 2vw;
 }
+
+.technology-list {
+    display: flex;
+    flex-wrap: wrap; /* Falls es zu viele Technologien gibt, können sie umgebrochen werden */
+    gap: 16px; /* Abstand zwischen den einzelnen Technologien */
+  }
+  
+.technology-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Abstand zwischen SVG und Text */
+  }
+  
+.tech-icon {
+    width: 24px;
+    height: 24px;
+  }
