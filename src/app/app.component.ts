@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { HeroComponent } from './components/hero/hero.component';
+import { AtfComponent } from './components/atf/atf.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
@@ -23,14 +23,15 @@ import { Project } from './models/project.interface';
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-    HeroComponent,
+    AtfComponent,
     AboutMeComponent,
     SkillsComponent,
     ProjectsComponent,
     TestimonialsComponent,
     ContactFormComponent,
     CursorEffektComponent,
-    ModalComponent
+    ModalComponent,
+    TestimonialsComponent
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

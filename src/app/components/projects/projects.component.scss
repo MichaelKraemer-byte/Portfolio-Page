@@ -59,7 +59,7 @@ section{
     }
 
     &:hover {
-        background-color: #3dcfb740;
+        background-color: #3DCFB64D;
         cursor: pointer;
         svg{
             opacity: 1;
@@ -138,41 +138,9 @@ section{
 
 
 .translateY--45{
-    // top: -80px;
     transform: translateY(-45%);
 }
 
 .translateY--90{
-    // top: -156px;
     transform: translateY(-90%);
 }
-
-// .hidden-project-1,
-// .hidden-project-2,
-// .hidden-project-3 {
-//     display: none;
-// }
-
-// .hover-div-1 {
-//     &:hover {
-//         .hidden-project-1{
-//         display: block;
-//         }
-//     }
-// }
-
-// .hover-div-2 {
-//     &:hover {
-//         .hidden-project-1{
-//         display: block;
-//         }
-//     }
-// }
-
-// .hover-div-3 {
-//     &:hover {
-//         .hidden-project-1{
-//         display: block;
-//         }
-//     }
-// }

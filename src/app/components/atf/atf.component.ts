@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-hero',
   standalone: true,
   imports: [],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  templateUrl: './atf.component.html',
+  styleUrl: './atf.component.scss'
 })
-export class HeroComponent {
+export class AtfComponent {
 
 }
