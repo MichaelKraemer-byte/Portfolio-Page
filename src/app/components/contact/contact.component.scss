@@ -335,3 +335,26 @@ textarea:-moz-autofill {
     background-color: transparent !important; /* Hintergrundfarbe auf transparent setzen */
     color: #FFFFFF !important; /* Textfarbe */
 }
+
+.error-message{
+    position: absolute;
+    bottom: 0;
+    font-weight: 300;
+    color: rgb(195, 104, 104);
+    font-family: 'Karla';
+    font-size: 18px;
+}
+
+.error-message-for-checkbox{
+    position: relative;
+    font-weight: 300;
+    color: rgb(195, 104, 104);
+    font-family: 'Karla';
+    font-size: 18px;
+    margin-left: 40px;
+}
+
+.check-box-and-error{
+    display: flex;
+    flex-direction: column;
+}

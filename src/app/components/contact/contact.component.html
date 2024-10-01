@@ -10,40 +10,138 @@
         </div>
     </div>
 
-    <form class="form-container" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    <form class="form-container" novalidate (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
     
         <div class="inputContainer" (click)="focusInput(nameElement)">
             <label for="inputName">What's your name?</label>
-            <input required [(ngModel)]="contactData.name" #name="ngModel" #nameElement name="name" placeholder="Your name goes here" (blur)="restorePlaceholder(nameElement, 'Oops! It seems your name is missing')">
-            <!-- @if (!name.valid && name.touched && !name.disabled){
-                <span class="error-message">Oops! It seems your name is missing</span>
-            } -->
+            <input 
+                required 
+                [(ngModel)]="contactData.name" 
+                #name="ngModel" 
+                #nameElement 
+                name="name" 
+                placeholder="Your name goes here" 
+                (blur)="restorePlaceholder(nameElement, 'Oops! It seems your name is missing')">
+
+                @if (!name.valid && !name.disabled && submitted == true){
+                <span class="error-message">Please enter your name</span>
+            }
         </div>
+    
         <div class="inputContainer" (click)="focusInput(emailElement)">
             <label for="inputEmail">What's your email?</label>
-            <input required [(ngModel)]="contactData.email" #email="ngModel" #emailElement name="email" type="email" placeholder="youremail@email.com" (blur)="restorePlaceholder(emailElement, 'Hoppla! Your Email is required')" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-            <!-- @if (!email.valid && email.touched && !email.disabled){
-                <span class="error-message">Hoppla! Your Email is required</span>
-            } -->
+            <input 
+                required 
+                [(ngModel)]="contactData.email" 
+                #email="ngModel" 
+                #emailElement 
+                name="email" 
+                type="email" 
+                placeholder="youremail@email.com" 
+                (blur)="restorePlaceholder(emailElement, 'Hoppla! Your Email is required')" 
+                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+
+                @if (!email.valid && !email.disabled && submitted == true){
+                    <span class="error-message">Please enter a valid email adress</span>
+                }
         </div>
+    
         <div class="inputContainer" (click)="focusTextarea(messageTextAreaElement)">
             <label for="inputMessage">How can I help you?</label>
-            <textarea required [(ngModel)]="contactData.message" #message="ngModel" minlength="4" #messageTextAreaElement name="message" placeholder="Hello Michael, I am interested in..." (blur)="restorePlaceholderForMessage(messageTextAreaElement, 'What do you need to develop?')">
-                <!-- @if (!message.valid && message.touched && !message.disabled){
-                    <span class="error-message">What do you need to develop?</span>
-                } -->
+            <textarea 
+                required 
+                [(ngModel)]="contactData.message" 
+                #message="ngModel" 
+                minlength="4" 
+                #messageTextAreaElement 
+                name="message" 
+                placeholder="Hello Michael, I am interested in..." 
+                (blur)="restorePlaceholderForMessage(messageTextAreaElement, 'What do you need to develop?')">
             </textarea>
-        </div>
 
-        <div class="checkboxContainer">
-            <input id="customCheckbox" type="checkbox">
-            <label type="checkbox" required for="customCheckbox">I've read the <a href="#" >privacy policy </a> and agree to the processing of my data as outlined.</label>
+            @if (!message.valid && !message.disabled && submitted == true){
+                <span class="error-message">Please enter a message with at least 4 letters</span>
+            }
         </div>
+    
+            <div class="check-box-and-error">
+                <div class="checkboxContainer">
+                    <input 
+                        id="customCheckbox" 
+                        type="checkbox" 
+                        required 
+                        [(ngModel)]="contactData.checkboxChecked" 
+                        #checkbox="ngModel" 
+                        name="privacyPolicy">
+                    <label for="customCheckbox">I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</label>
+                </div>
+                @if (submitted == true && checkbox.invalid) {
+                    <span class="error-message-for-checkbox">
+                        Please accept the privacy policy.
+                    </span>
+                }                
 
+            </div>
+         
+    
         <div class="button-container">
             <button type="submit" class="fill">Contact me</button>
         </div>
-
+    
     </form>
+    
+    
 
 </section>
+
+
+            <!-- @if (!name.valid && name.touched && !name.disabled){
+                <span class="error-message">Oops! It seems your name is missing</span>
+            } -->
+            <!-- @if (!email.valid && email.touched && !email.disabled){
+                <span class="error-message">Hoppla! Your Email is required</span>
+            } -->
+                <!-- @if (!message.valid && message.touched && !message.disabled){
+                    <span class="error-message">What do you need to develop?</span>
+                } -->
+
+
+
+
+                <!-- <form class="form-container" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    
+                    <div class="inputContainer" (click)="focusInput(nameElement)">
+                        <label for="inputName">What's your name?</label>
+                        <input required [(ngModel)]="contactData.name" #name="ngModel" #nameElement name="name" placeholder="Your name goes here" (blur)="restorePlaceholder(nameElement, 'Oops! It seems your name is missing')">
+            
+                    </div>
+                    <div class="inputContainer" (click)="focusInput(emailElement)">
+                        <label for="inputEmail">What's your email?</label>
+                        <input required [(ngModel)]="contactData.email" #email="ngModel" #emailElement name="email" type="email" placeholder="youremail@email.com" (blur)="restorePlaceholder(emailElement, 'Hoppla! Your Email is required')" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+            
+                    </div>
+                    <div class="inputContainer" (click)="focusTextarea(messageTextAreaElement)">
+                        <label for="inputMessage">How can I help you?</label>
+                        <textarea required [(ngModel)]="contactData.message" #message="ngModel" minlength="4" #messageTextAreaElement name="message" placeholder="Hello Michael, I am interested in..." (blur)="restorePlaceholderForMessage(messageTextAreaElement, 'What do you need to develop?')">
+                        </textarea>
+                    </div>
+            
+                    <div class="checkboxContainer">
+                        <input 
+                            id="customCheckbox" 
+                            type="checkbox" 
+                            required 
+                            [(ngModel)]="contactData.checkboxChecked" 
+                            #checkbox="ngModel">
+                        <label for="customCheckbox">I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</label>
+                        <span class="error-message" *ngIf="checkbox.invalid && checkbox.touched">
+                            Please accept the privacy policy.
+                        </span>
+                    </div>
+                    
+            
+                    <div class="button-container">
+                        <button type="submit" class="fill" [disabled]="contactForm.invalid">Contact me</button>
+                    </div>
+            
+                </form> -->

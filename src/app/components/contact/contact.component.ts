@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -14,8 +15,12 @@ export class ContactComponent {
   contactData = {
     name: '',
     email: '',
-    message: ''
+    message: '',
+    checkboxChecked: false
   }
+
+  submitted: boolean = false; // Neue Variable für den Submit-Versuch
+
 
 
   // Diese Methode fokussiert das entsprechende Input-Feld, wenn auf den Container geklickt wird.
@@ -23,7 +28,6 @@ export class ContactComponent {
     inputElement.focus();
     inputElement.placeholder = ''; 
     inputElement.classList.remove('error-placeholder');
-
   }
 
     // Diese Methode fokussiert das entsprechende Input-Feld, wenn auf den Container geklickt wird.
@@ -31,7 +35,6 @@ export class ContactComponent {
     textAreaElement.focus();
     textAreaElement.placeholder = ''; 
     textAreaElement.classList.remove('error-placeholder');
-
   }
 
   // Methode zum Wiederherstellen des Platzhalters und Hinzufügen der Fehlerklasse, falls notwendig
@@ -58,10 +61,19 @@ export class ContactComponent {
     }, 100);
   }
 
-  onSubmit(ngForm: NgForm){
-    if (ngForm.valid && ngForm.submitted) {
-      
+  onSubmit(form: NgForm) {
+    this.submitted = true; // Setze die Variable auf true, wenn das Formular abgeschickt wird
+    
+    console.log('Submitted:', this.submitted);
+    console.log('Checkbox invalid:', form.controls['privacyPolicy'].invalid);
+
+    if (form.valid) {
+      // Verarbeite das Formular, wenn es gültig ist
+      console.log('Form submitted:', this.contactData);
+      // Hier kannst du auch die Formulardaten an einen Service oder eine API senden
+    } else {
+      // Optional: Hier kannst du auch eine Rückmeldung geben, wenn das Formular ungültig ist
+      console.log('Form is invalid:', form);
     }
-    console.log('et laeuft, .. diggi, ja .. na sicher :)', this.contactData)
   }
 }
