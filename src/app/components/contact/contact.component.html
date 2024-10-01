@@ -1,0 +1,49 @@
+<section>
+    <div class="intro-container">
+        <h3 class="introTitle">Contact me</h3>
+        <h2 class="title">Let's work together</h2>
+
+        <div class="intro-question-container">
+            <h3 class="intro-question">Got a problem to solve?</h3>
+            <p class="introText">Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.
+            <p class="introText">Need a Frontend developer? <span>Let's talk!</span></p>
+        </div>
+    </div>
+
+    <form class="form-container" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+    
+        <div class="inputContainer" (click)="focusInput(nameElement)">
+            <label for="inputName">What's your name?</label>
+            <input required [(ngModel)]="contactData.name" #name="ngModel" #nameElement name="name" placeholder="Your name goes here" (blur)="restorePlaceholder(nameElement, 'Oops! It seems your name is missing')">
+            <!-- @if (!name.valid && name.touched && !name.disabled){
+                <span class="error-message">Oops! It seems your name is missing</span>
+            } -->
+        </div>
+        <div class="inputContainer" (click)="focusInput(emailElement)">
+            <label for="inputEmail">What's your email?</label>
+            <input required [(ngModel)]="contactData.email" #email="ngModel" #emailElement name="email" type="email" placeholder="youremail@email.com" (blur)="restorePlaceholder(emailElement, 'Hoppla! Your Email is required')" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+            <!-- @if (!email.valid && email.touched && !email.disabled){
+                <span class="error-message">Hoppla! Your Email is required</span>
+            } -->
+        </div>
+        <div class="inputContainer" (click)="focusTextarea(messageTextAreaElement)">
+            <label for="inputMessage">How can I help you?</label>
+            <textarea required [(ngModel)]="contactData.message" #message="ngModel" minlength="4" #messageTextAreaElement name="message" placeholder="Hello Michael, I am interested in..." (blur)="restorePlaceholderForMessage(messageTextAreaElement, 'What do you need to develop?')">
+                <!-- @if (!message.valid && message.touched && !message.disabled){
+                    <span class="error-message">What do you need to develop?</span>
+                } -->
+            </textarea>
+        </div>
+
+        <div class="checkboxContainer">
+            <input id="customCheckbox" type="checkbox">
+            <label type="checkbox" required for="customCheckbox">I've read the <a href="#" >privacy policy </a> and agree to the processing of my data as outlined.</label>
+        </div>
+
+        <div class="button-container">
+            <button type="submit" class="fill">Contact me</button>
+        </div>
+
+    </form>
+
+</section>

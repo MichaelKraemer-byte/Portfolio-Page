@@ -7,7 +7,7 @@ import { AtfComponent } from './components/atf/atf.component';
 import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { SkillsComponent } from './components/skills/skills.component';
-import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
 import { CursorEffektComponent } from './components/cursor-effekt/cursor-effekt.component';
 import { ModalComponent } from './components/modal/modal.component';
@@ -28,7 +28,7 @@ import { Project } from './models/project.interface';
     SkillsComponent,
     ProjectsComponent,
     TestimonialsComponent,
-    ContactFormComponent,
+    ContactComponent,
     CursorEffektComponent,
     ModalComponent,
     TestimonialsComponent

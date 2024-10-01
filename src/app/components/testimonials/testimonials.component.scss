@@ -122,22 +122,78 @@ section{
         margin-bottom: 5px;
     }
 
-    .forthArrow, .backArrow { 
-        transition: transform 0.125s ease-in-out, filter 0.1s ease-in-out;
 
-        &:hover {
-            filter: brightness(0) saturate(100%) invert(74%) sepia(9%) saturate(3080%) hue-rotate(118deg)  contrast(71%);
+
+
+    .forthArrowContainer {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        margin-top: 19px;
+
+        &:hover{
             cursor: pointer;
         }
-    }
-    .backArrow{
+    
+        .forthArrow {
+            transition: transform 0.125s ease-in-out, filter 0.1s ease-in-out;
+        }
+    
         &:hover {
-            transform: translateX(-50%);
+            .forthArrow {
+                filter: brightness(0) saturate(100%) invert(74%) sepia(9%) saturate(3080%) hue-rotate(118deg) contrast(71%);
+                cursor: pointer;
+                transform: translateX(50%);
+            }
         }
     }
-    .forthArrow{
+    
+
+    .backArrowContainer {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        margin-top: 19px;
+
+        &:hover{
+            cursor: pointer;
+        }
+    
+        .backArrow {
+            transition: transform 0.125s ease-in-out, filter 0.1s ease-in-out;
+        }
+    
         &:hover {
-            transform: translateX(50%);
+            .backArrow {
+                filter: brightness(0) saturate(100%) invert(74%) sepia(9%) saturate(3080%) hue-rotate(118deg) contrast(71%);
+                cursor: pointer;
+                transform: translateX(-50%);
+            }
         }
     }
 }
+
+.leftFadeBar{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12.5%;
+    height: 100%;
+    background: linear-gradient(to left, rgb(27 27 27 / 0%) 0%, rgb(27 27 27) 100%),;    
+    z-index: 1;
+}
+
+.rightFadeBar{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 12.5%;
+    height: 100%;
+    background: linear-gradient(to right, rgb(27 27 27 / 0%) 0%, rgb(27 27 27) 100%);    
+    z-index: 1;
+}
+
