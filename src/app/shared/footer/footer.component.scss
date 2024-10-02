@@ -1,0 +1,73 @@
+footer{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 64px 96px 64px 96px;
+    box-sizing: border-box;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #FFFFFF;
+
+    .logo-name{
+        display: flex;
+        flex-direction: column;
+        transition: color 0.175s ease-in-out, -webkit-text-stroke 0.175s ease-in-out;
+
+
+        span{
+            font-size: 30px;
+            letter-spacing: 0px;
+            font-weight: 900;
+            font-family: 'Fira Code';
+        }
+        .surnameSpan{
+          margin-top: -12px;
+        }
+    }
+
+    svg {
+      transition: fill 0.175s ease-in-out, stroke 0.175s ease-in-out, stroke-width 0.175s ease-in-out;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .logo-name{
+        color: transparent; 
+        -webkit-text-stroke: 0.6px white;
+      }
+      svg{
+        fill: transparent; 
+        stroke: #3CDFB6; 
+        stroke-width: 8px; 
+      }
+    }
+}
+
+h4{
+  color: #3CDFB6;
+  font-family: 'Fira Code';
+  font-weight: 400;
+}
+
+.footer-right-box{
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  gap: 8px;
+  text-align: end;
+    a{
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+}
