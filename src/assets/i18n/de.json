@@ -1,0 +1,29 @@
+{
+    "header": {
+        "aboutLink": "Über mich",
+        "projectsLink": "Projekte",
+        "skillsLink": "Fähigkeiten"
+    },
+    "atf": {
+        "title": "Frontend Entwickler",
+        "contactButton": "Kontakt",
+        "projectsButton": "Meine Arbeit"
+    },
+    "marquee": {
+        "frontend": "Frontend-Entwickler",
+        "location": "Ansässig in Münster Westfalen",
+        "relocation": "Offen für einen Standortwechsel",
+        "openToWork": "Aktuell verfügbar",
+        "remoteWork": "Verfügbar für Remote-Arbeit"
+    },
+    "aboutMe": {
+        "introTitle": "Wer ich bin",
+        "subtitle": "Über mich",
+        "descriptionText": "Hallo, ich bin ein deutscher, englischsprachiger Frontend-Entwickler mit Sitz in Münster. Motiviert von den grenzenlosen Möglichkeiten in der IT freue ich mich darauf, visuell ansprechende und intuitive Websites und Anwendungen zu erstellen.",
+        "flexibleText": "Ich bin flexibel in Bezug auf Arbeitsumgebungen und kann umziehen und effektiv vor Ort oder remote arbeiten.",
+        "openMindedText": "Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um mein Wissen und meine Fähigkeiten ständig zu verbessern.",
+        "creativeProblemSolvingText": "In meinem Beruf ist Programmieren nicht nur das Schreiben von Code; es ist eine kreative Form der Problemlösung. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu destillieren. Auf diese Weise helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken."
+
+    }
+
+  }

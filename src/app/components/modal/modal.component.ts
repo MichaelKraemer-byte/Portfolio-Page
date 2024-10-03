@@ -3,11 +3,12 @@ import { trigger, style, animate, transition, state } from '@angular/animations'
 import { CommonModule } from '@angular/common';
 import { Project } from '../../models/project.interface';
 import { DomSanitizer, SafeHtml  } from '@angular/platform-browser';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
   animations:  [

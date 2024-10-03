@@ -123,7 +123,7 @@ header{
     text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
     width: 50%;
     text-align: center;
-    transition: color 0.125s ease-in-out; /* Übergang für die Textfarbe */
+    transition: color 0.125s ease-in-out;
   }
   
   input.check-toggle-round-flat:checked ~ .off {
@@ -173,6 +173,7 @@ header{
     -o-border-radius: 60px;
     border-radius: 60px;
   }
+
   input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
     display: block;
     position: absolute;
@@ -191,6 +192,7 @@ header{
     -o-border-radius: 60px;
     border-radius: 60px;
   }
+
   input.check-toggle-round-flat + label:after {
     top: 4px;
     left: 4px;
@@ -206,9 +208,6 @@ header{
     -moz-transition: margin 0.2s;
     -o-transition: margin 0.2s;
     transition: margin 0.2s;
-  }
-  
-  input.check-toggle-round-flat:checked + label {
   }
   
   input.check-toggle-round-flat:checked + label:after {

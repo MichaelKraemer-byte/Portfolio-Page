@@ -12,8 +12,7 @@ import { TestimonialsComponent } from './components/testimonials/testimonials.co
 import { CursorEffektComponent } from './components/cursor-effekt/cursor-effekt.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { Project } from './models/project.interface';
-
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -31,7 +30,8 @@ import { Project } from './models/project.interface';
     ContactComponent,
     CursorEffektComponent,
     ModalComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    TranslateModule
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
@@ -54,3 +54,4 @@ export class AppComponent {
   }
 
 }
+

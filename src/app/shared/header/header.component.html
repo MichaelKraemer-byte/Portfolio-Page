@@ -1,14 +1,17 @@
-<header>
+<header >
     <div class="switch-and-links">
         <div class="switch">
-            <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+            <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" 
+              [checked]="currentLanguage === 'de'" 
+              (change)="switchLanguage()">
             <label for="language-toggle"></label>
             <span class="on">EN</span>
             <span class="off">DE</span>
-        </div>
-        <a href="#about" class="link">About me<span>•</span></a>
-        <a href="#skills" class="link">Skills<span>•</span></a>
-        <a href="#projects" class="link">Projects<span>•</span></a>
+          </div>
+          
+        <a href="#about" class="link">{{ 'header.aboutLink' | translate }}<span>•</span></a>
+        <a href="#skills" class="link">{{ 'header.skillsLink' | translate }}<span>•</span></a>
+        <a href="#projects" class="link">{{ 'header.projectsLink' | translate }}<span>•</span></a>
     </div>
 
     <a href="#about" class="logo-container">

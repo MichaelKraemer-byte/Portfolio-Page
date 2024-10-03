@@ -1,16 +1,16 @@
 <div class="hero-container">
-    <h3>Frontend Developer</h3>
+    <h3>{{ 'atf.title' | translate }}</h3>
     <h1>Michael Krämer</h1>
     <div class="buttonContainer">
-        <a href="#projects"><button class="fill">Check my work</button></a>
-        <a href="#contact"><button class="fill">Contact me</button></a>
+        <a href="#projects"><button class="fill">{{ 'atf.projectsButton' | translate }}</button></a>
+        <a href="#contact"><button class="fill">{{ 'atf.contactButton' | translate }}</button></a>
     </div>
 
     <div class="hero-bottom ">
         <div class="left-string-container">
-            <div class="arrowContainer">
+            <a href="#about" class="arrowContainer">
                 <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25"><path style="fill:#FFFFFF" d="m18.294 16.793-5.293 5.293V1h-1v21.086l-5.295-5.294-.707.707L12.501 24l6.5-6.5-.707-.707z"/></svg>
-            </div>
+            </a>
             <div class="colored-string"></div>
         </div>
         <div class="right-string-container">
@@ -42,27 +42,28 @@
     </div>
 
     <div class="sliderContainer">
-        <div class="marqueeText">
-            <span>Frontend Developer</span><span>•</span>
-            <span>Based in Münster Westfalen</span><span>•</span>
-            <span>Open to work</span><span>•</span>
-            <span>Available for remote work</span><span>•</span>
+        <div class="marqueeText" [ngClass]="{'animation-en': currentLang === 'en', 'animation-de': currentLang === 'de'}">
+            <span>{{ 'marquee.frontend' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.location' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.relocation' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.openToWork' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.remoteWork' | translate }}</span><span>•</span>
         </div>
-
-        <div class="marqueeText">
-            <span>Frontend Developer</span><span>•</span>
-            <span>Based in Münster Westfalen</span><span>•</span>
-            <span>Open to work</span><span>•</span>
-            <span>Available for remote work</span><span>•</span>
+    
+        <div class="marqueeText" [ngClass]="{'animation-en': currentLang === 'en', 'animation-de': currentLang === 'de'}">
+            <span>{{ 'marquee.frontend' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.location' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.relocation' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.openToWork' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.remoteWork' | translate }}</span><span>•</span>
         </div>
-
-        <div class="marqueeText">
-            <span>Frontend Developer</span><span>•</span>
-            <span>Based in Münster Westfalen</span><span>•</span>
-            <span>Open to work</span><span>•</span>
-            <span>Available for remote work</span><span>•</span>
+    
+        <div class="marqueeText" [ngClass]="{'animation-en': currentLang === 'en', 'animation-de': currentLang === 'de'}">
+            <span>{{ 'marquee.frontend' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.location' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.relocation' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.openToWork' | translate }}</span><span>•</span>
+            <span>{{ 'marquee.remoteWork' | translate }}</span><span>•</span>
         </div>
     </div>
 </div>
-
-<div class="custom-cursor"></div>

@@ -1,0 +1,29 @@
+{
+    "header": {
+        "aboutLink": "About me",
+        "projectsLink": "Projects",
+        "skillsLink": "Skills"
+    },
+    "atf": {
+        "title": "Frontend Developer",
+        "contactButton": "Contact me",
+        "projectsButton": "Check my work"
+    },
+    "marquee": {
+      "frontend": "Frontend Developer",
+      "location": "Based in Münster Westfalen",
+      "relocation": "Open to relocate",
+      "openToWork": "Open to work",
+      "remoteWork": "Available for remote work"
+    },
+    "aboutMe": {
+      "introTitle": "Who I am",
+      "subtitle": "About me",
+      "descriptionText": "Hi, I’m a German, English-speaking Frontend Developer based in Münster. Motivated by the limitless opportunities within IT, I am excited about crafting visually captivating and intuitive websites and applications.",
+      "flexibleText": "Flexible in terms of working environments, I can relocate and work effectively on-site or remotely.",
+      "openMindedText": "I am open-minded and always looking for personal challenges to constantly improve my knowledge and skills.",
+      "creativeProblemSolvingText": "In my profession, programming isn't just about writing code; it's a creative form of problem-solving. I take pride in my ability to distill complex technical challenges into simple, user-friendly solutions. This way, I help you achieve your goals and bring your visions to life."
+
+    }
+
+}
