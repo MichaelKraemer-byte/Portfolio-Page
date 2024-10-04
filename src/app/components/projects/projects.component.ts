@@ -35,6 +35,7 @@ export class ProjectsComponent {
 
   projects: Project[] = [
     {
+      id: 'join',
       number: 1,
       title: 'Join',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories. ',
@@ -44,6 +45,7 @@ export class ProjectsComponent {
       img: '../../assets/img/join-1.jpg',
     },
     {
+      id: 'loctarRisen',
       number: 2,
       title: 'Loctar Risen',
       description: 'A object-oriented jump, run and throw game. Guide Scarr the orc through obstacles, collect coins and axes, and defeat the troll to uncover treasure for his family.',
@@ -53,6 +55,7 @@ export class ProjectsComponent {
       img: '../../assets/img/loctar-risen-1.jpg',
     },
     {
+      id: 'daBubble',
       number: 3,
       title: 'DABubble',
       description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
@@ -60,7 +63,7 @@ export class ProjectsComponent {
       github: 'https://github.com/MichaelKraemer-byte/Join',
       livetest: 'https://project2.com',
       img: '../../assets/img/dabubble.jpg',
-    }
+    },
   ];
 
   openProject(project: any) {

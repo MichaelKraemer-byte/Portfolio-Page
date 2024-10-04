@@ -1,9 +1,10 @@
 export interface Project {
+    id: string,
     number: number;
     title: string;
     description: string;
-    technologies: string[];  // SVG-URLs oder Namen der Technologien
+    technologies: string[]; 
     github: string;
     livetest: string;
-    img: string;  // Bild-URL oder Pfad
+    img: string;
   }

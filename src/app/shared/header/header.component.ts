@@ -20,24 +20,20 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Nur einmal beim Laden der Komponente ausführen
     const savedLanguage = localStorage.getItem('language');
     const browserLang = this.translate.getBrowserLang() || 'en';
-
-    // Setze die aktuelle Sprache
     this.currentLanguage = savedLanguage ? savedLanguage : (browserLang.match(/en|de/) ? browserLang : 'en');
     this.translate.use(this.currentLanguage);
-    this.portfolioService.changeLanguage(this.currentLanguage); // Setze die Sprache im Service
-
+    this.portfolioService.changeLanguage(this.currentLanguage);
   }
 
   switchLanguage() {
     const toggle = document.getElementById('language-toggle') as HTMLInputElement;
-    const isChecked = toggle.checked; // Zugriff auf den aktuellen checked-Status
-    this.currentLanguage = isChecked ? 'de' : 'en';  // Logik basierend auf checked-Status
-    localStorage.setItem('language', this.currentLanguage); // Sprache im localStorage speichern
-    this.portfolioService.changeLanguage(this.currentLanguage); // Sprache im Service ändern
-    this.translate.use(this.currentLanguage); // Sprache für ngx-translate setzen
+    const isChecked = toggle.checked; 
+    this.currentLanguage = isChecked ? 'de' : 'en'; 
+    localStorage.setItem('language', this.currentLanguage); 
+    this.portfolioService.changeLanguage(this.currentLanguage); 
+    this.translate.use(this.currentLanguage); 
   }
   
 

@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
@@ -12,6 +13,10 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class ContactComponent {
 
+  constructor(public translate: TranslateService) {
+  }
+
+  http = inject(HttpClient);
 
   contactData = {
     name: '',
@@ -20,9 +25,39 @@ export class ContactComponent {
     checkboxChecked: false
   }
 
-  submitted: boolean = false; // Neue Variable für den Submit-Versuch
+  submitted: boolean = false;
 
+  mailTest = true;
 
+  post = {
+    endPoint: 'https://deineDomain.de/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
+
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.http.post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      ngForm.resetForm();
+    } else if (!ngForm.form.valid) {
+      this.submitted = true;
+    }
+  }
 
   // Diese Methode fokussiert das entsprechende Input-Feld, wenn auf den Container geklickt wird.
   focusInput(inputElement: HTMLInputElement) {
@@ -43,9 +78,9 @@ export class ContactComponent {
     setTimeout(() => {
       if (!inputElement.value) {
         inputElement.placeholder = placeholder;
-        inputElement.classList.add('error-placeholder');  // Fehlerklasse hinzufügen
+        inputElement.classList.add('error-placeholder');
       } else {
-        inputElement.classList.remove('error-placeholder');  // Fehlerklasse entfernen, wenn gefüllt
+        inputElement.classList.remove('error-placeholder'); 
       }
     }, 100);
   }
@@ -55,26 +90,11 @@ export class ContactComponent {
     setTimeout(() => {
       if (!textareaElement.value) {
         textareaElement.placeholder = placeholder;
-        textareaElement.classList.add('error-placeholder');  // Fehlerklasse hinzufügen
+        textareaElement.classList.add('error-placeholder'); 
       } else {
-        textareaElement.classList.remove('error-placeholder');  // Fehlerklasse entfernen, wenn gefüllt
+        textareaElement.classList.remove('error-placeholder'); 
       }
     }, 100);
   }
 
-  onSubmit(form: NgForm) {
-    this.submitted = true; // Setze die Variable auf true, wenn das Formular abgeschickt wird
-    
-    console.log('Submitted:', this.submitted);
-    console.log('Checkbox invalid:', form.controls['privacyPolicy'].invalid);
-
-    if (form.valid) {
-      // Verarbeite das Formular, wenn es gültig ist
-      console.log('Form submitted:', this.contactData);
-      // Hier kannst du auch die Formulardaten an einen Service oder eine API senden
-    } else {
-      // Optional: Hier kannst du auch eine Rückmeldung geben, wenn das Formular ungültig ist
-      console.log('Form is invalid:', form);
-    }
-  }
 }

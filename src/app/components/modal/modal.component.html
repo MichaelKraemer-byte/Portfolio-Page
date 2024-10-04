@@ -14,8 +14,8 @@ class="grey-background"
         <h1 class="project-number">0{{project?.number}}</h1>
         <div class="gap-wrapper">
           <h2 class="title">{{project?.title}}</h2>
-          <h3 class="subtitle">What is this project about?</h3>
-          <p class="description">{{project?.description}}</p>
+          <h3 class="subtitle">{{ 'projectPopUp.subtitle' | translate }}</h3>
+          <p class="description">{{ 'projectPopUp.' + project?.id + '.description' | translate }}</p>
           <div class="technology-list">
             <div class="technology-item" *ngFor="let tech of project?.technologies">
               <div [innerHTML]="getTechnologyIcon(tech)"></div>
@@ -35,7 +35,6 @@ class="grey-background"
             </a>                  
           </div>
         </div>
-
       </div>
 
       <div class="right-side">
@@ -47,7 +46,7 @@ class="grey-background"
 
         <img class="project-img" src="{{project?.img}}" alt="Project picture of: {{project?.title}}">
         <button class="nextProjectButton" (click)="nextProject()">
-          Next Project 
+          {{ 'projectPopUp.button' | translate }}
           <svg class="nextButtonSVG" xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
             <path d="M16.7715 10.6667H1.33317C1.14339 10.6667 0.984837 10.603 0.857504 10.4757C0.73017 10.3484 0.666504 10.1898 0.666504 10C0.666504 9.81025 0.73017 9.65169 0.857504 9.52436C0.984837 9.39702 1.14339 9.33336 1.33317 9.33336H16.7715L9.5205 2.08202C9.3905 1.95225 9.3225 1.79925 9.3165 1.62302C9.3105 1.44702 9.38106 1.28547 9.52817 1.13836C9.67506 0.99658 9.83228 0.924358 9.99984 0.921691C10.1674 0.919246 10.3246 0.991469 10.4715 1.13836L18.5792 9.24602C18.6956 9.36247 18.7773 9.48136 18.8242 9.60269C18.8713 9.72402 18.8948 9.85647 18.8948 10C18.8948 10.1436 18.8713 10.276 18.8242 10.3974C18.7773 10.5187 18.6956 10.6376 18.5792 10.754L10.4715 18.8617C10.3468 18.9864 10.1952 19.053 10.0165 19.0617C9.83784 19.0701 9.67506 19.0035 9.52817 18.8617C9.38106 18.7146 9.3075 18.556 9.3075 18.386C9.3075 18.2158 9.38106 18.0572 9.52817 17.9104L16.7715 10.6667Z" fill="#3DCFB6"/>
           </svg>

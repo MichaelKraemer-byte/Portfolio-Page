@@ -66,8 +66,33 @@ h4{
   font-weight: 300;
   gap: 8px;
   text-align: end;
+
     a{
     text-decoration: none;
     color: #FFFFFF;
+    transition: color 0.125s ease-in-out;
+    display: flex;
+
+    span{
+      font-size: 32px;
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.125s ease-in-out;
+      transform: translate(-190%, -28%);
+    }
+
+    &:hover{
+      color: #3CDFB6;
+
+      span{
+        opacity: 1;
+        visibility: visible;
+        position: absolute;
+        color: #3CDFB6;
+      }   
+    }
+
+
   }
 }

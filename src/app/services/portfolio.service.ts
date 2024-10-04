@@ -22,7 +22,6 @@ export class PortfolioService {
 
   getLanguageFromLocalStorage() {
     const lang = localStorage.getItem('language') || 'en'; 
-    console.log('Current Language:', lang); 
     return lang;
   }
 }

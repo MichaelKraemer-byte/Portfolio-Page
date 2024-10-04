@@ -5,25 +5,96 @@
         "skillsLink": "Fähigkeiten"
     },
     "atf": {
-        "title": "Frontend Entwickler",
+        "title": "Frontend-Entwickler",
         "contactButton": "Kontakt",
         "projectsButton": "Meine Arbeit"
     },
     "marquee": {
         "frontend": "Frontend-Entwickler",
         "location": "Ansässig in Münster Westfalen",
-        "relocation": "Offen für einen Standortwechsel",
-        "openToWork": "Aktuell verfügbar",
+        "relocation": "Bereit zum Umziehen",
+        "openToWork": "Bereit zu arbeiten",
         "remoteWork": "Verfügbar für Remote-Arbeit"
     },
     "aboutMe": {
         "introTitle": "Wer ich bin",
         "subtitle": "Über mich",
-        "descriptionText": "Hallo, ich bin ein deutscher, englischsprachiger Frontend-Entwickler mit Sitz in Münster. Motiviert von den grenzenlosen Möglichkeiten in der IT freue ich mich darauf, visuell ansprechende und intuitive Websites und Anwendungen zu erstellen.",
-        "flexibleText": "Ich bin flexibel in Bezug auf Arbeitsumgebungen und kann umziehen und effektiv vor Ort oder remote arbeiten.",
-        "openMindedText": "Ich bin aufgeschlossen und immer auf der Suche nach persönlichen Herausforderungen, um mein Wissen und meine Fähigkeiten ständig zu verbessern.",
-        "creativeProblemSolvingText": "In meinem Beruf ist Programmieren nicht nur das Schreiben von Code; es ist eine kreative Form der Problemlösung. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu destillieren. Auf diese Weise helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken."
-
+        "descriptionText": "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler mit Sitz in Münster. Motiviert durch die unbegrenzten Möglichkeiten in der IT, freue ich mich darauf, visuell ansprechende und intuitive Websites und Anwendungen zu gestalten.",
+        "flexibleText": "Ich bin flexibel in Bezug auf Arbeitsumgebungen und kann umziehen sowie effektiv vor Ort oder remote arbeiten.",
+        "openMindedText": "Ich bin offen und immer auf der Suche nach persönlichen Herausforderungen, um mein Wissen und meine Fähigkeiten ständig zu verbessern.",
+        "creativeProblemSolvingText": "In meinem Beruf geht es beim Programmieren nicht nur darum, Code zu schreiben; es ist eine kreative Form des Problemlösens. Ich bin stolz auf meine Fähigkeit, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu verwandeln. So helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zum Leben zu erwecken."
+    },
+    "skills": {
+        "introTitle": "Technologien",
+        "subtitle": "Fähigkeiten",
+        "descriptionText": "Meine Reise beinhaltete die Arbeit an verschiedenen Projekten, bei denen ich eine Vielzahl von Frontend-Technologien und -Konzepten eingesetzt habe. Ich bin offen für neue Technologien und Methoden, um meine Fähigkeiten kontinuierlich zu verbessern und im sich ständig weiterentwickelnden Bereich der Webentwicklung an der Spitze zu bleiben.",
+        "question": "Sie benötigen",
+        "spanText": "eine andere Fähigkeit?",
+        "answerText": "Zögern Sie nicht, mich zu kontaktieren. Ich freue mich darauf, mein Wissen zu erweitern.",
+        "contactButton": "Lass uns reden",
+        "specialInterestPartOne": "Ich habe ein besonderes",
+        "specialInterestPartTwo": "Interesse daran, zu lernen"
+    },
+    "projects": {
+        "introTitle": "Portfolio",
+        "subtitle": "Hervorgehobene Projekte",
+        "descriptionText": "Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit den Projekten, um meine Fähigkeiten in Aktion zu sehen."
+    },
+    "projectPopUp": {
+        "join": {
+            "description": "Ein Aufgabenmanager, inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu."
+        },
+        "loctarRisen": {
+            "description": "Ein objektorientiertes Jump-, Run- und Wurfspiel. Führen Sie Scarr, den Ork, durch Hindernisse, sammeln Sie Münzen und Äxte und besiegen Sie den Troll, um den Schatz für seine Familie zu finden."
+        },
+        "daBubble": {
+            "description": "Diese App ist eine Slack-Klon-App. Sie revolutioniert die Teamkommunikation und Zusammenarbeit mit ihrer intuitiven Benutzeroberfläche, Echtzeit-Messaging und robuster Kanalorganisation."
+        },
+        "subtitle": "Worum geht es in diesem Projekt?",
+        "button": "Nächstes Projekt"
+    },
+    "testimonials": {
+        "title": "Was meine Kollegen über mich sagen",
+        "sBoese": "Die Zusammenarbeit mit Michael Krämer war eine absolute Freude. Seine Detailgenauigkeit und die Fähigkeit, komplexe Anforderungen in elegante, benutzerfreundliche Designs zu verwandeln, sind wirklich beeindruckend. Er ist ein wichtiger Beitrag zu unserem Teamerfolg.",
+        "aButalov": "Michael Krämer liefert konsequent hochwertige Frontend-Lösungen, die Fristen einhalten und die Erwartungen übertreffen. Seine Kreativität und Problemlösungsfähigkeiten machen ihn zu einem unverzichtbaren Bestandteil unserer Projekte.",
+        "lStanislav": "Als Mitfrontend-Entwickler bewundere ich Michael Krämers Engagement für sauberen, effizienten Code und innovatives Design. Sein kooperativer Geist und seine Leidenschaft für die Schaffung nahtloser Benutzererfahrungen sind unerreicht."
+    },
+    "contact": {
+        "introTitle": "Kontaktieren Sie mich",
+        "title": "Lass uns zusammenarbeiten",
+        "introQuestion": "Haben Sie ein Problem zu lösen?",
+        "introText1": "Kontaktieren Sie mich über dieses Formular. Ich bin daran interessiert, von Ihnen zu hören, Ihre Ideen zu kennen und mit meiner Arbeit zu Ihren Projekten beizutragen.",
+        "introText2": "Benötigen Sie einen Frontend-Entwickler?",
+        "spanText": "Lass uns reden!",
+        "inputName": {
+            "label": "Wie heißt du?",
+            "placeholder": "Ihr Name hier",
+            "error": "Ups! Es scheint, dass Ihr Name fehlt",
+            "errorMessage": "Bitte geben Sie Ihren Namen ein"
+        },
+        "inputEmail": {
+            "label": "Wie lautet Ihre E-Mail?",
+            "placeholder": "IhreEmail@email.com",
+            "error": "Ups! Ihre E-Mail ist erforderlich",
+            "errorMessage": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+        },
+        "inputMessage": {
+            "label": "Wie kann ich Ihnen helfen?",
+            "placeholder": "Hallo Michael, ich interessiere mich für...",
+            "error": "Was müssen Sie entwickeln?",
+            "errorMessage": "Bitte geben Sie eine Nachricht mit mindestens 4 Buchstaben ein"
+        },
+        "privacyPolicy": {
+            "labelPartOne": "Ich habe die ",
+            "privacyPolicyLink": "Datenschutzrichtlinie",
+            "labelPartTwo": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+            "errorMessage": "Bitte akzeptieren Sie die Datenschutzrichtlinie."
+        },
+        "submitButton": "Hallo sagen ;)"
+    },
+    "footer": {
+        "jobTitle": "Web Entwickler",
+        "location": "Münster Nord-Rhein-Westfalen",
+        "legalNotice": "Impressum"
     }
-
-  }
+}

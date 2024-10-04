@@ -131,8 +131,8 @@ textarea ::placeholder{
         font-size: 15px;
         font-weight: 200;
         line-height: 18px;
-        display: flex; /* Füge Flexbox für das Label hinzu */
-        align-items: center; /* Zentriert den Text im Label */
+        display: flex; 
+        align-items: center;
         white-space: nowrap;
         gap: 4px;
         &:hover {
@@ -144,7 +144,10 @@ textarea ::placeholder{
         text-decoration: none;
         color: #3dcfb6;
         white-space: nowrap;
-
+        transition: color 0.125s ease-in-out;
+        &:hover{
+            color: #FFFFFF;
+        }
     }
 }
 
@@ -153,8 +156,8 @@ textarea ::placeholder{
     cursor: pointer;
     position: absolute;
     opacity: 0;
-    width: 1em; /* Optional: Breite anpassen */
-    height: 1em; /* Optional: Höhe anpassen */
+    width: 1em; 
+    height: 1em; 
 }
 
 .checkboxContainer label::before{

@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { PortfolioService } from '../../services/portfolio.service';  // Importiere den Service
-
+import { PortfolioService } from '../../services/portfolio.service'; 
 
 @Component({
   selector: 'app-atf',
@@ -10,7 +9,6 @@ import { PortfolioService } from '../../services/portfolio.service';  // Importi
   imports: [TranslateModule, CommonModule],
   templateUrl: './atf.component.html',
   styleUrl: './atf.component.scss',
-  
 })
 
 export class AtfComponent implements OnInit {
@@ -19,18 +17,14 @@ export class AtfComponent implements OnInit {
   constructor(private portfolioService: PortfolioService) {
     setTimeout(()=>{
       this.currentLang = this.portfolioService.getLanguageFromLocalStorage();
-    }, 100)
+    }, 200)
   }
 
   ngOnInit() {
     this.portfolioService.currentLanguage$.subscribe(lang => {
       this.currentLang = lang;
-      console.log('Current Language:', this.currentLang); // Protokolliere die aktuelle Sprache
+      console.log('Current Language:', this.currentLang); 
     });
-
-    // Setze die Sprache beim Laden der Komponente
     this.currentLang = this.portfolioService.getLanguageFromLocalStorage();
   }
-
-
 }

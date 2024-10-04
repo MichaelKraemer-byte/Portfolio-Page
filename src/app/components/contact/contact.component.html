@@ -1,35 +1,35 @@
 <section id="contact">
     <div class="intro-container">
-        <h3 class="introTitle">Contact me</h3>
-        <h2 class="title">Let's work together</h2>
+        <h3 class="introTitle">{{ 'contact.introTitle' | translate }}</h3>
+        <h2 class="title">{{ 'contact.title' | translate }}</h2>
 
         <div class="intro-question-container">
-            <h3 class="intro-question">Got a problem to solve?</h3>
-            <p class="introText">Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.
-            <p class="introText">Need a Frontend developer? <span>Let's talk!</span></p>
+            <h3 class="intro-question">{{ 'contact.introQuestion' | translate }}</h3>
+            <p class="introText">{{ 'contact.introText1' | translate }}</p>
+            <p class="introText">{{ 'contact.introText2' | translate }} <span>{{ 'contact.spanText' | translate }}</span></p>
         </div>
     </div>
 
     <form class="form-container" novalidate (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
     
         <div class="inputContainer" (click)="focusInput(nameElement)">
-            <label for="inputName">What's your name?</label>
+            <label for="inputName">{{ 'contact.inputName.label' | translate }}</label>
             <input 
                 required 
                 [(ngModel)]="contactData.name" 
                 #name="ngModel" 
                 #nameElement 
                 name="name" 
-                placeholder="Your name goes here" 
-                (blur)="restorePlaceholder(nameElement, 'Oops! It seems your name is missing')">
+                placeholder="{{ 'contact.inputName.placeholder' | translate }}" 
+                (blur)="restorePlaceholder(nameElement, translate.instant('contact.inputName.error'))"> <!-- Verwende translate.instant -->
 
-                @if (!name.valid && !name.disabled && submitted == true){
-                <span class="error-message">Please enter your name</span>
-            }
+            <ng-container *ngIf="!name.valid && !name.disabled && submitted == true">
+                <span class="error-message">{{ 'contact.inputName.errorMessage' | translate }}</span>
+            </ng-container>
         </div>
     
         <div class="inputContainer" (click)="focusInput(emailElement)">
-            <label for="inputEmail">What's your email?</label>
+            <label for="inputEmail">{{ 'contact.inputEmail.label' | translate }}</label>
             <input 
                 required 
                 [(ngModel)]="contactData.email" 
@@ -37,17 +37,17 @@
                 #emailElement 
                 name="email" 
                 type="email" 
-                placeholder="youremail@email.com" 
-                (blur)="restorePlaceholder(emailElement, 'Hoppla! Your Email is required')" 
+                placeholder="{{ 'contact.inputEmail.placeholder' | translate }}" 
+                (blur)="restorePlaceholder(emailElement, translate.instant('contact.inputEmail.error'))" 
                 pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
 
-                @if (!email.valid && !email.disabled && submitted == true){
-                    <span class="error-message">Please enter a valid email adress</span>
-                }
+            <ng-container *ngIf="!email.valid && !email.disabled && submitted == true">
+                <span class="error-message">{{ 'contact.inputEmail.errorMessage' | translate }}</span>
+            </ng-container>
         </div>
     
         <div class="inputContainer" (click)="focusTextarea(messageTextAreaElement)">
-            <label for="inputMessage">How can I help you?</label>
+            <label for="inputMessage">{{ 'contact.inputMessage.label' | translate }}</label>
             <textarea 
                 required 
                 [(ngModel)]="contactData.message" 
@@ -55,93 +55,36 @@
                 minlength="4" 
                 #messageTextAreaElement 
                 name="message" 
-                placeholder="Hello Michael, I am interested in..." 
-                (blur)="restorePlaceholderForMessage(messageTextAreaElement, 'What do you need to develop?')">
+                placeholder="{{ 'contact.inputMessage.placeholder' | translate }}" 
+                (blur)="restorePlaceholderForMessage(messageTextAreaElement, translate.instant('contact.inputMessage.error'))">
             </textarea>
 
-            @if (!message.valid && !message.disabled && submitted == true){
-                <span class="error-message">Please enter a message with at least 4 letters</span>
-            }
+            <ng-container *ngIf="!message.valid && !message.disabled && submitted == true">
+                <span class="error-message">{{ 'contact.inputMessage.errorMessage' | translate }}</span>
+            </ng-container>
         </div>
     
-            <div class="check-box-and-error">
-                <div class="checkboxContainer">
-                    <input 
-                        id="customCheckbox" 
-                        type="checkbox" 
-                        required 
-                        [(ngModel)]="contactData.checkboxChecked" 
-                        #checkbox="ngModel" 
-                        name="privacyPolicy">
-                    <label for="customCheckbox">I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</label>
-                </div>
-                @if (submitted == true && checkbox.invalid) {
-                    <span class="error-message-for-checkbox">
-                        Please accept the privacy policy.
-                    </span>
-                }                
-
+        <div class="check-box-and-error">
+            <div class="checkboxContainer">
+                <input 
+                    id="customCheckbox" 
+                    type="checkbox" 
+                    required 
+                    [(ngModel)]="contactData.checkboxChecked" 
+                    #checkbox="ngModel" 
+                    name="privacyPolicy">
+                <label for="customCheckbox">{{ 'contact.privacyPolicy.labelPartOne' | translate }}<a href="#">{{ 'contact.privacyPolicy.privacyPolicyLink' | translate }}</a>{{ 'contact.privacyPolicy.labelPartTwo' | translate }}</label>
             </div>
-         
-    
+            <ng-container *ngIf="submitted == true && checkbox.invalid">
+                <span class="error-message-for-checkbox">
+                    {{ 'contact.privacyPolicy.errorMessage' | translate }}
+                </span>
+            </ng-container>                
+        </div>
+
         <div class="button-container">
-            <button type="submit" class="fill">Say Hello ;)</button>
+            <button type="submit" class="fill">{{ 'contact.submitButton' | translate }}</button>
         </div>
     
     </form>
-    
-    
-
 </section>
-
-
-            <!-- @if (!name.valid && name.touched && !name.disabled){
-                <span class="error-message">Oops! It seems your name is missing</span>
-            } -->
-            <!-- @if (!email.valid && email.touched && !email.disabled){
-                <span class="error-message">Hoppla! Your Email is required</span>
-            } -->
-                <!-- @if (!message.valid && message.touched && !message.disabled){
-                    <span class="error-message">What do you need to develop?</span>
-                } -->
-
-
-
-
-                <!-- <form class="form-container" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-    
-                    <div class="inputContainer" (click)="focusInput(nameElement)">
-                        <label for="inputName">What's your name?</label>
-                        <input required [(ngModel)]="contactData.name" #name="ngModel" #nameElement name="name" placeholder="Your name goes here" (blur)="restorePlaceholder(nameElement, 'Oops! It seems your name is missing')">
-            
-                    </div>
-                    <div class="inputContainer" (click)="focusInput(emailElement)">
-                        <label for="inputEmail">What's your email?</label>
-                        <input required [(ngModel)]="contactData.email" #email="ngModel" #emailElement name="email" type="email" placeholder="youremail@email.com" (blur)="restorePlaceholder(emailElement, 'Hoppla! Your Email is required')" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-            
-                    </div>
-                    <div class="inputContainer" (click)="focusTextarea(messageTextAreaElement)">
-                        <label for="inputMessage">How can I help you?</label>
-                        <textarea required [(ngModel)]="contactData.message" #message="ngModel" minlength="4" #messageTextAreaElement name="message" placeholder="Hello Michael, I am interested in..." (blur)="restorePlaceholderForMessage(messageTextAreaElement, 'What do you need to develop?')">
-                        </textarea>
-                    </div>
-            
-                    <div class="checkboxContainer">
-                        <input 
-                            id="customCheckbox" 
-                            type="checkbox" 
-                            required 
-                            [(ngModel)]="contactData.checkboxChecked" 
-                            #checkbox="ngModel">
-                        <label for="customCheckbox">I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.</label>
-                        <span class="error-message" *ngIf="checkbox.invalid && checkbox.touched">
-                            Please accept the privacy policy.
-                        </span>
-                    </div>
-                    
-            
-                    <div class="button-container">
-                        <button type="submit" class="fill" [disabled]="contactForm.invalid">Contact me</button>
-                    </div>
-            
-                </form> -->
