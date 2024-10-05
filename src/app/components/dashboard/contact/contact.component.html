@@ -73,7 +73,7 @@
                     [(ngModel)]="contactData.checkboxChecked" 
                     #checkbox="ngModel" 
                     name="privacyPolicy">
-                <label for="customCheckbox">{{ 'contact.privacyPolicy.labelPartOne' | translate }}<a href="#">{{ 'contact.privacyPolicy.privacyPolicyLink' | translate }}</a>{{ 'contact.privacyPolicy.labelPartTwo' | translate }}</label>
+                <label for="customCheckbox">{{ 'contact.privacyPolicy.labelPartOne' | translate }}<a [routerLink]="['/privacy-policy']" routerLinkActive="active">{{ 'contact.privacyPolicy.privacyPolicyLink' | translate }}</a>{{ 'contact.privacyPolicy.labelPartTwo' | translate }}</label>
             </div>
             <ng-container *ngIf="submitted == true && checkbox.invalid">
                 <span class="error-message-for-checkbox">

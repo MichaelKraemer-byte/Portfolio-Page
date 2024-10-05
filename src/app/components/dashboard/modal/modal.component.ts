@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, ViewChild} from '@angular/core';
 import { trigger, style, animate, transition, state } from '@angular/animations';
 import { CommonModule } from '@angular/common';
-import { Project } from '../../models/project.interface';
+import { Project } from '../../../models/project.interface';
 import { DomSanitizer, SafeHtml  } from '@angular/platform-browser';
 import { TranslateModule } from '@ngx-translate/core';
 

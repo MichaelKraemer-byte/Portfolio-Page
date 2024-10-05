@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output} from '@angular/core';
-import { Project } from '../../models/project.interface';
+import { Project } from '../../../models/project.interface';
 import { TranslateModule } from '@ngx-translate/core';
 
 
@@ -29,7 +29,6 @@ export class ProjectsComponent {
       this.project3IsVisible = isHovered;
     }
   }
-
 
   @Output() openProjectEvent = new EventEmitter<Project>();
 

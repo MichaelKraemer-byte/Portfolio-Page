@@ -1,14 +1,12 @@
 footer{
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 64px 96px 64px 96px;
     box-sizing: border-box;
-    bottom: 0;
-    left: 0;
-    right: 0;
     z-index: 2;
+    width: 100%;
+    position: relative;
 }
 
 .logo-container{
@@ -22,7 +20,6 @@ footer{
         display: flex;
         flex-direction: column;
         transition: color 0.175s ease-in-out, -webkit-text-stroke 0.175s ease-in-out;
-
 
         span{
             font-size: 30px;
@@ -92,7 +89,5 @@ h4{
         color: #3CDFB6;
       }   
     }
-
-
   }
 }

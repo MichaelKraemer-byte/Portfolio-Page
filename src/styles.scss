@@ -1,14 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body, html{
     background-color: rgba( 27, 27, 27, 1);
     color: white;
     font-family: 'Karla', Arial, Helvetica, sans-serif;
     margin: 0px;
+    scroll-behavior: smooth;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 
 

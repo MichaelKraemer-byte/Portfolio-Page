@@ -2,12 +2,17 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PortfolioService } from '../../services/portfolio.service';  // Importiere den Service
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [TranslateModule, CommonModule],
+  imports: [
+    TranslateModule, 
+    CommonModule,
+    RouterLink  
+  ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })

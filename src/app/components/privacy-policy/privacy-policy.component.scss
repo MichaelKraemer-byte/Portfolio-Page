@@ -1,0 +1,53 @@
+section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 144px 112px 144px 112px;
+    box-sizing: border-box;
+    width: 75%;
+    max-width: 1024px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: start;
+}
+
+a{
+    color: #3dcfb6;
+    text-decoration: none;
+
+    &:hover{
+        color: white;
+    }
+}
+
+h1, h2, h3 {
+    color: #3dcfb6;
+    font-family: 'Fira Code';
+    font-weight: 700;
+}
+
+h1{
+    font-size: 3.2rem;
+}
+
+h2{
+    font-size: 2rem;
+    color: #3dcfb6;
+    font-family: 'Fira Code';
+}
+
+h3{
+    font-size: 1.6rem;
+    color: #3dcfb6;
+    font-family: 'Fira Code';
+}
+
+h4{
+    font-size: 1.2rem;
+    color: #3dcfb6;
+}
+
+p, li {
+    font-size: 18px;
+    font-weight: 200;
+}

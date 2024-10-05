@@ -1,26 +1,6 @@
-<app-modal [project]="project" [projects]="projects"></app-modal>
 <app-cursor-effekt></app-cursor-effekt>
 <app-header></app-header>
-<app-atf></app-atf>
-<app-about-me></app-about-me>
-<app-skills></app-skills>
-<app-projects (openProjectEvent)="openingProject($event)">
-</app-projects>
-<app-testimonials></app-testimonials>
-<app-contact></app-contact>
+<main>
+    <router-outlet></router-outlet>
+</main>
 <app-footer></app-footer>
-<router-outlet><router-outlet/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
