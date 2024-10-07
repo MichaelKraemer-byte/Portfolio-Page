@@ -1,3 +1,20 @@
+$breakpoints: (
+  small: 600px,
+  medium: 900px,
+  large: 1200px,
+  XL: 1660px,
+);
+
+@mixin respond-to($breakpoint) {
+    $max-width: map-get($breakpoints, $breakpoint); // Wert aus der Map abrufen
+
+    @if $max-width {
+      @media (max-width: $max-width) {
+        @content; // Die Inhalte, die in das Mixin übergeben werden
+      }
+    }
+}
+
 header{
     display: flex;
     justify-content: space-between;
@@ -9,6 +26,10 @@ header{
     left: 0;
     right: 0;
     z-index: 2;
+
+    @include respond-to(small) {
+      display: none;
+  }
 
     .logo-container{
         display: flex;
@@ -213,3 +234,33 @@ header{
   input.check-toggle-round-flat:checked + label:after {
     margin-left: 44px;
   }
+
+
+// Mobile Header
+.mobileHeader{
+  display: none;
+  position: fixed;
+  backdrop-filter: blur(2vmax);
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+  z-index: 2;
+  padding: 32px 16px 16px 16px;
+  box-sizing: border-box;
+  
+    @include respond-to(medium) {
+      display: flex;
+  }
+}
+
+.burgerMenuContainer{
+  position: relative;
+
+  &:hover{
+    cursor: pointer;
+    filter: brightness(10);
+  }
+}

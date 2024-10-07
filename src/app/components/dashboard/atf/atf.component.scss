@@ -1,3 +1,20 @@
+$breakpoints: (
+  small: 600px,
+  medium: 900px,
+  large: 1200px,
+  XL: 1660px,
+);
+
+@mixin respond-to($breakpoint) {
+    $max-width: map-get($breakpoints, $breakpoint); // Wert aus der Map abrufen
+
+    @if $max-width {
+      @media (max-width: $max-width) {
+        @content; // Die Inhalte, die in das Mixin übergeben werden
+      }
+    }
+}
+
 .hero-container {
     width: 100%;
     height: 100vh;
@@ -8,6 +25,9 @@
     flex-direction: column;
     overflow: hidden;
 
+    @include respond-to(small) {
+      background: linear-gradient(75deg, rgba( 27, 27, 27, 1) 40%, rgba(8,70,59,1) 100%);
+    }
     
     h3{
         font-family: 'Fira Code';
@@ -16,16 +36,29 @@
         margin-bottom: 12px;
         margin-top: 0px;
         z-index: 1;
+        @include respond-to(small) {
+          font-size: 22px;
+        }
     }
     h1{
         font-size: clamp(96px, 4vw, 128px);
         margin-bottom: 40px;
         margin-top: 0px;
         z-index: 1;
+        font-weight: 700;
+        @include respond-to(small) {
+          font-size: 36px;
+          margin-bottom: 32px;
+        }
     }
 
     .buttonContainer{
         z-index: 1;
+        @include respond-to(small) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
     }
 
 // Animate the size, inside
@@ -82,13 +115,13 @@ button {
   cursor: pointer;
   border-radius: 100px;
   font-size: 18px;
-}
 
-h1 { font-weight: 400; }
-
-code { 
-  color: #3dcfb6;
-  font: inherit;
+  @include respond-to(small) {
+    padding:13px 24px 13px 24px;
+    border: 1px solid white;
+    color: white;
+    font-weight: 300;
+  }
 }
 }
 
@@ -101,7 +134,10 @@ code {
     bottom: 0;
     right: 96px;
     left: 96px;
-
+    @include respond-to(small) {
+      right: 4px;
+      left: 16px;
+    }
 
 
     .left-string-container{
@@ -156,12 +192,53 @@ code {
             color: white;
             letter-spacing: 1px;
             font-weight: 400;
+            transition: color 0.125s ease-in-out;
 
-
+            @include respond-to(small) {
+              display: none;
+            }
 
             &:hover{
             color: #b5fff3;
             }
+        }
+
+        .heroEmailSVG{
+          width: fit-content;
+          text-decoration: none;
+          transition: filter 0.125s ease-in-out;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          transition: opacity 0.125 ease-in-out;      
+
+          span{
+            font-size: 32px;
+            position: absolute;
+            right: -12px;
+            bottom: -2px;
+            visibility: hidden;
+            opacity: 0;
+            z-index: 1;
+            transition: opacity 0.125 ease-in-out;      
+          }
+          
+          @include respond-to(large) {
+            display: none;
+          }
+          @include respond-to(small) {
+            display: block;
+          }
+
+          &:hover{
+            filter: brightness(10);
+            span{
+              opacity: 1;
+              visibility: visible;
+              color: #3CDFB6;
+            }    
+          }
         }
     }
 
@@ -173,6 +250,10 @@ code {
         display: flex;
         justify-content: center;
         align-items: center;
+        @include respond-to(small) {
+          height: 48px;
+          width: 24px;      
+        }
         .arrow {
             animation: up-and-down-slide 1.25s ease-in-out infinite;
             width: 16px;
@@ -187,6 +268,10 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+  @include respond-to(small) {
+    width: 26px;
+    height: 26px;
+  }
 
   span{
     font-size: 32px;
@@ -196,7 +281,10 @@ code {
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.125 ease-in-out;
-
+    @include respond-to(small) {
+      margin-left: 42px;
+      margin-bottom: 4px;
+    }
   }
 
   &:hover{
@@ -237,15 +325,24 @@ code {
 
       font-size: 32px;
       font-weight: 400;
+      @include respond-to(small) {
+        font-size: 24px;
+      }
   }
 }
 
 .animation-en {
   animation: infinite-loop 14s infinite linear;
+  @include respond-to(small) {
+    animation: infinite-loop 13s infinite linear;
+  }
 }
 
 .animation-de {
   animation: infinite-loop-de 15.6s infinite linear;
+  @include respond-to(small) {
+    animation: infinite-loop 14.6s infinite linear;
+  }
 }
 
 

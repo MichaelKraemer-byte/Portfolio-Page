@@ -20,15 +20,14 @@ $breakpoints: (
     box-sizing: border-box;
     display: flex;
     padding: 144px 112px 144px 112px;
-    // padding: 12vh 8vw; 
     align-items: center;
     justify-content: center;
     gap: 9vw;    
     z-index: 1;
     position: relative;
 
-    @include respond-to(small) {
-        padding: 100px 16px 100px 16px;
+    @include respond-to(large) {
+        padding: 100px 64px 100px 64px;
     }
     @include respond-to(medium) {
         padding: 100px 32px 100px 32px;
@@ -36,10 +35,14 @@ $breakpoints: (
         gap: 2vh;
         align-items: unset;
         justify-content: unset;
+    }    
+    @include respond-to(small) {
+        padding: 100px 16px 100px 16px;
+        gap: 24px;
+
     }
-    @include respond-to(large) {
-        padding: 100px 64px 100px 64px;
-    }
+
+
 
     .img-and-svg-container{
         height: auto;
@@ -47,8 +50,8 @@ $breakpoints: (
         flex: 1;
         max-width: 600px;
 
-        @include respond-to(medium) {
-
+        @include respond-to(small) {
+            position: relative;
         }
 
 
@@ -56,7 +59,7 @@ $breakpoints: (
             display: flex;
             justify-content: end;
             position: relative;
-
+            flex: 1;
 
             img{
                 width: 100%;
@@ -65,7 +68,12 @@ $breakpoints: (
                 position: absolute;
                 border-radius: 30px;
                 transform: translate(8%, -6%);
-
+                @include respond-to(small) {
+                    position: relative;
+                    transform: none;
+                    z-index: 0;
+                    flex: 1;
+                }
             }        
         }
 
@@ -75,10 +83,12 @@ $breakpoints: (
             z-index: 0;
             position: relative;
             border-radius: 40px;
+            @include respond-to(small) {
+                display: none;
+            }
         }
     }
 }
-
 
 
     .aboute-me-container{
@@ -89,7 +99,9 @@ $breakpoints: (
     width: 100%;
     max-width: 600px;
     height: 100%;
-
+    @include respond-to(small) {
+        justify-content: unset;
+    }
 
         .description-container{
             padding: 32px;
@@ -98,6 +110,9 @@ $breakpoints: (
             background-color: rgba(61, 207, 183, 0.10);
             border: 1px solid #3dcfb6;
             border-radius: 30px;
+            @include respond-to(small) {
+                padding: 16px 20px 16px 20px;
+            }
         
             .subtitle {
                 font-size: 4.3rem;
@@ -105,6 +120,11 @@ $breakpoints: (
                 font-weight: 700;
                 color: #3dcfb6;
                 margin: 0;
+                @include respond-to(small) {
+                    font-size: 56px;
+                    letter-spacing: -3%;
+                    line-height: 44.8px;
+                }
             }
 
         }    
@@ -114,33 +134,51 @@ $breakpoints: (
         font-size: 1.6rem;
         margin-bottom: 20px;
         letter-spacing: 3px;
+
+            @include respond-to(small) {
+            font-size: 18px;
+            }
         }    
 
         .description-content-container{
             display: flex;
             flex-direction: column;
             gap: 16px;
+            text-align: justify;
 
             .description-text{
                 font-size: 18px;
                 font-weight: 300;
+                @include respond-to(small) {
+                    font-size: 16px;
+                }
             }        
 
             .single-content{
                 display: flex;
                 align-items: space-between;
                 gap: 1vw;
-
+                text-align: justify;
+                @include respond-to(small) {
+                    gap: 16px;
+                }
 
                 svg{
                     width: 32px;
                     height: auto;
+                    @include respond-to(small) {
+                        width: 28px;
+                    }
                 }
 
                 p{
                     font-weight: 200;
                     font-size: 18px;
                     margin: 0;
+
+                    @include respond-to(small) {
+                        font-size: 16px;
+                    }
                 }
             }
 
