@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, OnDestroy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { PortfolioService } from '../../../services/portfolio.service'; 
 import { Subscription } from 'rxjs';
@@ -16,13 +16,14 @@ export class AtfComponent implements AfterViewInit, OnDestroy  {
   currentLang!: string;
   private subscription!: Subscription;
 
-  constructor(private portfolioService: PortfolioService) {
+  constructor(private portfolioService: PortfolioService, private cdRef: ChangeDetectorRef) {
   }
 
   ngAfterViewInit() {
     // Abonniere die Sprachänderung, um aktuelle Sprache sofort anzuwenden
     this.subscription = this.portfolioService.currentLanguage$.subscribe(lang => {
       this.currentLang = lang;
+      this.cdRef.detectChanges();
     });
   }
 
