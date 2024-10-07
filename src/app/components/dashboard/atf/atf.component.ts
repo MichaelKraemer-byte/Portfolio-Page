@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { PortfolioService } from '../../../services/portfolio.service'; 
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-atf',
@@ -11,23 +12,24 @@ import { PortfolioService } from '../../../services/portfolio.service';
   styleUrl: './atf.component.scss',
 })
 
-export class AtfComponent implements OnInit, AfterViewInit {
+export class AtfComponent implements AfterViewInit, OnDestroy  {
   currentLang!: string;
+  private subscription!: Subscription;
 
-  constructor(private portfolioService: PortfolioService) {}
+  constructor(private portfolioService: PortfolioService) {
+  }
 
-  ngOnInit() {
+  ngAfterViewInit() {
     // Abonniere die Sprachänderung, um aktuelle Sprache sofort anzuwenden
-    this.portfolioService.currentLanguage$.subscribe(lang => {
+    this.subscription = this.portfolioService.currentLanguage$.subscribe(lang => {
       this.currentLang = lang;
     });
   }
 
-  ngAfterViewInit() {
-    window.onload = () => {
-      requestAnimationFrame(() => {
-        this.currentLang = this.portfolioService.getLanguageFromLocalStorage();
-      });
-    };
+  ngOnDestroy() {
+    // Beim Zerstören der Komponente das Abo beenden
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }
