@@ -248,12 +248,12 @@ code {
   animation: infinite-loop-de 15.6s infinite linear;
 }
 
-@keyframes infinite-loop {
 
+
+@keyframes infinite-loop {
   from {
     transform: translateX(2.7%);
  }
-
   to {
       transform: translateX(-100%);
   }
