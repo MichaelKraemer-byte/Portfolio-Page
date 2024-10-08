@@ -52,9 +52,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class ModalComponent {
 
-
   constructor(private sanitizer: DomSanitizer) {}
-
 
   @Input() project: Project | null = null;
   @Input() projects: Project[] = [];

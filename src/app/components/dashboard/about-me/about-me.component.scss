@@ -1,7 +1,7 @@
 $breakpoints: (
   small: 600px,
-  medium: 900px,
-  large: 1200px,
+  medium: 1150px,
+  large: 1400px,
   XL: 1660px,
 );
 
@@ -16,30 +16,30 @@ $breakpoints: (
 }
 
 .about-me-section {
-    height: 100vh;
     box-sizing: border-box;
     display: flex;
     padding: 144px 112px 144px 112px;
     align-items: center;
     justify-content: center;
-    gap: 9vw;    
+    gap: 144px;
     z-index: 1;
     position: relative;
 
     @include respond-to(large) {
         padding: 100px 64px 100px 64px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
     @include respond-to(medium) {
         padding: 100px 32px 100px 32px;
         flex-direction: column;
-        gap: 2vh;
-        align-items: unset;
-        justify-content: unset;
-    }    
+        gap: 40px;
+    }
+
     @include respond-to(small) {
         padding: 100px 16px 100px 16px;
-        gap: 24px;
-
+        flex-direction: column;
     }
 
 
@@ -47,43 +47,50 @@ $breakpoints: (
     .img-and-svg-container{
         height: auto;
         width: 100%;
-        flex: 1;
         max-width: 600px;
-
-        @include respond-to(small) {
+        
+        @include respond-to(large){
             position: relative;
+            width: fit-content;
         }
-
 
         .imgWrapper{
             display: flex;
-            justify-content: end;
+            justify-content: center;
             position: relative;
-            flex: 1;
+            height: 100%;
+            width: 100%;
 
             img{
                 width: 100%;
+                max-width: 600px;
                 height: auto;
                 z-index: 1;
                 position: absolute;
                 border-radius: 30px;
                 transform: translate(8%, -6%);
-                @include respond-to(small) {
+                
+                @include respond-to(large){
+                    max-width: 400px;
+                    transform: translate(8%, 19%);
+                }
+                @include respond-to(medium) {
                     position: relative;
-                    transform: none;
-                    z-index: 0;
-                    flex: 1;
+                    transform: translate(0%, 0%);
                 }
             }        
         }
 
         svg{
+            height: 600px;
             width: 100%;
-            height: auto;
             z-index: 0;
             position: relative;
             border-radius: 40px;
-            @include respond-to(small) {
+            @include respond-to(large) {
+                max-width: 400px;
+            }
+            @include respond-to(medium) {
                 display: none;
             }
         }
@@ -99,7 +106,7 @@ $breakpoints: (
     width: 100%;
     max-width: 600px;
     height: 100%;
-    @include respond-to(small) {
+    @include respond-to(large) {
         justify-content: unset;
     }
 
@@ -110,8 +117,14 @@ $breakpoints: (
             background-color: rgba(61, 207, 183, 0.10);
             border: 1px solid #3dcfb6;
             border-radius: 30px;
+            @include respond-to(large) {
+                padding: 32px 64px 32px 64px;
+            }
+            @include respond-to(medium) {
+                padding: 24px 32px 24px 32px;
+            }
             @include respond-to(small) {
-                padding: 16px 20px 16px 20px;
+                padding: 27px 32px 27px 32px;
             }
         
             .subtitle {
@@ -121,7 +134,7 @@ $breakpoints: (
                 color: #3dcfb6;
                 margin: 0;
                 @include respond-to(small) {
-                    font-size: 56px;
+                    font-size: clamp(42px, 2.6em, 64px);
                     letter-spacing: -3%;
                     line-height: 44.8px;
                 }
@@ -134,7 +147,9 @@ $breakpoints: (
         font-size: 1.6rem;
         margin-bottom: 20px;
         letter-spacing: 3px;
-
+            @include respond-to(large) {
+            margin-top: 0px;
+            }
             @include respond-to(small) {
             font-size: 18px;
             }

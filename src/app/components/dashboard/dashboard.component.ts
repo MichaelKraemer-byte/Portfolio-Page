@@ -8,6 +8,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { ContactComponent } from './contact/contact.component';
 import { ModalComponent } from './modal/modal.component';
 import { Project } from '../../models/project.interface';
+import { HeaderModalComponent } from '../../shared/header-modal/header-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,7 @@ import { Project } from '../../models/project.interface';
     TestimonialsComponent,
     ContactComponent,
     TestimonialsComponent,
-    ModalComponent
+    ModalComponent,
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],

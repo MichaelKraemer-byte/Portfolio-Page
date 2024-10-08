@@ -5,6 +5,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CursorEffektComponent } from './shared/cursor-effekt/cursor-effekt.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { HeaderModalComponent } from './shared/header-modal/header-modal.component';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +19,21 @@ import { TranslateModule } from '@ngx-translate/core';
     FooterComponent,
     CursorEffektComponent,
     TranslateModule,
+    HeaderModalComponent
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
 
+  modalIsOpen: boolean = false;
+
+  openHeaderModal(){
+    document.body.style.overflow = 'hidden'; 
+    this.modalIsOpen = true;
+  }
+
+  closeHeaderModal(){
+    this.modalIsOpen = false;
+  }
 }

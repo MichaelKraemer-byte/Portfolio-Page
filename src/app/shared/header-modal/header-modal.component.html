@@ -1,0 +1,24 @@
+<div   
+class="grey-background" 
+
+[@fadeAnimation]="modalIsOpen ? 'open' : 'closed' "
+
+(click)="closeModal()">
+</div>
+
+
+<div class="menu-container" [@fadeAnimation]="modalIsOpen ? 'open' : 'closed' ">
+    <a href="/#about" (click)="closeModal()" class="link">{{ 'header.aboutLink' | translate }}<span>•</span></a>
+    <a href="/#skills" (click)="closeModal()" class="link">{{ 'header.skillsLink' | translate }}<span>•</span></a>
+    <a href="/#projects" (click)="closeModal()" class="link">{{ 'header.projectsLink' | translate }}<span>•</span></a>
+    
+    <div class="switch">
+        <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" 
+          [checked]="currentLanguage === 'de'" 
+          (change)="switchLanguage()">
+        <label for="language-toggle">
+        </label>
+        <span class="on">EN</span>
+        <span class="off">DE</span>
+    </div>
+</div>

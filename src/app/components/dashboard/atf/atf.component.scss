@@ -36,6 +36,10 @@ $breakpoints: (
         margin-bottom: 12px;
         margin-top: 0px;
         z-index: 1;
+        @include respond-to(medium) {
+          font-size: clamp(32px, 5.7vw, 48px);
+          margin-bottom: 32px;
+        }
         @include respond-to(small) {
           font-size: 22px;
         }
@@ -46,6 +50,10 @@ $breakpoints: (
         margin-top: 0px;
         z-index: 1;
         font-weight: 700;
+        @include respond-to(medium) {
+          font-size: clamp(40px, 9vw, 64px);
+          margin-bottom: 32px;
+        }
         @include respond-to(small) {
           font-size: 36px;
           margin-bottom: 32px;
@@ -115,7 +123,6 @@ button {
   cursor: pointer;
   border-radius: 100px;
   font-size: 18px;
-
   @include respond-to(small) {
     padding:13px 24px 13px 24px;
     border: 1px solid white;
@@ -134,6 +141,10 @@ button {
     bottom: 0;
     right: 96px;
     left: 96px;
+    @include respond-to(medium) {
+      right: 32px;
+      left: 32px;
+    }
     @include respond-to(small) {
       right: 4px;
       left: 16px;
@@ -158,8 +169,6 @@ button {
             align-items: center;
             justify-content: center;
         }
-
-
     }
 
     .right-string-container{

@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PortfolioService } from '../../services/portfolio.service';  // Importiere den Service
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
@@ -11,7 +11,8 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   imports: [
     TranslateModule, 
     CommonModule,
-    RouterLink  
+    RouterLink,
+    CommonModule,
   ],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
@@ -19,9 +20,15 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class HeaderComponent implements OnInit {
   currentLanguage: string = 'en';
 
+  @Output() openHeaderModalEvent =  new EventEmitter<void>();
+
   constructor(public translate: TranslateService, private portfolioService: PortfolioService) {
     translate.addLangs(['en', 'de']);
     translate.setDefaultLang('en');
+  }
+
+  openModal(){
+    this.openHeaderModalEvent.emit();
   }
 
   ngOnInit() {

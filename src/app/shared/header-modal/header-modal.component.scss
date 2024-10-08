@@ -1,0 +1,182 @@
+.grey-background {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.505);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transition: z-index 500ms ease-in-out; 
+}
+
+.menu-container {
+    position: fixed;
+    z-index: 4;
+    right: 16px;
+    top: 32px;
+    border: 1px solid #3dcfb6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+    gap: 24px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    padding: 40px 72px 40px 72px;
+    background: linear-gradient(25deg, rgba( 27, 27, 27, 1) 40%, rgba(8,70,59,1) 100%);
+
+    a {
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        font-family: 'Fira Code';
+    }
+  }
+
+  .link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color  0.125s ease-in-out;
+    span{
+      font-size: 24px;
+      position: absolute;
+      margin-top: 16px;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.125s ease-in-out;
+  
+    }
+  
+    &:hover{
+      color: #3CDFB6 !important;
+      span{
+        opacity: 1;
+        visibility: visible;
+        position: absolute;
+        color: #3CDFB6;
+      }    
+    }
+  
+  }
+  
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    border: 1px solid #3CDFB6;
+    border-radius: 100px;
+    transition: border 0.125s ease-in-out;
+  
+    &:hover {
+      border: 1px solid white;
+    }
+    &:hover > span.off,
+    &:hover input.check-toggle-round-flat:checked ~ .on {
+      color: #3CDFB6 ;
+    }
+  }
+    
+    .switch > span {
+      position: absolute;
+      top: 9px;
+      pointer-events: none;
+      font-family: 'Karla', 'Helvetica', Arial, sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      text-transform: uppercase;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, .06);
+      width: 50%;
+      text-align: center;
+      transition: color 0.125s ease-in-out;
+    }
+    
+    input.check-toggle-round-flat:checked ~ .off {
+      color: white;
+    }
+    
+    input.check-toggle-round-flat:checked ~ .on {
+      color: #266258;
+    }
+    
+    .switch > span.on {
+      left: 0;
+      padding-left: 2px;
+      color: white;
+    }
+    
+    .switch > span.off {
+      right: 0;
+      padding-right: 4px;
+      color: #266258;
+    }
+    
+    .check-toggle {
+      position: absolute;
+      margin-left: -9999px;
+      visibility: hidden;
+    }
+    .check-toggle + label {
+      display: block;
+      position: relative;
+      cursor: pointer;
+      outline: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    input.check-toggle-round-flat + label {
+      padding: 2px;
+      width: 97px;
+      height: 35px;
+      background-color: transparent;
+      -webkit-border-radius: 60px;
+      -moz-border-radius: 60px;
+      -ms-border-radius: 60px;
+      -o-border-radius: 60px;
+      border-radius: 60px;
+    }
+  
+    input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
+      display: block;
+      position: absolute;
+      content: "";
+    }
+    
+    input.check-toggle-round-flat + label:before {
+      top: 2px;
+      left: 2px;
+      bottom: 2px;
+      right: 2px;
+      background-color: transparent;
+      
+      -moz-border-radius: 60px;
+      -ms-border-radius: 60px;
+      -o-border-radius: 60px;
+      border-radius: 60px;
+    }
+  
+    input.check-toggle-round-flat + label:after {
+      top: 4px;
+      left: 4px;
+      bottom: 4px;
+      width: 48px;
+      background-color: #3CDFB6;
+      -webkit-border-radius: 52px;
+      -moz-border-radius: 52px;
+      -ms-border-radius: 52px;
+      -o-border-radius: 52px;
+      border-radius: 52px;
+      -webkit-transition: margin 0.2s;
+      -moz-transition: margin 0.2s;
+      -o-transition: margin 0.2s;
+      transition: margin 0.2s;
+    }
+    
+    input.check-toggle-round-flat:checked + label:after {
+      margin-left: 44px;
+    }
+  

@@ -1,12 +1,42 @@
+$breakpoints: (
+  small: 600px,
+  medium: 1150px,
+  large: 1400px,
+  XL: 1660px,
+);
+
+@mixin respond-to($breakpoint) {
+  $max-width: map-get($breakpoints, $breakpoint); // Wert aus der Map abrufen
+
+  @if $max-width {
+    @media (max-width: $max-width) {
+      @content; // Die Inhalte, die in das Mixin übergeben werden
+    }
+  }
+}
+
 section{
-    height: 95vh;
+    height: auto;
     display: flex;
-    gap: 9vw;
-    padding: 144px 112px 144px 112px;
+    gap: 96px;    
+    padding: 0px 112px 144px 112px;
     box-sizing: border-box;
     position: relative;
-    justify-content: space-between;
-
+    justify-content: center;
+    @include respond-to(large) {
+      padding: 0px 64px 100px 64px;
+      align-items: center;
+      gap: 64px;
+    }
+    @include respond-to(medium) {
+      padding: 0px 32px 100px 32px;
+      flex-direction: column;
+      align-items: center;
+    }
+    @include respond-to(small) {
+      padding: 0px 16px 100px 16px;
+      gap: 40px;
+    }
 }
 
 @keyframes rotateBubble {
@@ -36,6 +66,11 @@ section{
     filter: blur(10vmax);
     left: 0;
     position: absolute;
+    @include respond-to(medium){
+      height: 100vmax;
+      translate: -100% -50%;
+      opacity: 0.15;
+    }
 }
 
 
@@ -63,23 +98,32 @@ letter-spacing: 3px;
     border: 1px solid #3dcfb6;
     border-radius: 30px;
 
+    @include respond-to(medium) {
+      padding: 27px 32px 27px 32px;
+    }
+
     .subtitle {
         font-size: 4.3rem;
         font-family: 'Fira Code';
         font-weight: 700;
         color: #3dcfb6;
         margin: 0;
+        
+        @include respond-to(small) {
+          font-size: clamp(38px, 3em, 64px);
+        }
+        @include respond-to(small) {
+          font-size: clamp(38px, 2em, 64px);
+        }
     }
-    .description-text{
-        font-size: 18px;
-        font-weight: 300;
-    }      
+    
 } 
     
 .question{
     font-size: 24px;
     font-family: 'Fira Code';
     color: white;
+    margin-top: 24px;
     span{
         color: #3dcfb6;
     }
@@ -88,11 +132,14 @@ letter-spacing: 3px;
 .description-text{
     font-size: 18px;
     font-weight: 300;
+    text-align: justify;
+    margin-bottom: 0px;
 }
 
 .answer{
     font-size: 16px;
     font-weight: 300;
+    text-align: justify;
 }
 
 
@@ -152,6 +199,9 @@ button {
   font-size: 18px;
   width: 160px;
   margin-top: 40px;
+  @include respond-to(medium) {
+    margin: 32px 0px 0px 0px;
+  }
 }
 
 h1 { font-weight: 400; }
@@ -164,11 +214,23 @@ code {
 .icon-section{
     display: flex;
     width: 100%;
+    max-width: 732px;
     flex-wrap: wrap;
     column-gap: 72px;
     row-gap: 40px;
     height: 100%;
     margin-top: 72px;
+    @include respond-to(medium) {
+      column-gap: 40px;
+      row-gap: 30px;
+      justify-content: center;
+      margin-top: 0px;
+    }
+    @include respond-to(small) {
+      column-gap: 20px;
+      row-gap: 20px;
+    }
+
 }
 
 svg{
@@ -189,6 +251,10 @@ svg{
     p {
         font-size: 18px;
         font-family: 'Fira Code';
+
+        @include respond-to(small){
+          font-size: 16px;
+        }
     }
 
 
@@ -196,6 +262,10 @@ svg{
     &:hover {
         .icon{
             transform: scale(1.125);
+            @include respond-to(small) {
+              width: 56px;
+              height: 56px;
+            }
         }
         .color-effekt{
             color: #37ffe1;

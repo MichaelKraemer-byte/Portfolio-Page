@@ -1,16 +1,50 @@
+$breakpoints: (
+  small: 600px,
+  medium: 900px,
+  large: 1200px,
+  XL: 1660px,
+);
+
+@mixin respond-to($breakpoint) {
+    $max-width: map-get($breakpoints, $breakpoint); // Wert aus der Map abrufen
+
+    @if $max-width {
+      @media (max-width: $max-width) {
+        @content; // Die Inhalte, die in das Mixin übergeben werden
+      }
+    }
+}
+
 section{
     position: relative;
-    height: 95vh;
+    height: auto;
     display: flex;
-    padding: 144px 112px 144px 112px;
+    padding: 0px 112px 144px 112px;
     box-sizing: border-box;
     justify-content: space-between;
+    @include respond-to(large) {
+        padding: 0px 64px 144px 64px;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-3%);
+      }
+    @include respond-to(medium) {
+        padding: 0px 32px 100px 32px;
+        width: 100%;
+      }
+    @include respond-to(small) {
+        padding: 0px 16px 100px 16px;
+
+    }
 }
 
 .projects{
     display: flex;
     flex-direction: column;
     width: 100%;
+    @include respond-to(large) {
+        width: auto;
+      }
 }
 
 .subtitle{
@@ -44,11 +78,16 @@ section{
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 1200px;
     font-size: 18px;
     border-bottom: 1px solid #3dcfb6;
     font-weight: 300;
     word-spacing: 1px;
     transition: background-color 0.125s ease-in-out;
+
+    @include respond-to(large) {
+        width: 90%;
+      }
 
     p, h3 {
         margin: 0px;
@@ -109,6 +148,10 @@ section{
     height: 100%;
     position: relative;
     margin-top: -24px;
+
+    @include respond-to(medium) {
+    display: none;      
+    }
 }
 
 

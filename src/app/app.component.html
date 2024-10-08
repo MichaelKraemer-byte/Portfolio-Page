@@ -1,5 +1,6 @@
 <app-cursor-effekt></app-cursor-effekt>
-<app-header></app-header>
+<app-header-modal (closeHeaderModalEvent)="closeHeaderModal()" [openModal]="modalIsOpen"></app-header-modal>
+<app-header (openHeaderModalEvent)="openHeaderModal()"></app-header>
 <main>
     <router-outlet></router-outlet>
 </main>
