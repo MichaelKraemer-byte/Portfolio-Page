@@ -79,6 +79,9 @@ color: #3dcfb6;
 font-size: 1.6rem;
 margin-bottom: 20px;
 letter-spacing: 3px;
+@include respond-to(small) {
+  font-size: 18px;
+}
 }   
 
 .description-wrapper{
@@ -109,11 +112,12 @@ letter-spacing: 3px;
         color: #3dcfb6;
         margin: 0;
         
-        @include respond-to(small) {
-          font-size: clamp(38px, 3em, 64px);
+        @include respond-to(medium) {
+          font-size: clamp(56px, 2.2em, 64px);
+
         }
         @include respond-to(small) {
-          font-size: clamp(38px, 2em, 64px);
+          font-size: clamp(37px, 2em, 64px);
         }
     }
     

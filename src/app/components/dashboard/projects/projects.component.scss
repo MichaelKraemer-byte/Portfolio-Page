@@ -1,7 +1,7 @@
 $breakpoints: (
   small: 600px,
-  medium: 900px,
-  large: 1200px,
+  medium: 1150px,
+  large: 1400px,
   XL: 1660px,
 );
 
@@ -26,7 +26,6 @@ section{
         padding: 0px 64px 144px 64px;
         justify-content: center;
         align-items: center;
-        transform: translateX(-3%);
       }
     @include respond-to(medium) {
         padding: 0px 32px 100px 32px;
@@ -34,7 +33,6 @@ section{
       }
     @include respond-to(small) {
         padding: 0px 16px 100px 16px;
-
     }
 }
 
@@ -53,6 +51,12 @@ section{
     font-weight: 700;
     color: #3dcfb6;
     margin: 0;
+    @include respond-to(medium) {
+        font-size: clamp(56px, 2.4em, 64px);
+    }
+    @include respond-to(small) {
+        font-size: clamp(42px, 2.6em, 64px);
+    }
 }
 
 .intro-line{
@@ -60,6 +64,13 @@ section{
     font-weight: 300;
     width: 60%;
     margin: 41px 0px 41px 0px;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+    @include respond-to(small) {
+        font-size: 16px;
+        margin: 24px 0px 32px 0px;
+    }
 }
 
 .content-section{
@@ -84,10 +95,17 @@ section{
     font-weight: 300;
     word-spacing: 1px;
     transition: background-color 0.125s ease-in-out;
+    box-sizing: border-box;
 
-    @include respond-to(large) {
-        width: 90%;
-      }
+
+    @include respond-to(small) {
+        padding: 42px 0px 42px 0px;
+        flex-direction: column;
+        align-items: start;
+        h3{
+            padding-bottom: 8px;
+        }
+    }
 
     p, h3 {
         margin: 0px;
@@ -120,6 +138,7 @@ section{
     align-items: center;
     gap: 16px;
 
+
     h3{
         font-size: 24px;
         font-weight: 700;
@@ -138,6 +157,9 @@ section{
     font-size: 1.6rem;
     margin-bottom: 20px;
     letter-spacing: 3px;
+    @include respond-to(small) {
+        font-size: 18px;
+    }
 }
 
 .image-section{
@@ -150,7 +172,7 @@ section{
     margin-top: -24px;
 
     @include respond-to(medium) {
-    display: none;      
+        display: none;      
     }
 }
 

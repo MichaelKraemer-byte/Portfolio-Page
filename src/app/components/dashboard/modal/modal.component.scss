@@ -1,3 +1,20 @@
+$breakpoints: (
+  small: 600px,
+  medium: 1150px,
+  large: 1400px,
+  XL: 1660px,
+);
+
+@mixin respond-to($breakpoint) {
+    $max-width: map-get($breakpoints, $breakpoint); // Wert aus der Map abrufen
+
+    @if $max-width {
+      @media (max-width: $max-width) {
+        @content; // Die Inhalte, die in das Mixin übergeben werden
+      }
+    }
+}
+
 .grey-background {
     height: 100%;
     width: 100%;
@@ -31,6 +48,19 @@
     opacity: 1;
     padding: 80px;
     box-sizing: border-box;
+    @include respond-to(medium) {
+        padding: 75px 40px 95px 40px;
+        flex-direction: column;
+        height: 97vh;
+        width: 95vw;
+        border-radius: 20px;
+    }
+    @include respond-to(small) {
+        padding: 65px 12px 95px 12px;
+        width: 97vw;
+        justify-content: space-between;
+    }
+
 }
 
 .project-content{
@@ -39,6 +69,11 @@
     justify-content: center;
     width: 100%;
     gap: 5vw;
+    @include respond-to(medium) {
+        flex-direction: column-reverse;
+        gap: 8px;
+    }
+
 }
 
 
@@ -50,6 +85,13 @@
     font-weight: 700;
     color: #3dcfb6;
     line-height: 1;
+    @include respond-to(medium) {
+        flex-direction: column-reverse;
+        font-size: 40px;
+    }
+    @include respond-to(small) {
+        font-size: 24px;
+    }
 }
 
 .title{
@@ -57,6 +99,10 @@
     font-weight: 700;
     font-size: 4.5rem;
     margin: 0px;
+    @include respond-to(medium) {
+        flex-direction: column-reverse;
+        font-size: 38px;
+    }
 }
 
 .subtitle{
@@ -66,12 +112,21 @@
     font-family: 'Karla', Arial, Helvetica, sans-serif;
     font-family: 'Fira Code';
     margin: 0px;
+    @include respond-to(medium) {
+        font-size: 20px;
+    }
 }
 
 .description {
     font-size: 1.2rem;
     font-weight: 300;
     margin: 0px;
+    @include respond-to(medium) {
+        font-size: 18px;
+    }
+    @include respond-to(medium) {
+        font-size: 16px;
+    }
 }
 
 .project-img{
@@ -80,12 +135,19 @@
     height: fit-content;
     object-fit: contain;
     object-position: left;
+    @include respond-to(medium) {
+        max-width: 300px;
+    }
+    @include respond-to(small) {
+        max-width: 220px;
+    }
 }
 
 .left-side,
 .right-side{
     width: 100%;
     flex: 1;
+    position: relative;
 }
 
 .left-side{
@@ -98,7 +160,12 @@
     display: flex;
     flex-direction: column;
     gap: 3.5vh;
-    
+    @include respond-to(medium) {
+        gap: 12px;
+    }
+    @include respond-to(small) {
+        gap: 8px;
+    }
 }
 
 .right-side{
@@ -106,14 +173,25 @@
     align-items: end;
     flex-direction: column;
     justify-content: space-between;
+    @include respond-to(medium) {
+        align-items: center;
+    }
 }
 
 .closeX-container{
+    position: absolute;
+
+    top: 32px;
+    right: 32px;
     transition: transform 0.075s ease-in-out, filter 0.075s ease-in-out;
     &:hover{
         filter: brightness(0) saturate(100%) invert(74%) sepia(9%) saturate(3080%) hue-rotate(118deg)  contrast(71%);
         transform: scale(1.4);
         cursor: pointer;
+    }
+    @include respond-to(medium) {
+        right: 24px;
+        top: 24px;
     }
 }
 
@@ -129,6 +207,9 @@
     display: flex;
     align-items: center;
     gap: 16px;
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
 
     .nextButtonSVG{
         transition: transform 0.125s ease-in-out, filter 0.1s ease-in-out;
@@ -142,6 +223,13 @@
             transform: translateX(50%);
             filter: brightness(5);
         }
+    }
+    @include respond-to(medium) {
+        bottom: 24px;
+        right: 16px;
+    }
+    @include respond-to(small) {
+        font-size: 16px;
     }
 }
 
@@ -161,6 +249,7 @@
     text-decoration: none;
     width: fit-content;
     box-sizing: border-box;
+    
 
     .ankerSVG{
         transition: transform 0.125s ease-in-out;
@@ -177,6 +266,13 @@
     }
     &:not(:hover) .ankerSVG {
         animation: moveOutArc 0.125s ease-in-out forwards; /* Zurück zur Ausgangsposition */
+    }
+
+    @include respond-to(medium) {
+        padding: 13px 24px 13px 24px;
+    }
+    @include respond-to(small) {
+        font-size: 16px;
     }
 }
 
@@ -207,12 +303,16 @@
 .link-container{
     display: flex;
     gap: 2vw;
+    @include respond-to(small) {
+        gap: 16px
+    }
 }
 
 .technology-list {
     display: flex;
     flex-wrap: wrap; /* Falls es zu viele Technologien gibt, können sie umgebrochen werden */
     gap: 16px; /* Abstand zwischen den einzelnen Technologien */
+
   }
   
 .technology-item {
