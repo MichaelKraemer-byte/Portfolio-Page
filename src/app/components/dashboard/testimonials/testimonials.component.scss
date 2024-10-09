@@ -1,3 +1,20 @@
+$breakpoints: (
+  small: 600px,
+  medium: 1150px,
+  large: 1400px,
+  XL: 1660px,
+);
+
+@mixin respond-to($breakpoint) {
+    $max-width: map-get($breakpoints, $breakpoint); // Wert aus der Map abrufen
+
+    @if $max-width {
+      @media (max-width: $max-width) {
+        @content; // Die Inhalte, die in das Mixin übergeben werden
+      }
+    }
+}
+
 section{
     position: relative;
     height: auto;
@@ -8,6 +25,15 @@ section{
     align-items: center;
     overflow: hidden;
     gap: 6%;
+    @include respond-to(large) {
+        padding: 0px 64px 144px 64px;
+    }
+    @include respond-to(medium) {
+        padding: 0px 32px 100px 32px;
+    }
+    @include respond-to(small) {
+        padding: 0px 16px 100px 16px;
+    }
 }
 
 .title{
@@ -15,6 +41,12 @@ section{
     color: #3dcfb6;
     font-family: 'Fira Code';
     margin: 0px;
+    text-align: center;
+    margin-bottom: 48px;
+    @include respond-to(medium) {
+        font-size: 24px;
+        margin-bottom: 32px;
+    }
 }
 
 .slide-section{
@@ -26,12 +58,27 @@ section{
 }
 
 
+
+
 .comment, span {
     font-weight: 300;
     font-size: 1.3rem;
     letter-spacing: 0.5px;
     margin: 0px;
     line-height: 1.2;
+    
+    @include respond-to(medium) {
+        line-height: unset;
+    }
+}
+
+.comment {
+    @include respond-to(medium) {
+        font-size: 18px;
+        align-self: center;
+        padding-bottom: 16px;
+        box-sizing: border-box;
+    }
 }
 
 .testimonial-wrapper{
@@ -39,6 +86,7 @@ section{
 }
 
 .testimonial-container {
+    text-align: justify;
     padding: 40px;
     width: 45vw;
     height: 30vh;
@@ -50,7 +98,22 @@ section{
     flex-direction: column;
     position: absolute;
     transition: transform 0.2s ease-in-out, left 0.2s ease-in-out, opacity 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    ;
+    @include respond-to(large) {
+        height: 35vh;
+        width: 52.5vw;
+        padding: 40px;
+        display: grid;
+    }
+    @include respond-to(medium) {
+        height: 40vh;
+        width: 60vw;
+        padding: 40px;
+    }
+    @include respond-to(small) {
+        height: 60vh;
+        width: 80vw;
+        padding: 32px;
+    }
 }
 
 .fade {
@@ -64,6 +127,15 @@ section{
     left: 0;
     transform: translateX(-50%) scale(0.9);
     z-index: 0;
+    @include respond-to(large) {
+        transform: translateX(-80%);
+    }
+    @include respond-to(medium) {
+        transform: translateX(-85%);
+    }
+    @include respond-to(small) {
+        transform: translateX(-100%);
+    }
 }
 
 .current {
@@ -80,6 +152,15 @@ section{
     left: 100%;
     transform: translateX(-50%) scale(0.9);
     z-index: 0;
+    @include respond-to(large) {
+        transform: translateX(-20%);
+    }
+    @include respond-to(medium) {
+        transform: translateX(-15%);
+    }
+    @include respond-to(small) {
+        transform: translateX(0%);
+    }
 }
 
 .colored{
@@ -99,16 +180,35 @@ section{
     }
     span{
         white-space: nowrap;
+        @include respond-to(small) {
+            font-size: 16px;
+        }
+    }
+    @include respond-to(medium) {
+        align-items: center;
     }
 }
 
 .quotes{
-    top: 29%;
+    top: 5%;
     font-size: 120px;
     position: absolute;
-    left: 20%;
+    left: 23%;
     transform: translate(50%, 50%);
     z-index: 2;
+    @include respond-to(large) {
+        left: 20%;
+        top: 5%;
+    }
+    @include respond-to(medium) {
+        left: 12%;
+        top: 4%;
+        height: 48px;
+    }
+    @include respond-to(small) {
+        left: -32px;
+        top: 8%;
+    }
 }
 
 .button-container{
@@ -116,6 +216,15 @@ section{
     align-items: center;
     justify-content: space-between;
     gap: 24px;
+    @include respond-to(large) {
+        margin-top: 8vh;
+    }
+    @include respond-to(medium) {
+        margin-top: 12vh;
+    }
+    @include respond-to(small) {
+        margin-top: 32vh;
+    }
 
     span{
         font-size: 3rem;
@@ -185,6 +294,10 @@ section{
     height: 100%;
     background: linear-gradient(to left, rgb(27 27 27 / 0%) 0%, rgb(27 27 27) 100%),;    
     z-index: 1;
+    @include respond-to(small) {
+        top: 6vh;
+        height: 80%;
+    }
 }
 
 .rightFadeBar{
@@ -195,5 +308,9 @@ section{
     height: 100%;
     background: linear-gradient(to right, rgb(27 27 27 / 0%) 0%, rgb(27 27 27) 100%);    
     z-index: 1;
+    @include respond-to(small) {
+        top: 10vh;
+        height: 80%;
+    }
 }
 
