@@ -1,3 +1,20 @@
+$breakpoints: (
+  small: 600px,
+  medium: 1150px,
+  large: 1400px,
+  XL: 1660px,
+);
+
+@mixin respond-to($breakpoint) {
+    $max-width: map-get($breakpoints, $breakpoint); // Wert aus der Map abrufen
+
+    @if $max-width {
+      @media (max-width: $max-width) {
+        @content; // Die Inhalte, die in das Mixin übergeben werden
+      }
+    }
+}
+
 footer{
     display: flex;
     justify-content: space-between;
@@ -7,6 +24,13 @@ footer{
     z-index: 2;
     width: 100%;
     position: relative;
+    @include respond-to(medium) {
+      padding: 0px 16px 25px 16px;
+      font-size: 16px;
+    }
+    @include respond-to(small) {
+      padding: 0px 16px 80px 16px;
+    }
 }
 
 .logo-container{
@@ -15,6 +39,9 @@ footer{
     gap: 8px;
     text-decoration: none;
     color: #FFFFFF;
+    @include respond-to(small) {
+      gap: 4px;
+    }
 
     .logo-name{
         display: flex;
@@ -26,14 +53,24 @@ footer{
             letter-spacing: 0px;
             font-weight: 900;
             font-family: 'Fira Code';
+            @include respond-to(small) {
+              font-size: 20px;
+            }
         }
         .surnameSpan{
           margin-top: -12px;
+          @include respond-to(small) {
+            padding-top: 6px;
+          }
         }
     }
 
     svg {
       transition: fill 0.175s ease-in-out, stroke 0.175s ease-in-out, stroke-width 0.175s ease-in-out;
+      @include respond-to(small) {
+        width: 40px;
+        height: auto;
+      }
     }
 
     &:hover {
@@ -55,6 +92,14 @@ h4{
   color: #3CDFB6;
   font-family: 'Fira Code';
   font-weight: 400;
+  @include respond-to(small) {
+    position: absolute;
+    bottom: 25px;
+    margin: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
 }
 
 .footer-right-box{
@@ -63,6 +108,8 @@ h4{
   font-weight: 300;
   gap: 8px;
   text-align: end;
+  align-items: end;
+  white-space: nowrap;
 
     a{
     text-decoration: none;

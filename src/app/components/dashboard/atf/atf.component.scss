@@ -324,6 +324,7 @@ button {
     right: 0;
     box-sizing: border-box;
     backdrop-filter: blur(2px);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 13px 27px -5px, rgba(0, 0, 0, 0.1) 0px 8px 3px -8px;
 
     .marqueeText {
       display: flex;

@@ -1,3 +1,21 @@
+$breakpoints: (
+  small: 600px,
+  medium: 1150px,
+  large: 1400px,
+  XL: 1660px,
+);
+
+@mixin respond-to($breakpoint) {
+  $max-width: map-get($breakpoints, $breakpoint);
+
+  @if $max-width {
+    @media (max-width: $max-width) {
+      @content; 
+    }
+  }
+}
+
+
 section{
     position: relative;
     display: flex;
@@ -8,7 +26,17 @@ section{
     max-width: 1024px;
     left: 50%;
     transform: translateX(-50%);
-    text-align: start;
+    text-align: justify;
+    @include respond-to(large) {
+        padding: 144px 64px 144px 64px;
+        width: 100%;
+      }
+    @include respond-to(medium) {
+        padding: 100px 32px 100px 32px;
+      }
+    @include respond-to(small) {
+        padding: 100px 16px 100px 16px;
+    }
 }
 
 a{
