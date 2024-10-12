@@ -344,6 +344,7 @@ button {
 .animation-en {
   animation: infinite-loop 14s infinite linear;
   @include respond-to(small) {
+    animation: none;
     animation: infinite-loop 13s infinite linear;
   }
 }
@@ -351,7 +352,8 @@ button {
 .animation-de {
   animation: infinite-loop-de 15.6s infinite linear;
   @include respond-to(small) {
-    animation: infinite-loop 14.6s infinite linear;
+    animation: none;
+    animation: infinite-loop-de 14.6s infinite linear;
   }
 }
 
