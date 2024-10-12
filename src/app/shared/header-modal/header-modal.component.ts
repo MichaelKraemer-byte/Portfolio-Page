@@ -80,7 +80,7 @@ export class HeaderModalComponent {
   }
 
   switchLanguage() {
-    const toggle = document.getElementById('language-toggle') as HTMLInputElement;
+    const toggle = document.getElementById('mobile-language-toggle') as HTMLInputElement;
     const isChecked = toggle.checked; 
     this.currentLanguage = isChecked ? 'de' : 'en'; 
     localStorage.setItem('language', this.currentLanguage); 

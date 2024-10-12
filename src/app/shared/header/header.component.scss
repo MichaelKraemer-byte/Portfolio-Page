@@ -76,6 +76,9 @@ header{
     display: flex;
     align-items: center;
     gap: 32px;
+    @include respond-to (large) {
+      gap: 16px;
+    }
     a {
         color: white;
         font-size: 20px;
@@ -89,6 +92,8 @@ header{
   flex-direction: column;
   align-items: center;
   transition: color  0.125s ease-in-out;
+  white-space: nowrap;
+
   span{
     font-size: 24px;
     position: absolute;
@@ -108,10 +113,10 @@ header{
       color: #3CDFB6;
     }    
   }
-
 }
 
 
+  
 .switch {
   position: relative;
   display: inline-block;

@@ -50,6 +50,10 @@ $breakpoints: (
         margin-top: 0px;
         z-index: 1;
         font-weight: 700;
+        @include respond-to(large) {
+          font-size: clamp(48px, 9vw, 64px);
+          margin-bottom: 32px;
+        }
         @include respond-to(medium) {
           font-size: clamp(40px, 9vw, 64px);
           margin-bottom: 32px;
