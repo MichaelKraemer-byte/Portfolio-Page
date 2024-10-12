@@ -5,13 +5,13 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 4;
     transition: z-index 500ms ease-in-out; 
 }
 
 .menu-container {
     position: fixed;
-    z-index: 4;
+    z-index: 5;
     right: 16px;
     top: 32px;
     border: 1px solid #3dcfb6;

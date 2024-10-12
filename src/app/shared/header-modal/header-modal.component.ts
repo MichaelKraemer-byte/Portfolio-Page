@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
     trigger('fadeAnimation', [
       state('open', style({
         opacity: 1,
-        zIndex: 3,
+        zIndex: 4,
         display: 'flex',
       })),
       state('closed', style({

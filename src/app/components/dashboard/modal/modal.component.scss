@@ -22,13 +22,13 @@ $breakpoints: (
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 4;
     transition: z-index 500ms ease-in-out; 
 }
 
 .popup {
     position: fixed;
-    z-index: 4;
+    z-index: 5;
   }
 
 
@@ -40,7 +40,7 @@ $breakpoints: (
     border-radius: 50px;
     border: 1px solid #3dcfb6;
     width: 85vmax;
-    height: 75vh;
+    height: 85vh;
     background: linear-gradient(38deg, rgb(27, 27, 27) 33%, rgb(8, 70, 59) 110%);
     top: 50%;
     left: 50%;
@@ -56,14 +56,14 @@ $breakpoints: (
         border-radius: 20px;
     }
     @include respond-to(medium) {
-        padding: 75px 40px 95px 40px;
+        padding: 75px 40px 75px 40px;
         flex-direction: column;
         height: 97vh;
         width: 95vw;
         border-radius: 20px;
     }
     @include respond-to(small) {
-        padding: 65px 12px 95px 12px;
+        padding: 65px 12px 65px 12px;
         width: 97vw;
         justify-content: space-between;
     }
@@ -76,7 +76,7 @@ $breakpoints: (
     justify-content: center;
     width: 100%;
     height: 100%;
-    gap: 5vw;
+    gap: 40px;
     @include respond-to(large) {
         gap: 24px;
         justify-content: space-between;
@@ -152,16 +152,32 @@ $breakpoints: (
 .right-side{
     display: flex;
     width: 100%;
+    align-items: center;
+    height: 100%;
+}
+
+.img-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+    min-width: 50%;
+    @include respond-to(medium) {
+        width: 100%;
+    }
 }
 
 .project-img{
     display: flex;
     justify-content: center;
     width: auto;
-    height: auto;
+    height: fit-content;
     border-radius: 30px;
-    object-fit: contain;
+    object-fit: cover;
     object-position: left;
+    max-width: 500px;
+
     @include respond-to(large) {
         max-width: 500px;
     }
@@ -175,7 +191,6 @@ $breakpoints: (
     }
 }
 
-
 .left-side{
     width: 100%;
     position: relative;
@@ -183,8 +198,12 @@ $breakpoints: (
     display: flex;
     align-items: start;
     flex-direction: column;
+    height: 100%;
+    justify-content: center;
     @include respond-to(medium) {
         flex: none;
+        height: auto;
+        justify-content: unset;
     }
 }
 
@@ -273,6 +292,7 @@ $breakpoints: (
     text-decoration: none;
     width: fit-content;
     box-sizing: border-box;
+    white-space: nowrap;
     
 
     .ankerSVG{

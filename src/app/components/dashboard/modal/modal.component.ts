@@ -16,7 +16,7 @@ import { TranslateModule } from '@ngx-translate/core';
     trigger('fadeAnimation', [
       state('open', style({
         opacity: 1,
-        zIndex: 3,
+        zIndex: 10,
         display: 'block',
       })),
       state('closed', style({

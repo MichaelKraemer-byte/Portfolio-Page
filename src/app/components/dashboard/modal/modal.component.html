@@ -37,7 +37,9 @@ class="grey-background"
         </div>
       </div>
 
-      <img class="project-img" src="{{project?.img}}" alt="Project picture of: {{project?.title}}">
+      <div class="img-container">
+        <img class="project-img" src="{{project?.img}}" alt="Project picture of: {{project?.title}}">
+      </div>
 
       <div (click)="close()" class="closeX-container">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">

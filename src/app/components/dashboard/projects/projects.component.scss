@@ -40,9 +40,6 @@ section{
     display: flex;
     flex-direction: column;
     width: 100%;
-    @include respond-to(large) {
-        width: auto;
-      }
 }
 
 .subtitle{
@@ -55,7 +52,7 @@ section{
         font-size: clamp(56px, 2.4em, 64px);
     }
     @include respond-to(small) {
-        font-size: clamp(42px, 2.6em, 64px);
+        font-size: clamp(28px, 2em, 64px);
     }
 }
 
@@ -174,6 +171,10 @@ section{
     position: relative;
     margin-top: -24px;
 
+    @include respond-to(large) {
+        overflow: hidden;
+        flex: 0.6;    
+    }
     @include respond-to(medium) {
         display: none;      
     }

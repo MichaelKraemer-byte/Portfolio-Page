@@ -33,7 +33,7 @@
         "answerText": "Zögern Sie nicht, mich zu kontaktieren. Ich freue mich darauf, mein Wissen zu erweitern.",
         "contactButton": "Lass uns reden",
         "specialInterestPartOne": "Ich habe ein besonderes",
-        "specialInterestPartTwo": "Interesse daran, zu lernen"
+        "specialInterestPartTwo": "Interesse für"
     },
     "projects": {
         "introTitle": "Portfolio",
@@ -60,14 +60,14 @@
         "lStanislav": "Als Mitfrontend-Entwickler bewundere ich Michael Krämers Engagement für sauberen, effizienten Code und innovatives Design. Sein kooperativer Geist und seine Leidenschaft für die Schaffung nahtloser Benutzererfahrungen sind unerreicht."
     },
     "contact": {
-        "introTitle": "Kontaktieren Sie mich",
+        "introTitle": "Kontaktiere mich",
         "title": "Lass uns zusammenarbeiten",
         "introQuestion": "Haben Sie ein Problem zu lösen?",
         "introText1": "Kontaktieren Sie mich über dieses Formular. Ich bin daran interessiert, von Ihnen zu hören, Ihre Ideen zu kennen und mit meiner Arbeit zu Ihren Projekten beizutragen.",
         "introText2": "Benötigen Sie einen Frontend-Entwickler?",
         "spanText": "Lass uns reden!",
         "inputName": {
-            "label": "Wie heißt du?",
+            "label": "Wie heißen Sie?",
             "placeholder": "Ihr Name hier",
             "error": "Ups! Es scheint, dass Ihr Name fehlt",
             "errorMessage": "Bitte geben Sie Ihren Namen ein"
@@ -90,7 +90,8 @@
             "labelPartTwo": " gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
             "errorMessage": "Bitte akzeptieren Sie die Datenschutzrichtlinie."
         },
-        "submitButton": "Hallo sagen ;)"
+        "submitButton": "Hallo sagen ;)",
+        "submitConfirmation": "Vielen Dank für Ihre Nachricht! Ihre Mitteilung wurde erfolgreich versendet, und ich werde mich so schnell wie möglich bei Ihnen melden."
     },
     "footer": {
         "jobTitle": "Web Entwickler",

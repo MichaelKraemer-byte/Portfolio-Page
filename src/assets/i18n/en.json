@@ -64,7 +64,7 @@
         "title": "Let's work together",
         "introQuestion": "Got a problem to solve?",
         "introText1": "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
-        "introText2": "Need a Frontend developer?",
+        "introText2": "Need a Frontend Developer?",
         "spanText": "Let's talk!",
         "inputName": {
             "label": "What's your name?",
@@ -90,7 +90,8 @@
             "labelPartTwo": " and agree to the processing of my data as outlined.",
             "errorMessage": "Please accept the privacy policy."
         },
-        "submitButton": "Say Hello ;)"
+        "submitButton": "Say Hello ;)",
+        "submitConfirmation": "Thank you for getting in touch! Your message has been successfully received, and I will respond as soon as possible."
     },
     "footer": {
         "jobTitle": "Web Developer",
@@ -185,8 +186,6 @@
       "subtitle": "Contact",
       "phone": "Phone",
       "source": "Source"
-
-
     }
 
 }

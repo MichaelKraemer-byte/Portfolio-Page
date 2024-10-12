@@ -36,6 +36,7 @@ section{
     @include respond-to(small) {
       padding: 0px 16px 100px 16px;
       gap: 40px;
+      overflow: hidden;
     }
 }
 
@@ -117,7 +118,7 @@ letter-spacing: 3px;
 
         }
         @include respond-to(small) {
-          font-size: clamp(37px, 2em, 64px);
+          font-size: clamp(28px, 2em, 64px);
         }
     }
     
@@ -215,6 +216,13 @@ code {
   font: inherit;
 }
 
+.icon{
+    @include respond-to(small) {
+      max-width: 56px; 
+      max-height: 56px;
+  }
+}
+
 .icon-section{
     display: flex;
     width: 100%;
@@ -265,7 +273,7 @@ svg{
 
     &:hover {
         .icon{
-            transform: scale(1.125);
+            transform: scale(1.2);
             @include respond-to(small) {
               width: 56px;
               height: 56px;
@@ -282,7 +290,7 @@ svg{
   position: relative;
   visibility: hidden;
   opacity: 0;
-  z-index: 4;  
+  z-index: 2;  
   transition: opacity 100ms ease-in-out, visibility 100ms ease-in-out,  transform 100ms ease-in-out;
 }
 
@@ -326,13 +334,14 @@ svg{
 
 
 .growth-wrapper{
+  
     &:hover{
 
       .popUp-wrapper{
         visibility: visible;
         opacity: 1;
         transform: scale(1.2);
-        z-index: 4;        
+        z-index: 2;        
       }
 
     }

@@ -11,7 +11,7 @@ import { Project } from '../../models/project.interface';
 import { HeaderModalComponent } from '../../shared/header-modal/header-modal.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-dashboard',
   standalone: true,
   imports: [
     CommonModule,

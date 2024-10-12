@@ -79,6 +79,12 @@ section{
         padding-bottom: 16px;
         box-sizing: border-box;
     }
+    @include respond-to(small) {
+        font-size: clamp(16px, 1rem, 18px);
+        align-self: center;
+        padding-bottom: 16px;
+        box-sizing: border-box;
+    }
 }
 
 .testimonial-wrapper{

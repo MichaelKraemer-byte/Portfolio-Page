@@ -10,90 +10,107 @@
         </div>
     </div>
 
-    <form class="form-container" novalidate (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-    
-        <div class="inputContainer" (click)="focusInput(nameElement)">
-            <label for="inputName">{{ 'contact.inputName.label' | translate }}</label>
-            <input 
-                required 
-                [(ngModel)]="contactData.name" 
-                #name="ngModel" 
-                #nameElement 
-                name="name" 
-                placeholder="{{ 'contact.inputName.placeholder' | translate }}" 
-                (blur)="restorePlaceholder(nameElement, translate.instant('contact.inputName.error'))"> <!-- Verwende translate.instant -->
-
-            <ng-container *ngIf="!name.valid && !name.disabled && submitted == true">
-                <span class="error-message">{{ 'contact.inputName.errorMessage' | translate }}</span>
-            </ng-container>
-        </div>
-    
-        <div class="inputContainer" (click)="focusInput(emailElement)">
-            <label for="inputEmail">{{ 'contact.inputEmail.label' | translate }}</label>
-            <input 
-                required 
-                [(ngModel)]="contactData.email" 
-                #email="ngModel" 
-                #emailElement 
-                name="email" 
-                type="email" 
-                placeholder="{{ 'contact.inputEmail.placeholder' | translate }}" 
-                (blur)="restorePlaceholder(emailElement, translate.instant('contact.inputEmail.error'))" 
-                pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
-
-            <ng-container *ngIf="!email.valid && !email.disabled && submitted == true">
-                <span class="error-message">{{ 'contact.inputEmail.errorMessage' | translate }}</span>
-            </ng-container>
-        </div>
-    
-        <div class="inputContainer" (click)="focusTextarea(messageTextAreaElement)">
-            <label for="inputMessage">{{ 'contact.inputMessage.label' | translate }}</label>
-            <textarea 
-                required 
-                [(ngModel)]="contactData.message" 
-                #message="ngModel" 
-                minlength="4" 
-                #messageTextAreaElement 
-                name="message" 
-                placeholder="{{ 'contact.inputMessage.placeholder' | translate }}" 
-                (blur)="restorePlaceholderForMessage(messageTextAreaElement, translate.instant('contact.inputMessage.error'))">
-            </textarea>
-
-            <ng-container *ngIf="!message.valid && !message.disabled && submitted == true">
-                <span class="error-message">{{ 'contact.inputMessage.errorMessage' | translate }}</span>
-            </ng-container>
-        </div>
-    
-        <div class="check-box-and-error">
-            <div class="checkboxContainer">
+    <div class="form-and-confirmation-container">
+        <form class="form-container" novalidate (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        
+            <div class="inputContainer" (click)="focusInput(nameElement)">
+                <label for="inputName">{{ 'contact.inputName.label' | translate }}</label>
                 <input 
-                    id="customCheckbox" 
-                    type="checkbox" 
                     required 
-                    [(ngModel)]="contactData.checkboxChecked" 
-                    #checkbox="ngModel" 
-                    name="privacyPolicy">
-                <label for="customCheckbox">
-                    <div class="labelTextContainer">
-                        <div class="firstLabelsentence">
-                            {{ 'contact.privacyPolicy.labelPartOne' | translate }}
-                            <a [routerLink]="['/privacy-policy']" routerLinkActive="active">{{ 'contact.privacyPolicy.privacyPolicyLink' | translate }}
-                            </a>
-                        </div>
-                        <span class="secondLabelsentence">{{ 'contact.privacyPolicy.labelPartTwo' | translate }}</span>
-                    </div>
-                </label>
-            </div>
-            <ng-container *ngIf="submitted == true && checkbox.invalid">
-                <span class="error-message-for-checkbox">
-                    {{ 'contact.privacyPolicy.errorMessage' | translate }}
-                </span>
-            </ng-container>                
-        </div>
+                    [(ngModel)]="contactData.name" 
+                    #name="ngModel" 
+                    #nameElement 
+                    name="name" 
+                    placeholder="{{ 'contact.inputName.placeholder' | translate }}" 
+                    (blur)="restorePlaceholder(nameElement, translate.instant('contact.inputName.error'))"> <!-- Verwende translate.instant -->
 
-        <div class="button-container">
-            <button type="submit" class="fill">{{ 'contact.submitButton' | translate }}</button>
-        </div>
-    
-    </form>
+                <ng-container *ngIf="!name.valid && !name.disabled && submitted == true">
+                    <span class="error-message">{{ 'contact.inputName.errorMessage' | translate }}</span>
+                </ng-container>
+            </div>
+        
+            <div class="inputContainer" (click)="focusInput(emailElement)">
+                <label for="inputEmail">{{ 'contact.inputEmail.label' | translate }}</label>
+                <input 
+                    required 
+                    [(ngModel)]="contactData.email" 
+                    #email="ngModel" 
+                    #emailElement 
+                    name="email" 
+                    type="email" 
+                    placeholder="{{ 'contact.inputEmail.placeholder' | translate }}" 
+                    (blur)="restorePlaceholder(emailElement, translate.instant('contact.inputEmail.error'))" 
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
+
+                <ng-container *ngIf="!email.valid && !email.disabled && submitted == true">
+                    <span class="error-message">{{ 'contact.inputEmail.errorMessage' | translate }}</span>
+                </ng-container>
+            </div>
+        
+            <div class="inputContainer" (click)="focusTextarea(messageTextAreaElement)">
+                <label for="inputMessage">{{ 'contact.inputMessage.label' | translate }}</label>
+                <textarea 
+                    required 
+                    [(ngModel)]="contactData.message" 
+                    #message="ngModel" 
+                    minlength="4" 
+                    #messageTextAreaElement 
+                    name="message" 
+                    placeholder="{{ 'contact.inputMessage.placeholder' | translate }}" 
+                    (blur)="restorePlaceholderForMessage(messageTextAreaElement, translate.instant('contact.inputMessage.error'))">
+                </textarea>
+
+                <ng-container *ngIf="!message.valid && !message.disabled && submitted == true">
+                    <span class="error-message">{{ 'contact.inputMessage.errorMessage' | translate }}</span>
+                </ng-container>
+            </div>
+        
+            <div class="check-box-and-error">
+                <div class="checkboxContainer">
+                    <input 
+                        id="customCheckbox" 
+                        type="checkbox" 
+                        required 
+                        [(ngModel)]="contactData.checkboxChecked" 
+                        #checkbox="ngModel" 
+                        name="privacyPolicy">
+                    <label for="customCheckbox">
+                        <div class="labelTextContainer">
+                            <div class="firstLabelsentence">
+                                {{ 'contact.privacyPolicy.labelPartOne' | translate }}
+                                <a [routerLink]="['/privacy-policy']" routerLinkActive="active">{{ 'contact.privacyPolicy.privacyPolicyLink' | translate }}
+                                </a>
+                            </div>
+                            <span class="secondLabelsentence">{{ 'contact.privacyPolicy.labelPartTwo' | translate }}</span>
+                        </div>
+                    </label>
+                </div>
+                <ng-container *ngIf="submitted == true && checkbox.invalid">
+                    <span class="error-message-for-checkbox">
+                        {{ 'contact.privacyPolicy.errorMessage' | translate }}
+                    </span>
+                </ng-container>      
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="fill">{{ 'contact.submitButton' | translate }}</button>
+            </div>
+        
+        </form>
+            @if (confirmation) {
+                <div class="confirmation-container">
+
+                    <svg class="submitCheckSVG" width="56px" height="56px" viewBox="0 0 133 133" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="check-group" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <circle id="filled-circle" fill="#78B348" cx="66.5" cy="66.5" r="54.5"></circle>
+                        <circle id="white-circle" fill="#FFFFFF" cx="66.5" cy="66.5" r="55.5"></circle>
+                        <circle id="outline" stroke="#78B348" stroke-width="4" cx="66.5" cy="66.5" r="54.5"></circle>
+                        <polyline id="check" stroke="#FFFFFF" stroke-width="4" points="41 70 56 85 92 49"></polyline>
+                        </g>
+                    </svg>            
+                    <p>{{ 'contact.submitConfirmation' | translate }}</p>
+                </div> 
+
+            } 
+    </div>  
 </section>
