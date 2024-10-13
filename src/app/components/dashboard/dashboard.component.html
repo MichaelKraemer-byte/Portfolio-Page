@@ -1,7 +1,17 @@
 <app-modal [project]="project" [projects]="projects"></app-modal>
 <app-atf></app-atf>
-<app-about-me></app-about-me>
-<app-skills></app-skills>
-<app-projects (openProjectEvent)="openingProject($event)"></app-projects>
-<app-testimonials></app-testimonials>
-<app-contact></app-contact>
+<div class="section" #section>
+  <app-about-me></app-about-me>
+</div>
+<div class="section" #section>
+  <app-skills></app-skills>
+</div>
+<div class="section" #section>
+  <app-projects (openProjectEvent)="openingProject($event)"></app-projects>
+</div>
+<div class="section" #section>
+  <app-testimonials></app-testimonials>
+</div>
+<div class="section" #section>
+  <app-contact></app-contact>
+</div>

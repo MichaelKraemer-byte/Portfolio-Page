@@ -15,6 +15,15 @@ $breakpoints: (
   }
 }
 
+html, body {
+  scroll-behavior: auto  !important;  /* Deaktiviert das 'smooth' scrolling für diese Komponente */
+
+}
+
+:host {
+  scroll-behavior: auto  !important;  /* Deaktiviert das 'smooth' scrolling für diese Komponente */
+}
+
 section{
     position: relative;
     display: flex;

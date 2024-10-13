@@ -69,20 +69,20 @@
         "inputName": {
             "label": "What's your name?",
             "placeholder": "Your name goes here",
-            "error": "Oops! It seems your name is missing",
-            "errorMessage": "Please enter your name"
+            "error": "How may I call you?",
+            "errorMessage": "Please enter your name."
         },
         "inputEmail": {
             "label": "What's your email?",
             "placeholder": "YourEmail@email.com",
-            "error": "Oops! Your Email is required",
-            "errorMessage": "Please enter a valid email address"
+            "error": "Please provide your email so I can reach out to you.",
+            "errorMessage": "Please enter a valid email address."
         },
         "inputMessage": {
             "label": "How can I help you?",
             "placeholder": "Hello Michael, I am interested in...",
             "error": "What do you need to develop?",
-            "errorMessage": "Please enter a message with at least 4 letters"
+            "errorMessage": "Please enter a message with at least 10 letters"
         },
         "privacyPolicy": {
             "labelPartOne": "I've read the ",
@@ -103,7 +103,7 @@
       "overview_title": "1. Privacy at a Glance",
       "general_info_title": "General Information",
       "general_info_text": "The following notes provide a simple overview of what happens to your personal data when you visit this website. Personal data is any data with which you can be personally identified. For detailed information on the topic of data protection, please refer to our privacy policy below this text.",
-      "data_collection_title": "Data Collection on This Website",
+      "data_collection_title": "Data Collection on this Website",
       "responsible_party_title": "Who is responsible for data collection on this website?",
       "responsible_party_text": "The data processing on this website is carried out by the website operator. You can find their contact details in the section 'Notice on the Responsible Authority' in this privacy policy.",
       "data_collection_method_title": "How do we collect your data?",

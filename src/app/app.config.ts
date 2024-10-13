@@ -1,5 +1,5 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app.routes';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { provideHttpClient } from '@angular/common/http';
@@ -21,7 +21,13 @@ export const providetranslation = () => ({
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
+    provideRouter(
+      routes,
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'enabled',  // Scrollt zur obersten Position bei Navigieren
+        anchorScrolling: 'enabled',  // Aktiviert das Scrollen zu Anker-Elementen
+      }),
+    ),
     provideHttpClient(), 
 
     importProvidersFrom([ 

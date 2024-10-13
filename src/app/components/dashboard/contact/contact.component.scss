@@ -15,7 +15,14 @@ $breakpoints: (
     }
 }
 
+.section-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 section{
+    max-width: 1674px;
     position: relative;
     width: 100%;
     display: flex;
@@ -345,7 +352,7 @@ code {
 ::placeholder,
 .error-placeholder,
 .error-placeholder::placeholder{
-    color: rgb(195,104,104);
+    color: rgb(220, 149, 91);
     font-size: 18px;
     font-weight: 300;
     font-family: 'Karla';   
@@ -357,7 +364,7 @@ code {
 /* Fehler-Placeholder */
 input.error-placeholder::placeholder,
 textarea.error-placeholder::placeholder {
-  color: rgb(195, 104, 104);
+  color: rgb(220, 149, 91);
   font-size: 18px;
   font-weight: 300;
   font-family: 'Karla';
@@ -369,7 +376,7 @@ textarea.error-placeholder::placeholder {
 /* WebKit-basiert (Safari, ältere Versionen von Chrome) */
 input.error-placeholder::-webkit-input-placeholder,
 textarea.error-placeholder::-webkit-input-placeholder {
-  color: rgb(195, 104, 104) !important;
+  color: rgb(220, 149, 91) !important;
   font-size: 18px !important;
   font-weight: 300 !important;
   font-family: 'Karla' !important;
@@ -381,7 +388,7 @@ textarea.error-placeholder::-webkit-input-placeholder {
 /* Mozilla-basiert (Firefox) */
 input.error-placeholder::-moz-placeholder,
 textarea.error-placeholder::-moz-placeholder {
-  color: rgb(195, 104, 104) !important;
+  color: rgb(220, 149, 91) !important;
   font-size: 18px !important;
   font-weight: 300 !important;
   font-family: 'Karla' !important;
@@ -393,7 +400,7 @@ textarea.error-placeholder::-moz-placeholder {
 /* Microsoft Edge / Internet Explorer */
 input.error-placeholder:-ms-input-placeholder,
 textarea.error-placeholder:-ms-input-placeholder {
-  color: rgb(195, 104, 104) !important;
+  color: rgb(220, 149, 91) !important;
   font-size: 18px !important;
   font-weight: 300 !important;
   font-family: 'Karla' !important;
@@ -405,7 +412,7 @@ textarea.error-placeholder:-ms-input-placeholder {
 /* Mozilla ab neueren Versionen */
 input.error-placeholder::-ms-input-placeholder,
 textarea.error-placeholder::-ms-input-placeholder {
-  color: rgb(195, 104, 104) !important;
+  color: rgb(220, 149, 91) !important;
   font-size: 18px !important;
   font-weight: 300 !important;
   font-family: 'Karla' !important;
@@ -449,6 +456,7 @@ textarea:-moz-autofill {
     color: rgb(195, 104, 104);
     font-family: 'Karla';
     font-size: 18px;
+    margin-bottom: 6px;
 }
 
 .error-message-for-checkbox{

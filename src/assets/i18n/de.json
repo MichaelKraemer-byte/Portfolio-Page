@@ -68,21 +68,21 @@
         "spanText": "Lass uns reden!",
         "inputName": {
             "label": "Wie heißen Sie?",
-            "placeholder": "Ihr Name hier",
-            "error": "Ups! Es scheint, dass Ihr Name fehlt",
-            "errorMessage": "Bitte geben Sie Ihren Namen ein"
+            "placeholder": "Ihr Name hier.",
+            "error": "Wie darf ich Sie nennen?",
+            "errorMessage": "Bitte geben Sie Ihren Namen ein."
         },
         "inputEmail": {
             "label": "Wie lautet Ihre E-Mail?",
             "placeholder": "IhreEmail@email.com",
-            "error": "Ups! Ihre E-Mail ist erforderlich",
-            "errorMessage": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+            "error": "Ihre Email, unter der ich Sie erreichen kann.",
+            "errorMessage": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
         },
         "inputMessage": {
             "label": "Wie kann ich Ihnen helfen?",
             "placeholder": "Hallo Michael, ich interessiere mich für...",
             "error": "Was müssen Sie entwickeln?",
-            "errorMessage": "Bitte geben Sie eine Nachricht mit mindestens 4 Buchstaben ein"
+            "errorMessage": "Bitte geben Sie eine Nachricht mit mindestens 10 Zeichen ein."
         },
         "privacyPolicy": {
             "labelPartOne": "Ich habe die ",

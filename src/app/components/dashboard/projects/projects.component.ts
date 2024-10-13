@@ -50,7 +50,7 @@ export class ProjectsComponent {
       description: 'A object-oriented jump, run and throw game. Guide Scarr the orc through obstacles, collect coins and axes, and defeat the troll to uncover treasure for his family.',
       technologies: ['JavaScript', 'HTML', 'CSS'],
       github: 'https://github.com/MichaelKraemer-byte/Loctar-Risen',
-      livetest: 'https:/kraemer-michael.net/game/index.html',
+      livetest: 'https://kraemer-michael.net/game/index.html',
       img: '../../assets/img/loctar-risen-1.jpg',
     },
     {

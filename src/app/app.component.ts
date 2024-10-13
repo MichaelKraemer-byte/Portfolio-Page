@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
@@ -25,6 +25,10 @@ import { HeaderModalComponent } from './shared/header-modal/header-modal.compone
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+
+  constructor( viewport: ViewportScroller ) { 
+    viewport.setOffset([0, 116])
+  }
 
   modalIsOpen: boolean = false;
 

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AtfComponent } from './atf/atf.component';
 import { AboutMeComponent } from './about-me/about-me.component';
@@ -27,7 +27,29 @@ import { HeaderModalComponent } from '../../shared/header-modal/header-modal.com
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements AfterViewInit {
+
+  @ViewChildren('section', { read: ElementRef }) sections!: QueryList<ElementRef>;
+
+  ngAfterViewInit(): void {
+    const options = {
+      threshold: 0.5
+    };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        const element = entry.target as HTMLElement;
+        if (entry.isIntersecting) {
+          element.classList.add('visible');
+        }
+        // } else {
+        //   element.classList.remove('visible');
+        // }
+      });
+    }, options);
+    this.sections.forEach(section => {
+      observer.observe(section.nativeElement);
+    });
+  }
 
   @ViewChild(ModalComponent) modal!: ModalComponent;  
   @ViewChild(ProjectsComponent) projectsComponent!: ProjectsComponent;

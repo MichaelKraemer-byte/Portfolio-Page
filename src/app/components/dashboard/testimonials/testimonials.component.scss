@@ -296,13 +296,17 @@ section{
     position: absolute;
     left: 0;
     top: 0;
-    width: 12.5%;
+    width: 33%;
     height: 100%;
     background: linear-gradient(to left, rgb(27 27 27 / 0%) 0%, rgb(27 27 27) 100%),;    
     z-index: 1;
+    @include respond-to(large) {
+        width: 22.5%;
+    }
     @include respond-to(small) {
         top: 6vh;
         height: 80%;
+        width: 12.5%;
     }
 }
 
@@ -310,13 +314,16 @@ section{
     position: absolute;
     right: 0;
     top: 0;
-    width: 12.5%;
+    width: 33%;
     height: 100%;
     background: linear-gradient(to right, rgb(27 27 27 / 0%) 0%, rgb(27 27 27) 100%);    
     z-index: 1;
+    @include respond-to(large) {
+        width: 22.5%;
+    }
     @include respond-to(small) {
-        top: 10vh;
+        top: 6vh;
         height: 80%;
+        width: 12.5%;
     }
 }
-

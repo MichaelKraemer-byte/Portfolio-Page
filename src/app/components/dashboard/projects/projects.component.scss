@@ -22,6 +22,11 @@ section{
     padding: 0px 112px 144px 112px;
     box-sizing: border-box;
     justify-content: space-between;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @include respond-to(large) {
         padding: 0px 64px 144px 64px;
         justify-content: center;
@@ -40,6 +45,10 @@ section{
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-width: 1450px;
+    @include respond-to(medium) {
+        max-width: 700px;
+    }
 }
 
 .subtitle{
@@ -63,7 +72,7 @@ section{
     margin: 41px 0px 41px 0px;
     text-align: justify;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     @include respond-to(medium) {
         width: 100%;
     }
@@ -76,7 +85,10 @@ section{
 .content-section{
     display: flex;
     justify-content: space-between;
-    gap: 9.5vmax;
+    gap: 5vmax;
+    @include respond-to(large) {
+        gap: 9.5vmax;
+    }
 }
 
 .button-section{
@@ -166,14 +178,13 @@ section{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 20vw;
     height: 100%;
     position: relative;
     margin-top: -24px;
 
     @include respond-to(large) {
         overflow: hidden;
-        flex: 0.6;    
+          
     }
     @include respond-to(medium) {
         display: none;      

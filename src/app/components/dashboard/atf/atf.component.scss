@@ -224,7 +224,8 @@ button {
           align-items: center;
           justify-content: center;
           position: relative;
-          transition: opacity 0.125 ease-in-out;      
+          transition: opacity 0.125 ease-in-out;     
+          display: none; 
 
           span{
             font-size: 32px;
@@ -237,9 +238,7 @@ button {
             transition: opacity 0.125 ease-in-out;      
           }
           
-          @include respond-to(large) {
-            display: none;
-          }
+
           @include respond-to(small) {
             display: block;
           }
