@@ -25,16 +25,16 @@ html, body {
 }
 
 section{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 144px 112px 144px 112px;
-    box-sizing: border-box;
-    top: 50vh;
-    transform: translateY(-50%);
-    white-space: nowrap;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 144px 112px 144px 112px;
+  box-sizing: border-box;
+  top: 10vh;
+  white-space: nowrap;
+  height: 77vh;
     @include respond-to(large) {
         padding: 144px 64px 144px 64px;
       }

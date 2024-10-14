@@ -53,16 +53,16 @@ export class ProjectsComponent {
       livetest: 'https://kraemer-michael.net/game/index.html',
       img: '../../assets/img/loctar-risen-1.jpg',
     },
-    {
-      id: 'daBubble',
-      number: 3,
-      title: 'DABubble',
-      description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
-      technologies: ['JavaScript', 'HTML', 'CSS'],
-      github: 'https://github.com/MichaelKraemer-byte/Join',
-      livetest: 'https://github.com/MichaelKraemer-byte/Loctar-Risen',
-      img: '../../assets/img/dabubble.jpg',
-    },
+    // {
+    //   id: 'daBubble',
+    //   number: 3,
+    //   title: 'DABubble',
+    //   description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
+    //   technologies: ['JavaScript', 'HTML', 'CSS'],
+    //   github: 'https://github.com/MichaelKraemer-byte/Join',
+    //   livetest: 'https://github.com/MichaelKraemer-byte/Loctar-Risen',
+    //   img: '../../assets/img/dabubble.jpg',
+    // },
   ];
 
   openProject(project: any) {

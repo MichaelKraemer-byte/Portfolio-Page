@@ -13,6 +13,17 @@ body, html{
     flex: 1;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Volle Höhe des Viewports
+}
+
+main {
+  flex-grow: 1; // Der Hauptinhalt wächst, um den Raum vor dem Footer zu füllen
+}
+
+
 
 /* karla-200 - latin */
 @font-face {

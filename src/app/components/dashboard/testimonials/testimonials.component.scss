@@ -2,7 +2,8 @@ $breakpoints: (
   small: 600px,
   medium: 1150px,
   large: 1400px,
-  XL: 1660px,
+  XL: 2060px,
+  XXL: 2500px,
 );
 
 @mixin respond-to($breakpoint) {
@@ -14,6 +15,16 @@ $breakpoints: (
       }
     }
 }
+
+@mixin respond-to-min($breakpoint) {
+    $min-width:map-get($breakpoints, $breakpoint);
+  
+    @if $min-width {
+      @media (min-width: $min-width) {
+        @content; 
+      }
+    }
+  }
 
 section{
     position: relative;
@@ -89,9 +100,12 @@ section{
 
 .testimonial-wrapper{
     height: 30vh;
+    max-height: 360px;
 }
 
 .testimonial-container {
+    max-width: 800px;
+    max-height: 320px;
     text-align: justify;
     padding: 40px;
     width: 45vw;
@@ -202,6 +216,12 @@ section{
     left: 23%;
     transform: translate(50%, 50%);
     z-index: 2;
+    @include respond-to-min('XL') {
+        left: 30%;
+    }
+    @include respond-to-min('XXL') {
+        left: 33%;
+    }
     @include respond-to(large) {
         left: 20%;
         top: 5%;
@@ -224,12 +244,6 @@ section{
     gap: 24px;
     @include respond-to(large) {
         margin-top: 8vh;
-    }
-    @include respond-to(medium) {
-        margin-top: 12vh;
-    }
-    @include respond-to(small) {
-        margin-top: 32vh;
     }
 
     span{

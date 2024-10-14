@@ -15,7 +15,7 @@ $breakpoints: (
     }
 }
 
-footer{
+section{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,9 +23,12 @@ footer{
     box-sizing: border-box;
     z-index: 2;
     width: 100%;
-    position: relative;
+    position: absolute;
+    max-width: 1674px;
+    left: 50%;
+    transform: translateX(-50%);
     @include respond-to(medium) {
-      padding: 0px 16px 25px 16px;
+      padding: 0px 64px 25px 64px;
       font-size: 16px;
     }
     @include respond-to(small) {

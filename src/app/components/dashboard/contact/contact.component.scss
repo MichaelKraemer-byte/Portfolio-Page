@@ -19,6 +19,12 @@ $breakpoints: (
   width: 100%;
   display: flex;
   justify-content: center;
+  @include respond-to(medium){
+  justify-content: unset;
+  }
+  @include respond-to(small){
+    justify-content: center;
+  }
 }
 
 section{
