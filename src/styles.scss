@@ -23,6 +23,36 @@ main {
   flex-grow: 1; // Der Hauptinhalt wächst, um den Raum vor dem Footer zu füllen
 }
 
+/* ===== Scrollbar CSS ===== */
+
+body {
+  --sb-track-color: rgb(27,27,27);
+  --sb-thumb-color: #3dcfb789;
+  --sb-size: 8px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 16px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 16px;
+  border: 1px solid rgb(27,27,27);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+      scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
 
 
 /* karla-200 - latin */
