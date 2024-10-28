@@ -1,5 +1,6 @@
 $breakpoints: (
   small: 600px,
+  smallMedium: 1000px,
   medium: 1150px,
   large: 1400px,
   XL: 2060px,
@@ -7,11 +8,21 @@ $breakpoints: (
 );
 
 @mixin respond-to($breakpoint) {
-    $max-width: map-get($breakpoints, $breakpoint); // Wert aus der Map abrufen
+    $max-width: map-get($breakpoints, $breakpoint); 
 
     @if $max-width {
       @media (max-width: $max-width) {
-        @content; // Die Inhalte, die in das Mixin übergeben werden
+        @content; 
+      }
+    }
+}
+
+@mixin respond-to-maxHeight($breakpoint) {
+    $max-height: map-get($breakpoints, $breakpoint); 
+
+    @if $max-height {
+      @media (max-height: $max-height) {
+        @content; 
       }
     }
 }
@@ -243,13 +254,24 @@ section{
     justify-content: space-between;
     gap: 24px;
     @include respond-to(large) {
-        margin-top: 8vh;
+        margin-top: 80px;
+    }
+    @include respond-to-maxHeight('smallMedium') {
+        @include respond-to(small) {
+            margin-top: 140px;
+        }
     }
 
     span{
         font-size: 3rem;
         margin-bottom: 5px;
     }
+
+    button {
+        user-select: none; /* Verhindert die Textmarkierung */
+        -webkit-user-select: none; /* Für Safari */
+        -ms-user-select: none; /* Für ältere Versionen von Internet Explorer */
+      }
 
 
 

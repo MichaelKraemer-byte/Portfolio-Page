@@ -1,5 +1,6 @@
 $breakpoints: (
   small: 600px,
+  smallMedium: 1000px,
   medium: 1150px,
   large: 1400px,
   XL: 1660px,
@@ -11,6 +12,16 @@ $breakpoints: (
     @if $max-width {
       @media (max-width: $max-width) {
         @content; // Die Inhalte, die in das Mixin übergeben werden
+      }
+    }
+}
+
+@mixin respond-to-maxHeight($breakpoint) {
+    $max-height: map-get($breakpoints, $breakpoint); 
+
+    @if $max-height {
+      @media (max-height: $max-height) {
+        @content; 
       }
     }
 }
@@ -60,13 +71,13 @@ $breakpoints: (
     @include respond-to(medium) {
         padding: 75px 40px 75px 40px;
         flex-direction: column;
-        height: 97vh;
+        height: 90vh;
         width: 95vw;
         border-radius: 20px;
     }
     @include respond-to(small) {
         padding: 65px 12px 65px 12px;
-        width: 97vw;
+        width: 95vw;
         justify-content: space-between;
     }
 
@@ -113,6 +124,9 @@ $breakpoints: (
     }
     @include respond-to(small) {
         font-size: 24px;
+        @include respond-to-maxHeight('smallMedium') {
+            display: none;
+        }
     }
 }
 
@@ -124,6 +138,10 @@ $breakpoints: (
     @include respond-to(medium) {
         flex-direction: column-reverse;
         font-size: 38px;
+    }
+    @include respond-to(small) {
+        flex-direction: column-reverse;
+        font-size: 32px;
     }
 }
 
@@ -190,6 +208,9 @@ $breakpoints: (
     @include respond-to(small) {
         max-width: 280px;
         width: auto;
+        @include respond-to('smallMedium') {
+            max-height: 200px;
+        }
     }
 }
 

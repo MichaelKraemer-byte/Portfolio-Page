@@ -73,6 +73,9 @@ section{
     font-size: 1.6rem;
     margin: 0px;
     letter-spacing: 3px;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
     @include respond-to(small) {
         font-size: 18px;
     }
@@ -84,6 +87,9 @@ section{
     font-family: 'Fira Code';
     color: #3dcfb6;
     margin: 0px;
+    user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
     @include respond-to(large) {
         font-size: clamp(48px, 2.6em, 64px);
       }

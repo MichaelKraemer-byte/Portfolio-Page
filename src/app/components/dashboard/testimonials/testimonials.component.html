@@ -13,7 +13,10 @@
 
     <div class="slide-section">
         <div *ngFor="let test of testimonials; let i = index" class="testimonial-wrapper">
-                <div  class="testimonial-container"  
+                <div  
+                (touchstart)="onTouchStart($event)"
+                (touchend)="onTouchEnd($event)"
+                class="testimonial-container"  
                 [ngClass]="{
                     'previous': i === getPrevIndex(),
                     'current': i === currentTestimonial,

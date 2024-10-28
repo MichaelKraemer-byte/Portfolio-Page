@@ -11,6 +11,9 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class TestimonialsComponent {
 
+  touchStartX: number = 0;
+  touchEndX: number = 0;
+
 
   testimonials = [
     {
@@ -58,4 +61,22 @@ export class TestimonialsComponent {
       }, 200); 
   }
 
+   onTouchStart(event: TouchEvent) {
+    this.touchStartX = event.changedTouches[0].screenX;
+  }
+
+  onTouchEnd(event: TouchEvent) {
+    this.touchEndX = event.changedTouches[0].screenX;
+    this.handleSwipeGesture();
+  }
+
+  handleSwipeGesture() {
+    const swipeThreshold = 50;
+    if (this.touchEndX < this.touchStartX - swipeThreshold) {
+      this.nextSlide();
+    }
+    if (this.touchEndX > this.touchStartX + swipeThreshold) {
+      this.prevSlide();
+    }
+  }
 }
