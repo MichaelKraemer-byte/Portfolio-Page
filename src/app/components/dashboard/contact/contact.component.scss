@@ -36,10 +36,10 @@ section{
     box-sizing: border-box;
     gap: 6vw;
     @include respond-to(large) {
-        padding: 0px 64px 144px 64px;
+        padding: 144px 64px 144px 64px;
     }
     @include respond-to(medium) {
-        padding: 0px 32px 100px 32px;
+        padding: 100px 32px 100px 32px;
         flex-direction: column;
         width: 80%;
         align-items: center;
@@ -48,7 +48,7 @@ section{
         transform: translateX(-50%);
     }
     @include respond-to(small) {
-        padding: 0px 16px 100px 16px;
+        padding: 100px 16px 100px 16px;
         width: 100%;
         align-items: unset;
         justify-content: unset;

@@ -35,7 +35,7 @@ export class DashboardComponent implements AfterViewInit {
     const options = {
       threshold: 0.5
     };
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const element = entry.target as HTMLElement;
         if (entry.isIntersecting) {

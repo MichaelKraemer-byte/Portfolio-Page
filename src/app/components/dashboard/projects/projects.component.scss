@@ -19,25 +19,23 @@ section{
     position: relative;
     height: auto;
     display: flex;
-    padding: 0px 112px 144px 112px;
+    padding: 100px 112px 0px 112px;
     box-sizing: border-box;
     justify-content: space-between;
-
-
     display: flex;
     justify-content: center;
     align-items: center;
     @include respond-to(large) {
-        padding: 0px 64px 144px 64px;
+        padding: 100px 64px 0px 64px;
         justify-content: center;
         align-items: center;
       }
     @include respond-to(medium) {
-        padding: 0px 32px 100px 32px;
+        padding: 100px 32px 100px 32px;
         width: 100%;
       }
     @include respond-to(small) {
-        padding: 0px 16px 100px 16px;
+        padding: 100px 16px 100px 16px;
     }
 }
 

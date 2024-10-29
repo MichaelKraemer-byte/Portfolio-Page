@@ -47,6 +47,7 @@ section{
     align-items: center;
     overflow: hidden;
     gap: 6%;
+    padding-bottom: 144px;
     @include respond-to(large) {
         padding: 0px 64px 144px 64px;
     }
