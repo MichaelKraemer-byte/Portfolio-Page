@@ -286,8 +286,13 @@ textarea ::placeholder{
     
 }
 
+.invalidButton{
+  cursor: not-allowed !important;
+}
+
 .fill:hover,
 .fill:focus {
+  cursor: pointer !important;
   box-shadow: inset 0 0 0 2em var(--hover);
 }
 
@@ -313,7 +318,6 @@ button {
     color: #FFFFFF;
     cursor: pointer;
   }
-
 }
 
 
