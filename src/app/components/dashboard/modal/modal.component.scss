@@ -206,7 +206,7 @@ $breakpoints: (
         width: 60%;
     }
     @include respond-to(small) {
-        max-width: 280px;
+        max-width: 240px;
         width: auto;
         @include respond-to('smallMedium') {
             max-height: 200px;
@@ -332,7 +332,7 @@ $breakpoints: (
         }
     }
     &:not(:hover) .ankerSVG {
-        animation: moveOutArc 0.125s ease-in-out forwards; /* Zurück zur Ausgangsposition */
+        animation: moveOutArc 0.125s ease-in-out forwards; 
     }
 
     @include respond-to(medium) {
@@ -340,6 +340,7 @@ $breakpoints: (
     }
     @include respond-to(small) {
         font-size: 16px;
+        padding: 13px 16px 13px 16px;
     }
 }
 
