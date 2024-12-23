@@ -58,7 +58,7 @@ export class ProjectsComponent {
       number: 3,
       title: 'DABubble',
       description: 'This App is a Slack Clone App. It revolutionizes team communication and collaboration with its intuitive interface, real-time messaging, and robust channel organization.',
-      technologies: ['Angular', 'Typescript', 'Firebase'],
+      technologies: ['Angular', 'TypeScript', 'Firebase'],
       github: 'https://github.com/MichaelKraemer-byte/DABubble',
       livetest: 'https://dabubble.kraemer-michael.net/',
       img: '../../assets/img/dabubble.png',
