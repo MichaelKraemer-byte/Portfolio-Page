@@ -23,6 +23,7 @@ section{
     box-sizing: border-box;
     position: relative;
     justify-content: center;
+    overflow-x: clip;
     @include respond-to(large) {
       padding: 40px 64px 100px 64px;
       align-items: center;
@@ -350,4 +351,16 @@ svg{
       }
 
     }
+}
+
+.bootstrapIcon{
+  width: 88px;
+  height: 88px;
+  margin: -12px;
+  @include respond-to(small){
+    width: 80px !important;
+    height: 80px !important;
+    max-width: unset !important;
+    max-height: unset !important;
+  }
 }
